@@ -116,7 +116,7 @@
 
 Bienvenido a la primera edición del libro Termux Hacking 101. Aquí vas a aprender a instalar Termux en Android, su uso básico, virus, programación y hacking.  
 
-Termux es un emulador de terminal para Android y un entorno de Linix que funciona directamente sin necesidad de rootear el dispositivo o comfigurarlo. Un sistema base mínimo se instala automáticamente - Y muchos paquetes adicionales están disponibles desde su gestor de paquetes.
+Termux es un emulador de terminal para Android y un entorno de Linux que funciona directamente sin necesidad de rootear el dispositivo o configurarlo. Un sistema base mínimo se instala automáticamente - Y muchos paquetes adicionales están disponibles desde su gestor de paquetes.
 
 [Tabla de Contenidos](#tabla-de-contenidos)  
 
@@ -262,8 +262,19 @@ Podemos movernos a cualquier directorio alcanzable poniendo su ruta relativa tra
 > cd son las siglas de Change Directory (Cambia Directorio), 
 
 #### ls  
-El commando **ls** muestra la lista de archivos y carpetes que contiene el directorio actual de trabajo. 
+El comando **ls** muestra la lista de archivos y carpetas que contiene el directorio actual de trabajo.  
+  
+![Salida del comando ls y pwd](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/ls.jpg)  
+  
+En este ejemplo nos movemos al directorio home, desde ahí al directorio ejemplo que está dentro de home y con **ls** listamos todo lo que contiene el directorio actual.  
+  
+En blanco se muestran los archivos comunes (foto_perfil.jpg, listaDeLaCompra.txt), en azul/violeta se muestran los directorios que contiene el directorio ejemplo. En este caso hay un directorio llamado documentosDelTrabajo. En verde se muestran archivos con permisos de ejecución, en esta imagen no hay ninguno.  
+  
+> ls es una abreviatura de List (Listar)  
 
+#### cat
+El comando **cat** muestra el contenido de un fichero.
+  
 [Tabla de Contenidos](#tabla-de-contenidos)
 
 -----
