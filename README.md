@@ -236,10 +236,29 @@ Una terminal es una interfaz conducida por comandos capaz de realizar todo tipo 
 
 Utilizar una terminal en lugar de una interfaz grafica, nos permite realizar tareas de todo tipo de forma mas ágil y rápida.  
 
-Todas las terminales de GNU/Linux, así como Termux, incluyen una gran variedad de comandos básicos que nos permiten realizar estas tareas. Este capítulo se enfoca en los comandos más básicos de Linux.
+Todas las terminales de GNU/Linux, así como Termux, incluyen una gran variedad de comandos básicos que nos permiten realizar estas tareas. Este capítulo se enfoca en los comandos más básicos de Linux.  
+  
+Al entrar en Termux, veremos un **$** que indica el "prompt" de la terminal, en Bash se guarda en la variable de entorno "$PS1". Este icono nos indica que podemos escribir comandos en la terminal. La sintaxis es **$ comando** y para enviar el comando para que sea procesado, pulsamos la tecla Enter. En caso de Hacker's Keyboard, esta tecla se representa como una flecha situada en la esquina inferior derecha **⏎**.  
 
-- pwd 
-El comando pwd nos va a mostrar la ruta completa de la carpeta en la cual nos encontramos. 
+### Comandos básicos de Linux
+
+- pwd  
+El comando **pwd** nos va a mostrar la ruta completa de la carpeta en la cual nos encontramos. 
+![Salida del comando pwd](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/pwd.jpg)  
+
+> pwd son las siglas de Print Working Directory (Imprime Directorio de Trabajo)
+
+- cd  
+El comando **cd** sirve para cambiar el directorio en el cual estamos trabajando. Es el equivalente a moverse a una carpeta haciendo doble-click en ella desde cualquier interfaz gráfica.  
+Si escribes el comando cd sin mas, se cambiará el directorio a "$HOME", por defecto /data/data/com.termux/files/home.  
+> Existe un símbolo especial **~** que sirve para indicar explícitamente que nos mueva a la carpeta home. Esto nos será útil cuando queramos crear un archivo en home desde otro directorio y tareas similares.  
+  
+Podemos movernos a cualquier directorio alcanzable poniendo su ruta relativa tras el comando cd, o poniendo su ruta absoluta desde cualquier lugar.  
+
+
+
+> cd son las siglas de Change Directory (Cambia Directorio), 
+
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
