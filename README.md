@@ -135,6 +135,9 @@ Este sencillo teclado offline funciona de marabilla en la mayoría de dispositiv
   
 Los que vienen preinstalados suelen vender tus datos aunque los configures para que no lo hagan.
 
+* [Fx File Explorer](https://play.google.com/store/apps/details?id=nextapp.fx)  
+Explorador de ficheros para Android que te permite el acceso a las carpetas de Termux. No lo he probado pero es recomendado por los desarrolladores de Termux.  
+
 [Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)  
 
 -----
@@ -195,7 +198,32 @@ Una vez tienes la consola de comandos ante ti, lo primero es configurar el acces
 ```bash
 termux-setup-storage
 ```
-Y permitir el acceso de termux al sistema interno de ficheros. 
+Y permitir el acceso de termux al sistema interno de ficheros.   
+  
+El comando **termux-setup-storage** va a configurar el acceso a las siguientes carpetas.  
+* ~/storage/shared  
+Carpeta utilizada por las aplicaciones de Android para compartir archivos  
+* ~/storage/downloads  
+La carpeta por defecto de descargas, por ejemplo donde tu navegador descarga los archivos.  
+* ~/storage/dcim  
+Aquí la cámara suele almacenar las fotos y videos del dispositivo  
+* ~/storage/pictures  
+En esta carpeta se suelen almacenar imágenes del dispositivo
+* ~/storage/music  
+Esta es la carpeta que Android suele utilizar para guardar la música del usuario
+* ~/storage/movies  
+Donde se suelen almacenar las películas
+* ~/storage/external-1  
+Carpeta especial creada por Termux en el almacenamiento externo (si este está disponible), normalmente una tarjeta micro-sd, aunque se permite también el acceso a pendrives y otro tipo de dispositivos de memoria externos. No instales paquetes, programas o archivos de programas aquí(como puedan ser logs de un servidor, archivos de configuración, ...), ya que Android no proporciona permisos de escritura/lectura directamente y es necesario utilizar una API a la que los programas no tienen acceso.
+
+Si utilizas Android 11 y se muestra el error __Permission denied__ (Permiso denegado) cuando intentas acceder a la carpeta shared, aún cuando le distes permisos, sigue los pasos siguientes:
+- Ve a Ajustes -> Aplicaciones -> Termux -> Permisos
+- Revoca el permiso de acceso a ficheros (Storage permission)
+- Autoriza de nuevo el permiso de acceso a ficheros.
+
+Este es un bug de Android 11, no de Termux.
+
+> Nunca elimines Termux directamente desde Android, ya que si tienes archivos en la tarjeta sd, todo su contenido será eliminado, incluyendo archivos que no tienen ninguna relación con Termux
 
 [Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
 
