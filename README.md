@@ -119,8 +119,11 @@ Bienvenido a la primera edición del libro Termux Hacking 101. Aquí vas a apren
 
 Termux es un emulador de terminal para Android y un entorno de Linix que funciona directamente sin necesidad de rootear el dispositivo o comfigurarlo. Un sistema base mínimo se instala automáticamente - Y muchos paquetes adicionales están disponibles desde su gestor de paquetes.
 
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
 -----
 
 ## Capítulo 0: Requisitos y Programas Extra
 
-
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+-----
