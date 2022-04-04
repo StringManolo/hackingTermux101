@@ -5,8 +5,8 @@
 
 ### Tabla de Contenidos
 
-* Prefacio
-* Capítulo 0: Requisitos y Programas Extra
+* [Prefacio](https://github.com/StringManolo/hackingTermux101#prefacio)
+* [Capítulo 0: Requisitos y Programas Extra](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-0-requisitos-y-programas-extra)
 * Capítulo 1: Qué es Termux?
 * Capitulo 2: Descarga e Instalación
 * Capítulo 3: Configuración Básica
@@ -106,7 +106,7 @@
 * Capítulo 97: Retos nivel basico
 * Capítulo 98: Retos nivel intermedio
 * Capítulo 99: Retos nivel avanzado
-* Capítulo 100: Retos nivel 3l1t31
+* Capítulo 100: Retos nivel 3l1t3
   
 * Glosario
 * Appendix
@@ -116,6 +116,8 @@
 ## Prefacio
 
 Bienvenido a la primera edición del libro Termux Hacking 101. Aquí vas a aprender a instalar Termux en Android, su uso básico, virus, programación y hacking.  
+
+Termux es un emulador de terminal para Android y un entorno de Linix que funciona directamente sin necesidad de rootear el dispositivo o comfigurarlo. Un sistema base mínimo se instala automáticamente - Y muchos paquetes adicionales están disponibles desde su gestor de paquetes.
 
 -----
 
