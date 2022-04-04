@@ -159,11 +159,69 @@ Soporta teclado y ratón externos. Puedes conectar Termux a una pantalla externa
 
 ## Capitulo 2: Descarga e Instalación
 
-Puedes instalar Termux descargando la última [release](https://github.com/termux/termux-app/releases) directamente desde el repositorio del proyecto en github. O desde la tienda de [F-Droid](https://f-droid.org/en/packages/com.termux/). La descarga también está disponible en Play Store pero descargar la app de la Play Store NO SE RECOMIENDA. El motivo esta relacionado con políticas de Google con respecto a dar soporte a nuevas versiones de Android. Si se cumpliese con dichas políticas, habría que dejar de dar soporte a versiones anteriores. [Aquí mas detalles](https://github.com/termux/termux-app#google-play-store-deprecated). Si no conoces la arquitectura de tu dispositivo, puedes pinchar [aquí](https://stringmanolo.ml/hackingTermux101/paginas/mostrarArch.html).  
+### Descarga
+Puedes instalar Termux descargando la última [release](https://github.com/termux/termux-app/releases) directamente desde el repositorio del proyecto en github. O desde la tienda de [F-Droid](https://f-droid.org/en/packages/com.termux/).  
+  
+La descarga también está disponible en Play Store, pero descargar la app de la Play Store NO SE RECOMIENDA. El motivo esta relacionado con políticas de Google con respecto a dar soporte a nuevas versiones de Android. Si se cumpliese con dichas políticas, habría que dejar de dar soporte a versiones anteriores. [Aquí mas detalles](https://github.com/termux/termux-app#google-play-store-deprecated).  
+  
+Si no conoces la arquitectura de tu dispositivo, puedes pinchar [aquí](https://stringmanolo.ml/hackingTermux101/paginas/mostrarArch.html).  
+  
+### Instalacion
+- Abre F-Droid en tu Android pinchando [aquí](https://f-droid.org/packages/com.termux/) 
+- Pincha en el primer enlace que dice [Descargar Apk]()  
+- Pincha en el archivo descargado para iniciar la instalación  
+- Pincha en Permitir instalación de aplicaciones desde orígenes desconocidos  
+- Espera a que se complete la instalación  
+- Cuando finalice la instalación tendrás el icono de Termux en tu escritorio, haz click para arrancar la app.
+  
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
 
+-----
+
+## Capítulo 3: Configuración Básica
 
 [Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
 
 -----
 
+## Capítulo 4: Uso básico de la terminal
 
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
+-----
+
+## Capítulo 5: Introducción a Bash
+
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
+-----
+
+## Capítulo 6: Uso de VI y de VIM
+
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
+-----
+
+## Capitulo 7: Configuración de Bash
+
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
+-----
+
+## Capítulo 8: Sistema de Ficheros
+
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
+-----
+
+## Capítulo 9: Creando comandos
+
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
+-----
+
+## Capítulo 10: Comandos Intermedios
+
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
+----
