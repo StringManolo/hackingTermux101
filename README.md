@@ -119,13 +119,40 @@ Bienvenido a la primera edición del libro Termux Hacking 101. Aquí vas a apren
 
 Termux es un emulador de terminal para Android y un entorno de Linix que funciona directamente sin necesidad de rootear el dispositivo o comfigurarlo. Un sistema base mínimo se instala automáticamente - Y muchos paquetes adicionales están disponibles desde su gestor de paquetes.
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)  
 
 -----
 
 ## Capítulo 0: Requisitos y Programas Extra
 
-abc 
+Para poder utilizar Termux, necesitas un dispositivo Android. Termux soporta versiones de android comprendidas entre la versión 7 y la última version de Android.  
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+Necesitas un mínimo de 300 megas de espacio en disco. Yo te recomiendo como mínimo 8 gigas disponibles de memoria interna. 64 Gigas está genial y suele ser mas que suficiente, depende del uso que le des.  
+  
+Antes de empezar, algunos programas extra son recomendados, aunque no necesarios.
+* [Hackers Keyboard](https://github.com/klausw/hackerskeyboard/releases/download/1.40.7/hackerskeyboard-v1.40.7.apk)  
+Este sencillo teclado offline funciona de marabilla en la mayoría de dispositivos. No vende tus datos, ya que no se conecta nunca a internet y te ofrece un teclado como el del PC, aunque no es necesario. Yo no utilizo esta característica en concreto, pero si este es el único teclado que utilizo en Android por seguridad. Los que vienen preinstalados suelen vender tus datos aunque los configures para que no lo hagan.
+
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)  
+
 -----
+
+## Capítulo 1: Qué es Termux?
+
+Termux es una aplicación para Android de código abierto que trae todo el poder Linux a tu dispositivo móvil. Puedes realizar prácticamente cualquier tarea que realices en tu PC con un Linux instalado. Todo se realiza directamente desde la terminal escribiendo comandos, aunque también es posible [instalar](https://wiki.termux.com/wiki/Graphical_Environment) un entorno gráfico como X11.  
+  
+Termux instala por defecto un sistema base con comandos y paquetes comunes que suelen ser imprescindibles en cualquier distribución de Linux. Los paquetes se compilan de forma cruzada con Android NDK y en la mayoría de casos solo necesitan añadirle pequeños parches para que sean totalmente compatibles con Android. Hay miles de paquetes disponibles y cada día la comunidad añade nuevos paquetes.   
+  
+Es seguro, ya que todo es código abierto y miles de profesionales revisan el código y los nuevos cambios a diario.  
+
+Tiene un montón de características extra, como poder ver los SMS, los archivos del dispotivo, etc. Esto te premite auomatizar un montón de tareas, hacer interfaces con distintas tecnologías y todo lo que se te ocurra.  
+  
+Totalmente customizable. Puedes modificar la apariencia, añadir atajos de teclado, nuevas funcionalidades...  
+
+Soporta teclado y ratón externos. Puedes conectar Termux a una pantalla externa y utilizar un teclado y un ratón.  
+  
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
+-----
+
+## Capitulo 2: Descarga e Instalación
