@@ -261,6 +261,8 @@ Podemos movernos a cualquier directorio alcanzable poniendo su ruta relativa tra
 
 > cd son las siglas de Change Directory (Cambia Directorio), 
 
+#### ls  
+El commando **ls** muestra la lista de archivos y carpetes que contiene el directorio actual de trabajo. 
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
