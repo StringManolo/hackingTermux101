@@ -108,7 +108,7 @@
 * Capítulo 100: Retos nivel 3l1t3
   
 * Glosario
-* Appendix
+* Apéndice
 
 -----
 
@@ -199,7 +199,7 @@ termux-setup-storage
 ```
 Y permitir el acceso de termux al sistema interno de ficheros.   
 
-![Imagen de Android pmque pide permisos de acceso al espacio interno de ficheros](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/termux-setup-storage.png)
+![Imagen de Android que pide permisos de acceso al espacio interno de ficheros](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/termux-setup-storage.png)
   
 El comando **termux-setup-storage** va a configurar el acceso a las siguientes carpetas.  
 * ~/storage/shared  
@@ -231,6 +231,15 @@ Este es un bug de Android 11, no de Termux.
 -----
 
 ## Capítulo 4: Uso básico de la terminal
+
+Una terminal es una interfaz conducida por comandos capaz de realizar todo tipo de tareas. Usualmente realizamos las tareas utilizando interfaces, esto es, pulsando botones, arrastrando carpetas, viendo la información en forma de imágenes e iconos. La terminal usa un modelo comoletamente distinto, replazando los iconos, las imágenes, los botones y toda la gestión de ficheros por comandos y texto mostrado en pantalla.  
+
+Utilizar una terminal en lugar de una interfaz grafica, nos permite realizar tareas de todo tipo de forma mas ágil y rápida.  
+
+Todas las terminales de GNU/Linux, así como Termux, incluyen una gran variedad de comandos básicos que nos permiten realizar estas tareas. Este capítulo se enfoca en los comandos más básicos de Linux.
+
+- pwd 
+El comando pwd nos va a mostrar la ruta completa de la carpeta en la cual nos encontramos. 
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
