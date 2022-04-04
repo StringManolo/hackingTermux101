@@ -159,7 +159,7 @@ Soporta teclado y ratón externos. Puedes conectar Termux a una pantalla externa
 
 ## Capitulo 2: Descarga e Instalación
 
-Puedes instalar Termux descargando la última [release](https://github.com/termux/termux-app/releases) directamente desde el repositorio del proyecto en github. O desde la tienda de [F-Droid](https://f-droid.org/en/packages/com.termux/). La descarga también está disponible en Play Store pero descargar la app de la Play Store NO SE RECOMIENDA. El motivo esta relacionado con políticas de Google con respecto a dar soporte a nuevas versiones de Android. Si se cumpliese con dichas políticas, habría que dejar de dar soporte a versiones anteriores. [Aquí mas detalles](https://github.com/termux/termux-app#google-play-store-deprecated). Si no conoces la arquitectura de dispositivo, puedes visitar esta página.
+Puedes instalar Termux descargando la última [release](https://github.com/termux/termux-app/releases) directamente desde el repositorio del proyecto en github. O desde la tienda de [F-Droid](https://f-droid.org/en/packages/com.termux/). La descarga también está disponible en Play Store pero descargar la app de la Play Store NO SE RECOMIENDA. El motivo esta relacionado con políticas de Google con respecto a dar soporte a nuevas versiones de Android. Si se cumpliese con dichas políticas, habría que dejar de dar soporte a versiones anteriores. [Aquí mas detalles](https://github.com/termux/termux-app#google-play-store-deprecated). Si no conoces la arquitectura de tu dispositivo, puedes pinchar aquí.
 
 
 [Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
