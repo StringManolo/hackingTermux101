@@ -7,8 +7,8 @@
 
 * [Prefacio](https://github.com/StringManolo/hackingTermux101#prefacio)
 * [Capítulo 0: Requisitos y Programas Extra](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-0-requisitos-y-programas-extra)
-* Capítulo 1: Qué es Termux?
-* Capitulo 2: Descarga e Instalación
+* [Capítulo 1: Qué es Termux?](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-1-qu%C3%A9-es-termux)
+* [Capitulo 2: Descarga e Instalación](https://github.com/StringManolo/hackingTermux101#capitulo-2-descarga-e-instalaci%C3%B3n)
 * Capítulo 3: Configuración Básica
 * Capítulo 4: Uso básico de la terminal
 * Capítulo 5: Introducción a Bash
@@ -125,13 +125,15 @@ Termux es un emulador de terminal para Android y un entorno de Linix que funcion
 
 ## Capítulo 0: Requisitos y Programas Extra
 
-Para poder utilizar Termux, necesitas un dispositivo Android. Termux soporta versiones de android comprendidas entre la versión 7 y la última version de Android.  
+Para poder utilizar Termux, necesitas un dispositivo Android. Termux soporta versiones de **android** comprendidas **entre** la **versión 7 y** la **última version** de Android.  
 
-Necesitas un mínimo de 300 megas de espacio en disco. Yo te recomiendo como mínimo 8 gigas disponibles de memoria interna. 64 Gigas está genial y suele ser mas que suficiente, depende del uso que le des.  
+Necesitas un **mínimo** de **300 megas de espacio** en disco. Yo te **recomiendo** como **mínimo 8 gigas disponibles de memoria interna**. 64 Gigas está genial y suele ser mas que suficiente, depende del uso que le des.  
   
 Antes de empezar, algunos programas extra son recomendados, aunque no necesarios.
 * [Hackers Keyboard](https://github.com/klausw/hackerskeyboard/releases/download/1.40.7/hackerskeyboard-v1.40.7.apk)  
-Este sencillo teclado offline funciona de marabilla en la mayoría de dispositivos. No vende tus datos, ya que no se conecta nunca a internet y te ofrece un teclado como el del PC, aunque no es necesario. Yo no utilizo esta característica en concreto, pero si este es el único teclado que utilizo en Android por seguridad. Los que vienen preinstalados suelen vender tus datos aunque los configures para que no lo hagan.
+Este sencillo teclado offline funciona de marabilla en la mayoría de dispositivos. No vende tus datos, ya que no se conecta nunca a internet y te ofrece un teclado como el del PC, aunque no es necesario. Yo no utilizo esta característica en concreto, pero si este es el único teclado que utilizo en Android por seguridad.  
+  
+Los que vienen preinstalados suelen vender tus datos aunque los configures para que no lo hagan.
 
 [Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)  
 
