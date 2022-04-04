@@ -17,16 +17,16 @@
 * [Capítulo 8: Sistema de Ficheros](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-8-sistema-de-ficheros)
 * [Capítulo 9: Creando comandos](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-9-creando-comandos)
 * [Capítulo 10: Comandos Intermedios](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-10-comandos-intermedios)
-* Capítulo 11: Proot-Distro
-* Capitulo 12: Introducción a Sistemas Linux
-* Capitulo 13: Uso básico de Debian
-* Capítulo 14: Uso básico de Ubuntu
-* Capítulo 15: Uso básico de Alpine
-* Capítulo 16: Uso básico de Fedora
-* Capítulo 17: Introducción a Servicios
-* Capítulo 18: Creando un Servidor
-* Capítulo 19: Ngrok y Exponer Servicios
-* Capítulo 20: Tor, Configuración y Uso
+* [Capítulo 11: Proot-Distro](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-11-proot-distro)
+* [Capitulo 12: Introducción a Sistemas Linux](https://github.com/StringManolo/hackingTermux101#capitulo-12-introducci%C3%B3n-a-sistemas-linux)
+* [Capitulo 13: Uso básico de Debian](https://github.com/StringManolo/hackingTermux101#capitulo-13-uso-b%C3%A1sico-de-debian)
+* [Capítulo 14: Uso básico de Ubuntu](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-14-uso-b%C3%A1sico-de-ubuntu)
+* [Capítulo 15: Uso básico de Alpine](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-15-uso-b%C3%A1sico-de-alpine)
+* [Capítulo 16: Uso básico de Fedora](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-16-uso-b%C3%A1sico-de-fedora)
+* [Capítulo 17: Introducción a Servicios](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-17-introducci%C3%B3n-a-servicios)
+* [Capítulo 18: Creando un Servidor](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-18-creando-un-servidor)
+* [Capítulo 19: Ngrok y Exponer Servicios](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-19-ngrok-y-exponer-servicios)
+* [Capítulo 20: Tor, Configuración y Uso](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-20-tor-configuraci%C3%B3n-y-uso)
 * Capítulo 21: Servicios Ocultos
 * Capítulo 22: SSH, SHCP y SSHD
 * Capítulo 23: Bots de Telegram
