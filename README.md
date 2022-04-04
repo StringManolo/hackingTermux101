@@ -253,7 +253,10 @@ El comando **cd** sirve para cambiar el directorio en el cual estamos trabajando
 Si escribes el comando cd sin mas, se cambiará el directorio a "$HOME", por defecto /data/data/com.termux/files/home.  
 > Existe un símbolo especial **~** que sirve para indicar explícitamente que nos mueva a la carpeta home. Esto nos será útil cuando queramos crear un archivo en home desde otro directorio y tareas similares.  
   
-Podemos movernos a cualquier directorio alcanzable poniendo su ruta relativa tras el comando cd, o poniendo su ruta absoluta desde cualquier lugar.  
+Podemos movernos a cualquier directorio alcanzable poniendo su ruta relativa tras el comando cd, o poniendo su ruta absoluta desde cualquier lugar. En la siguiente imagen puedes comprobar como se cambia el directorio a la carpeta ejemplo, que existe dentro de la carpeta home, y como después se imprime el directorio actual de trabajo.  
+  
+![Salida del comando cd ejemplo y pwd](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/cd_ejemplo.jpg)  
+
 
 
 
