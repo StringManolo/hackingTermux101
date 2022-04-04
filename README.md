@@ -243,7 +243,8 @@ Al entrar en Termux, veremos un **$** que indica el "prompt" de la terminal, en 
 ### Comandos básicos de Linux
 
 - pwd  
-El comando **pwd** nos va a mostrar la ruta completa de la carpeta en la cual nos encontramos. 
+El comando **pwd** nos va a mostrar la ruta completa de la carpeta en la cual nos encontramos.  
+  
 ![Salida del comando pwd](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/pwd.jpg)  
 
 > pwd son las siglas de Print Working Directory (Imprime Directorio de Trabajo)
