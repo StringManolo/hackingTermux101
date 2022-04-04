@@ -275,6 +275,14 @@ En blanco se muestran los archivos comunes (foto_perfil.jpg, listaDeLaCompra.txt
 #### cat
 El comando **cat** muestra el contenido de un fichero.
   
+![Salida del comando cat](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/cat.jpg)  
+  
+En este ejemplo se muestra el contenido del fichero listaDeLaCompra.txt. Es simplemente un texto que escribí en un fichero. La escritura de ficheros se detallará en el capítulo 6: Uso de VI y de VIM.  
+  
+> cat viene de concatenate (concatenar)  
+  
+### touch
+
 [Tabla de Contenidos](#tabla-de-contenidos)
 
 -----
