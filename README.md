@@ -277,11 +277,73 @@ El comando **cat** muestra el contenido de un fichero.
   
 ![Salida del comando cat](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/cat.jpg)  
   
-En este ejemplo se muestra el contenido del fichero listaDeLaCompra.txt. Es simplemente un texto que escribí en un fichero. La escritura de ficheros se detallará en el capítulo 6: Uso de VI y de VIM.  
+En este ejemplo se muestra el contenido del fichero listaDeLaCompra.txt. Es simplemente un texto que escribí en un fichero. La escritura de ficheros se detalla en el [capítulo 6: Uso de VI y de VIM](#cap%C3%ADtulo-6-uso-de-vi-y-de-vim).
   
 > cat viene de concatenate (concatenar)  
   
-### touch
+#### touch
+El comando **touch** crea ficheros vacios en el directorio actual.  
+```bash
+touch miListaDeLaCompra.txt
+```
+  
+Con este comando crearás un archivo miListaDeLaCompra.txt en el directorio actual, que podras ver en el listado del directorio en el que crees el archivo. Por ejemplo si quisieses crear el archivo en home y listar el contenido de home, usarías los siguientes comandos:  
+```bash
+cd
+touch miListaDeLaCompra.txt
+ls
+```
+   
+> touch significa tocar
+
+#### mkdir
+El comando **mkdir** crea directorios/carpetas vacias en el directorio actual.  
+```bash
+cd
+mkdir ejemplo
+```  
+  
+Con estes comandos crearás una carpeta (puedes usar el nombre de carpeta/directorio indistintamente) llamada __ejemplo__ dentro de la carpeta home. Puedes listarla con ls.  
+
+> mkdir es una abreviatura de Make Directory (Crea Directorio)
+
+#### cp
+El comando **cp** permire copiar archivos. Puedes copiarlos en el mismo directorio o en otro directorio. Tambien puedes modificar el nombre de destino.
+```bash
+cp miListaDeLaCompra.txt miSegundaListaDeLaCompra.txt
+```
+  
+El primer argumento del comando **cp** es el nombre del fichero del que deseamos realizar una copia. El segundo argumento es el nuevo nombre que tendrá la copia. Si el archivo contiene texto o cualquier otro contenido, este estará presente en ambos archivos, tanto en el original como en la copia.  
+  
+La mayoría de comandos nos permite especificar las ruta junto al nombre de los ficheros. Si nos encontramos en la carpeta home, y dentro de esta tenemos una carpeta llamada ejemplo que contiene un archivo miListaDeLaCompra.txt, podemos copiar este archivo directamente desde la carpera home. El comando para realizar esta acción sería:  
+  
+```bash
+cd
+cp ejemplo/miListaDeLaCompra.txt listaDeLaCompra.txt
+```
+
+Tras este comando tendremos una copia del archivo miListaDeLaCompra.txt (que se encuentra en la carpeta ejemplo) en la carpeta home con el nombre de listaDeLaCompra.txt  
+
+> cp es una abreviatura de copy (copiar)
+
+#### mv
+El comando **mv** permite mover archivos. El funcionamiente es exactamente igual al del comando **cp**, con la diferencia de que el archivo original es eliminado y solo se conserva la nueva copia.  
+  
+Esto hace de **mv** el comando ideal para mover archivos entre directorios.  
+  
+> mv es una abreviatura de move (mover)  
+
+#### rm
+El comando **rm** se utiliza para eliminar archivos de forma permanente.  
+  
+```bash
+cd
+rm listaDeLaCompra.txt
+```
+
+#### pkg
+
+#### tree
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
