@@ -158,7 +158,9 @@ La terminal emulada es básicamente una aplicación que arranca los programas de
   
 La mayoría de terminales para Android, trabajan con conjuntos de herramientas pobres que ya trae Android. Termux porta una gran cantidad de herramientas de GNU/Linux hacia Android. 
 
-Termux no es una máquina virtual ni otro tipo de sistema/entorno emulado. Todos los paquetes son compilados en cruce con Android NDK y solo se parchean para que funcionen en Android/Termux. El sistema operativo no proporciona accesso completo al sistema de ficheros, por lo cual Termux no puede instalar los paquetes en las rutas típicas /bin, /etc, /usr, /var. Termux traslada este sistema de ficheros a un directorio privado de la aplicación en la ruta /data/data/com.termux/files/usr  
+Termux no es una máquina virtual ni otro tipo de sistema/entorno emulado. Todos los paquetes son compilados en cruce con Android NDK y solo se parchean para que funcionen en Android/Termux.  
+  
+El sistema operativo no proporciona acceso completo al sistema de ficheros, por lo cual Termux no puede instalar los paquetes en las rutas típicas /bin, /etc, /usr, /var. Termux traslada este sistema de ficheros a un directorio privado de la aplicación en la ruta /data/data/com.termux/files/usr  
   
 Este directorio se llama **prefix** y su ruta se puede visualizar en la variable de entorno "$PREFIX". Esta ruta se hardcodea directamente en muchos de los binarios/paquetes disponibles para Termux. Esto es uno de los típicos parches que se añaden.  
 
@@ -188,6 +190,12 @@ Si no conoces la arquitectura de tu dispositivo, puedes pinchar [aquí](https://
 -----
 
 ## Capítulo 3: Configuración Básica
+
+Una vez tienes la consola de comandos ante ti, lo primero es configurar el acceso al sistema interno de ficheros de Android. Para ello debes correr el comando
+```bash
+termux-setup-storage
+```
+Y permitir el acceso de termux al sistema interno de ficheros. 
 
 [Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
 
