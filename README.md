@@ -199,6 +199,8 @@ Una vez tienes la consola de comandos ante ti, lo primero es configurar el acces
 termux-setup-storage
 ```
 Y permitir el acceso de termux al sistema interno de ficheros.   
+
+![Imagen de Android pmque pide permisos de acceso al espacio interno de ficheros](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/termux-setup-storage.png)
   
 El comando **termux-setup-storage** va a configurar el acceso a las siguientes carpetas.  
 * ~/storage/shared  
