@@ -1,4 +1,3 @@
-# Termux Hacking 101
 ![Portada Libro](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/portada.png)
 
 -----
@@ -6,7 +5,7 @@
 ### Tabla de Contenidos
 
 * [Prefacio](#prefacio)
-* [Capítulo 0: Requisitos y Programas Extra](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-0-requisitos-y-programas-extra)
+* [Capítulo 0: Requisitos y Programas Extra](#cap%C3%ADtulo-0-requisitos-y-programas-extra)
 * [Capítulo 1: Qué es Termux?](#cap%C3%ADtulo-1-qu%C3%A9-es-termux)
 * [Capitulo 2: Descarga e Instalación](#capitulo-2-descarga-e-instalaci%C3%B3n)
 * [Capítulo 3: Configuración Básica](#cap%C3%ADtulo-3-configuraci%C3%B3n-b%C3%A1sica)
