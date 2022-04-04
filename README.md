@@ -7,8 +7,8 @@
 
 * [Prefacio](https://github.com/StringManolo/hackingTermux101#prefacio)
 * [Capítulo 0: Requisitos y Programas Extra](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-0-requisitos-y-programas-extra)
-* [Capítulo 1: Qué es Termux?](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-1-qu%C3%A9-es-termux)
-* [Capitulo 2: Descarga e Instalación](https://github.com/StringManolo/hackingTermux101#capitulo-2-descarga-e-instalaci%C3%B3n)
+* [Capítulo 1: Qué es Termux?](#cap%C3%ADtulo-1-qu%C3%A9-es-termux)
+* [Capitulo 2: Descarga e Instalación](#capitulo-2-descarga-e-instalaci%C3%B3n)
 * [Capítulo 3: Configuración Básica](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-3-configuraci%C3%B3n-b%C3%A1sica)
 * [Capítulo 4: Uso básico de la terminal](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-4-uso-b%C3%A1sico-de-la-terminal)
 * [Capítulo 5: Introducción a Bash](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-5-introducci%C3%B3n-a-bash)
