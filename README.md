@@ -5,28 +5,28 @@
 
 ### Tabla de Contenidos
 
-* [Prefacio](https://github.com/StringManolo/hackingTermux101#prefacio)
+* [Prefacio](#prefacio)
 * [Capítulo 0: Requisitos y Programas Extra](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-0-requisitos-y-programas-extra)
 * [Capítulo 1: Qué es Termux?](#cap%C3%ADtulo-1-qu%C3%A9-es-termux)
 * [Capitulo 2: Descarga e Instalación](#capitulo-2-descarga-e-instalaci%C3%B3n)
-* [Capítulo 3: Configuración Básica](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-3-configuraci%C3%B3n-b%C3%A1sica)
-* [Capítulo 4: Uso básico de la terminal](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-4-uso-b%C3%A1sico-de-la-terminal)
-* [Capítulo 5: Introducción a Bash](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-5-introducci%C3%B3n-a-bash)
-* [Capítulo 6: Uso de VI y de VIM](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-6-uso-de-vi-y-de-vim)
-* [Capitulo 7: Configuración de Bash](https://github.com/StringManolo/hackingTermux101#capitulo-7-configuraci%C3%B3n-de-bash)
-* [Capítulo 8: Sistema de Ficheros](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-8-sistema-de-ficheros)
-* [Capítulo 9: Creando comandos](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-9-creando-comandos)
-* [Capítulo 10: Comandos Intermedios](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-10-comandos-intermedios)
-* [Capítulo 11: Proot-Distro](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-11-proot-distro)
-* [Capitulo 12: Introducción a Sistemas Linux](https://github.com/StringManolo/hackingTermux101#capitulo-12-introducci%C3%B3n-a-sistemas-linux)
-* [Capitulo 13: Uso básico de Debian](https://github.com/StringManolo/hackingTermux101#capitulo-13-uso-b%C3%A1sico-de-debian)
-* [Capítulo 14: Uso básico de Ubuntu](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-14-uso-b%C3%A1sico-de-ubuntu)
-* [Capítulo 15: Uso básico de Alpine](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-15-uso-b%C3%A1sico-de-alpine)
-* [Capítulo 16: Uso básico de Fedora](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-16-uso-b%C3%A1sico-de-fedora)
-* [Capítulo 17: Introducción a Servicios](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-17-introducci%C3%B3n-a-servicios)
-* [Capítulo 18: Creando un Servidor](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-18-creando-un-servidor)
-* [Capítulo 19: Ngrok y Exponer Servicios](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-19-ngrok-y-exponer-servicios)
-* [Capítulo 20: Tor, Configuración y Uso](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-20-tor-configuraci%C3%B3n-y-uso)
+* [Capítulo 3: Configuración Básica](#cap%C3%ADtulo-3-configuraci%C3%B3n-b%C3%A1sica)
+* [Capítulo 4: Uso básico de la terminal](#cap%C3%ADtulo-4-uso-b%C3%A1sico-de-la-terminal)
+* [Capítulo 5: Introducción a Bash](#cap%C3%ADtulo-5-introducci%C3%B3n-a-bash)
+* [Capítulo 6: Uso de VI y de VIM](#cap%C3%ADtulo-6-uso-de-vi-y-de-vim)
+* [Capitulo 7: Configuración de Bash](#capitulo-7-configuraci%C3%B3n-de-bash)
+* [Capítulo 8: Sistema de Ficheros](#cap%C3%ADtulo-8-sistema-de-ficheros)
+* [Capítulo 9: Creando comandos](#cap%C3%ADtulo-9-creando-comandos)
+* [Capítulo 10: Comandos Intermedios](#cap%C3%ADtulo-10-comandos-intermedios)
+* [Capítulo 11: Proot-Distro](#cap%C3%ADtulo-11-proot-distro)
+* [Capitulo 12: Introducción a Sistemas Linux](#capitulo-12-introducci%C3%B3n-a-sistemas-linux)
+* [Capitulo 13: Uso básico de Debian](#capitulo-13-uso-b%C3%A1sico-de-debian)
+* [Capítulo 14: Uso básico de Ubuntu](#cap%C3%ADtulo-14-uso-b%C3%A1sico-de-ubuntu)
+* [Capítulo 15: Uso básico de Alpine](#cap%C3%ADtulo-15-uso-b%C3%A1sico-de-alpine)
+* [Capítulo 16: Uso básico de Fedora](#cap%C3%ADtulo-16-uso-b%C3%A1sico-de-fedora)
+* [Capítulo 17: Introducción a Servicios](#cap%C3%ADtulo-17-introducci%C3%B3n-a-servicios)
+* [Capítulo 18: Creando un Servidor](#cap%C3%ADtulo-18-creando-un-servidor)
+* [Capítulo 19: Ngrok y Exponer Servicios](#cap%C3%ADtulo-19-ngrok-y-exponer-servicios)
+* [Capítulo 20: Tor, Configuración y Uso](#cap%C3%ADtulo-20-tor-configuraci%C3%B3n-y-uso)
 * Capítulo 21: Servicios Ocultos
 * Capítulo 22: SSH, SHCP y SSHD
 * Capítulo 23: Bots de Telegram
@@ -119,7 +119,7 @@ Bienvenido a la primera edición del libro Termux Hacking 101. Aquí vas a apren
 
 Termux es un emulador de terminal para Android y un entorno de Linix que funciona directamente sin necesidad de rootear el dispositivo o comfigurarlo. Un sistema base mínimo se instala automáticamente - Y muchos paquetes adicionales están disponibles desde su gestor de paquetes.
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)  
+[Tabla de Contenidos](#tabla-de-contenidos)  
 
 -----
 
@@ -138,7 +138,7 @@ Los que vienen preinstalados suelen vender tus datos aunque los configures para 
 * [Fx File Explorer](https://play.google.com/store/apps/details?id=nextapp.fx)  
 Explorador de ficheros para Android que te permite el acceso a las carpetas de Termux. No lo he probado pero es recomendado por los desarrolladores de Termux.  
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)  
+[Tabla de Contenidos](#tabla-de-contenidos)  
 
 -----
 
@@ -167,7 +167,7 @@ El sistema operativo no proporciona acceso completo al sistema de ficheros, por 
   
 Este directorio se llama **prefix** y su ruta se puede visualizar en la variable de entorno "$PREFIX". Esta ruta se hardcodea directamente en muchos de los binarios/paquetes disponibles para Termux. Esto es uno de los típicos parches que se añaden.  
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 -----
 
@@ -188,7 +188,7 @@ Si no conoces la arquitectura de tu dispositivo, puedes pinchar [aquí](https://
 - Espera a que se complete la instalación  
 - Cuando finalice la instalación tendrás el icono de Termux en tu escritorio, haz click para arrancar la app.
   
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 -----
 
@@ -227,108 +227,108 @@ Este es un bug de Android 11, no de Termux.
 
 > Nunca elimines Termux directamente desde Android, ya que si tienes archivos en la tarjeta sd, todo su contenido será eliminado, incluyendo archivos que no tienen ninguna relación con Termux
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 -----
 
 ## Capítulo 4: Uso básico de la terminal
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 -----
 
 ## Capítulo 5: Introducción a Bash
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 -----
 
 ## Capítulo 6: Uso de VI y de VIM
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 -----
 
 ## Capitulo 7: Configuración de Bash
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 -----
 
 ## Capítulo 8: Sistema de Ficheros
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 -----
 
 ## Capítulo 9: Creando comandos
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 -----
 
 ## Capítulo 10: Comandos Intermedios
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
 
 ## Capítulo 11: Proot-Distro
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
 
 ## Capitulo 12: Introducción a Sistemas Linux
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
 
 ## Capitulo 13: Uso básico de Debian
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
 
 ## Capítulo 14: Uso básico de Ubuntu
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
 
 ## Capítulo 15: Uso básico de Alpine
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
 
 ## Capítulo 16: Uso básico de Fedora
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
 
 ## Capítulo 17: Introducción a Servicios
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
 
 ## Capítulo 18: Creando un Servidor
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
 
 ## Capítulo 19: Ngrok y Exponer Servicios
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
 
 ## Capítulo 20: Tor, Configuración y Uso
 
-[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+[Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
