@@ -125,5 +125,7 @@ Termux es un emulador de terminal para Android y un entorno de Linix que funcion
 
 ## Capítulo 0: Requisitos y Programas Extra
 
+abc 
+
 [Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
 -----
