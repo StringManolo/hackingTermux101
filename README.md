@@ -9,14 +9,14 @@
 * [Capítulo 0: Requisitos y Programas Extra](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-0-requisitos-y-programas-extra)
 * [Capítulo 1: Qué es Termux?](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-1-qu%C3%A9-es-termux)
 * [Capitulo 2: Descarga e Instalación](https://github.com/StringManolo/hackingTermux101#capitulo-2-descarga-e-instalaci%C3%B3n)
-* Capítulo 3: Configuración Básica
-* Capítulo 4: Uso básico de la terminal
-* Capítulo 5: Introducción a Bash
-* Capítulo 6: Uso de VI y de VIM
-* Capitulo 7: Configuración de Bash
-* Capítulo 8: Sistema de Ficheros
-* Capítulo 9: Creando comandos
-* Capítulo 10: Comandos Intermedios
+* [Capítulo 3: Configuración Básica](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-3-configuraci%C3%B3n-b%C3%A1sica)
+* [Capítulo 4: Uso básico de la terminal](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-4-uso-b%C3%A1sico-de-la-terminal)
+* [Capítulo 5: Introducción a Bash](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-5-introducci%C3%B3n-a-bash)
+* [Capítulo 6: Uso de VI y de VIM](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-6-uso-de-vi-y-de-vim)
+* [Capitulo 7: Configuración de Bash](https://github.com/StringManolo/hackingTermux101#capitulo-7-configuraci%C3%B3n-de-bash)
+* [Capítulo 8: Sistema de Ficheros](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-8-sistema-de-ficheros)
+* [Capítulo 9: Creando comandos](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-9-creando-comandos)
+* [Capítulo 10: Comandos Intermedios](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-10-comandos-intermedios)
 * Capítulo 11: Proot-Distro
 * Capitulo 12: Introducción a Sistemas Linux
 * Capitulo 13: Uso básico de Debian
@@ -221,6 +221,66 @@ Si no conoces la arquitectura de tu dispositivo, puedes pinchar [aquí](https://
 -----
 
 ## Capítulo 10: Comandos Intermedios
+
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
+----
+
+## Capítulo 11: Proot-Distro
+
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
+----
+
+## Capitulo 12: Introducción a Sistemas Linux
+
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
+----
+
+## Capitulo 13: Uso básico de Debian
+
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
+----
+
+## Capítulo 14: Uso básico de Ubuntu
+
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
+----
+
+## Capítulo 15: Uso básico de Alpine
+
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
+----
+
+## Capítulo 16: Uso básico de Fedora
+
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
+----
+
+## Capítulo 17: Introducción a Servicios
+
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
+----
+
+## Capítulo 18: Creando un Servidor
+
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
+----
+
+## Capítulo 19: Ngrok y Exponer Servicios
+
+[Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
+
+----
+
+## Capítulo 20: Tor, Configuración y Uso
 
 [Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
 
