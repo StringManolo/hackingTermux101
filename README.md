@@ -242,24 +242,21 @@ Al entrar en Termux, veremos un **$** que indica el "prompt" de la terminal, en 
 
 ### Comandos básicos de Linux
 
-- pwd  
+#### pwd  
 El comando **pwd** nos va a mostrar la ruta completa de la carpeta en la cual nos encontramos.  
   
 ![Salida del comando pwd](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/pwd.jpg)  
 
 > pwd son las siglas de Print Working Directory (Imprime Directorio de Trabajo)
 
-- cd  
+#### cd  
 El comando **cd** sirve para cambiar el directorio en el cual estamos trabajando. Es el equivalente a moverse a una carpeta haciendo doble-click en ella desde cualquier interfaz gráfica.  
-Si escribes el comando cd sin mas, se cambiará el directorio a "$HOME", por defecto /data/data/com.termux/files/home.  
-> Existe un símbolo especial **~** que sirve para indicar explícitamente que nos mueva a la carpeta home. Esto nos será útil cuando queramos crear un archivo en home desde otro directorio y tareas similares.  
+Si escribes el comando cd sin mas, se cambiará el directorio a la variable de entorno "$HOME", por defecto /data/data/com.termux/files/home.  
+> Existe un símbolo especial **~** que sirve para indicar explícitamente que nos mueva a la carpeta home. Esto nos será útil cuando queramos crear o referenciar un archivo en home desde otro directorio.  
   
-Podemos movernos a cualquier directorio alcanzable poniendo su ruta relativa tras el comando cd, o poniendo su ruta absoluta desde cualquier lugar. En la siguiente imagen puedes comprobar como se cambia el directorio a la carpeta ejemplo, que existe dentro de la carpeta home, y como después se imprime el directorio actual de trabajo.  
+Podemos movernos a cualquier directorio alcanzable poniendo su ruta relativa tras el comando cd, o poniendo su ruta absoluta desde cualquier lugar. En la siguiente imagen puedes comprobar como se cambia el directorio a la carpeta ejemplo, que existe dentro de la carpeta home, y como después se imprime el directorio actual de trabajo. Indicándonos la terminal, que nos encontramos dentro de la carpeta ejemplo que existe en home.  
   
 ![Salida del comando cd ejemplo y pwd](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/cd_ejemplo.jpg)  
-
-
-
 
 > cd son las siglas de Change Directory (Cambia Directorio), 
 
