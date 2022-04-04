@@ -151,8 +151,17 @@ Tiene un montón de características extra, como poder ver los SMS, los archivos
   
 Totalmente customizable. Puedes modificar la apariencia, añadir atajos de teclado, nuevas funcionalidades...  
 
-Soporta teclado y ratón externos. Puedes conectar Termux a una pantalla externa y utilizar un teclado y un ratón.  
+Soporta teclado y ratón externos. Puedes conectar Termux a una pantalla externa y utilizar un teclado y un ratón. 
+
+#### Cómo funciona?
+La terminal emulada es básicamente una aplicación que arranca los programas de linea de comandos usando una llamada del sistema [execve(2)](https://www.man7.org/linux/man-pages/man2/execve.2.html) y redirige la entrada y la salida de datos de la función, hacia la pantalla.  
   
+La mayoría de terminales para Android, trabajan con conjuntos de herramientas pobres que ya trae Android. Termux porta una gran cantidad de herramientas de GNU/Linux hacia Android. 
+
+Termux no es una máquina virtual ni otro tipo de sistema/entorno emulado. Todos los paquetes son compilados en cruce con Android NDK y solo se parchean para que funcionen en Android/Termux. El sistema operativo no proporciona accesso completo al sistema de ficheros, por lo cual Termux no puede instalar los paquetes en las rutas típicas /bin, /etc, /usr, /var. Termux traslada este sistema de ficheros a un directorio privado de la aplicación en la ruta /data/data/com.termux/files/usr  
+  
+Este directorio se llama **prefix** y su ruta se puede visualizar en la variable de entorno "$PREFIX". Esta ruta se hardcodea directamente en muchos de los binarios/paquetes disponibles para Termux. Esto es uno de los típicos parches que se añaden.  
+
 [Tabla de Contenidos](https://github.com/StringManolo/hackingTermux101#tabla-de-contenidos)
 
 -----
