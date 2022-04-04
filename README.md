@@ -252,6 +252,7 @@ El comando **pwd** nos va a mostrar la ruta completa de la carpeta en la cual no
 #### cd  
 El comando **cd** sirve para cambiar el directorio en el cual estamos trabajando. Es el equivalente a moverse a una carpeta haciendo doble-click en ella desde cualquier interfaz gráfica.  
 Si escribes el comando cd sin mas, se cambiará el directorio a la variable de entorno "$HOME", por defecto /data/data/com.termux/files/home.  
+  
 > Existe un símbolo especial **~** que sirve para indicar explícitamente que nos mueva a la carpeta home. Esto nos será útil cuando queramos crear o referenciar un archivo en home desde otro directorio.  
   
 Podemos movernos a cualquier directorio alcanzable poniendo su ruta relativa tras el comando cd, o poniendo su ruta absoluta desde cualquier lugar. En la siguiente imagen puedes comprobar como se cambia el directorio a la carpeta ejemplo, que existe dentro de la carpeta home, y como después se imprime el directorio actual de trabajo. Indicándonos la terminal, que nos encontramos dentro de la carpeta ejemplo que existe en home.  
