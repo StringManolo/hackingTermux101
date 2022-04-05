@@ -341,9 +341,115 @@ cd
 rm listaDeLaCompra.txt
 ```
 
-#### pkg
+> rm es una abreviatura de remove (eliminar)
 
-#### tree
+#### clear
+El comando **clear**, limpia el contenido de la pantalla.
+```bash
+clear
+```
+  
+> clear significa limpiar  
+  
+#### pkg
+El comando **pkg** es único de Termux, no existe en GNU/Linux, aunqie si existen sus equivalentes. Este comando se encarga de gestionar por nosotros toda la instalación de paquetes, sus versiones, actualizaciones, dependencias, ...  
+  
+Si corres el comando:
+```bash
+pkg
+```
+
+Te mostrará la lista de subcomandos que soporta y una breve descripción de que hace cada uno. Aquí me limito a explicar los subcomandos mas básicos:  
+
+* ##### pkg list-all  
+Muestra un listado todos los comandos/programas/paquetes disponibles para instalar. El listado es bastante grande.  
+```bash 
+pkg list-all
+```
+
+* ##### pkg list-installed  
+Muestra el listado de los comandos que ya están instalados en tu Termux. Este listado solo hace referencia a paquetes que se han instalado por **pkg**. Esto significa que no verás en la lista comandos como cp, cat, mv, ls, ... También significa que puedan aparecer algunos paquetes que tu no instalases.  
+  
+Por ejemplo si instalas una herramienta que utiliza una base de datos, es común que en el listado te aparezcan tanto la herramienta que descargaste como la base de datos. Esto sucede porque pkg se encarga de bajar las dependencias necesarias (para que las herramientas funcionen) por su cuenta.  
+```bash
+pkg list-installed
+```
+
+* ##### pkg show
+Muestra información adicional incluyendo una breve descripción sobre el paquete que se indique. Puedes utilizar el nombre de cualquiera de los paquetes listados con los 2 anteriores subcomandos
+```bash
+pkg show unzip
+```
+
+El comando **pkg show unzip** nos muestra esta descripción para el comando unzip.
+```
+Package: unzip
+Version: 6.0-7
+Maintainer: Termux members @termux
+Installed-Size: 340 kB
+Depends: libbz2
+Homepage: https://sourceforge.net/projects/infozip/
+Download-Size: 115 kB
+APT-Manual-Installed: yes
+APT-Sources: https://termux.org/packages stable/main aarch64 Packages
+Description: Tools for working with zip files
+```
+
+En este ejemplo la información que se nos muestra indica:  
+- El nombre del paquete  
+- La versión del programa  
+- Las personas/organización que se encargan de gestionar este paquete
+- El tamaño que ocupará en el sistema una vez instalado  
+- Otros paquetes que necesita para funcionar
+- La página oficial del programa (o repositorio de su código fuente)
+- El tamaño de la descarga comprimida
+- Si se instaló manualmente
+- Repositorio donde está el paquete listado
+- Descripción de que es el paquete
+  
+Si tienes la opción de buscar en Google el paquete, te será de mas ayuda para saber exactamente para que sirve.
+
+* ##### pkg install
+Instala un comando en Termux.  
+```bash
+pkg install tree
+```
+
+Una vez instalado, ya podras utilizarlo. Tree es similar a ls pero también muestra todos los subdirectorios.
+```bash
+tree
+```
+
+* ##### pkg uninstall
+Desinstala un comando en Termux.
+```bash
+pkg uninstall tree
+```
+
+Una vez desinstalado, se borrará permanentemente del sistema el comando que hayas escrito en este caso tree. Si intentas volver a utilizarlo tras desinstalarlo, verás que ya no existe.  
+  
+Puedes borrarlo si quieres, siempre podrás volver a instalarlo si lo necesitas.
+
+* ##### pkg upgrade
+Actualiza todos los paquetes instalados.
+```bash
+pkg update
+```
+
+> Si tienes espacio de sobra, es recomendado que todos los días actualices tus comandos usando **pkg upgrade** Las actualizaciones, sirven principalmente para mantener tus paquetes seguros.
+> Cuando un programador o hacker, encuentra un fallo de seguridad en un programa, se programa un código (parche de seguridad). Cuando tu le das a actualizar, se instalan estos parches automáticamente. También se instalan parches de mejoras de rendimiento para que los comandos se ejecuten mas rápido o utilicen menos batería, asi como también nuevas funcionalidades. 
+
+#### grep
+#### pkg
+#### man
+#### exit
+
+#### Argumentos
+Los comandos de GNU/Linux aceptan argumentos especiales que van precedidos de guiones. Hay 2 formas de argumentos con guiones. La forma corta y la forma léxica del argumento. La forma corta es siempre una letra, normalmente la inicial de la forma léxica.  
+  
+Uno de los argumentos que vamos a encontrar presentes en prácticamente todos los comandos es **-h**. Versión corta de **--help**. Normalmente podemos acompañar nuestros comandos de cualquiera de estos indistintamente, aunque no hay ninguna norma escrita y muchos desarrolladores muestran distintos mensajes de ayuda según utilizas la versión corta o la léxica. Veámoslo en acción 
+
+
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
