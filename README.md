@@ -439,15 +439,28 @@ pkg update
 > Si tienes espacio de sobra, es recomendado que todos los días actualices tus comandos usando **pkg upgrade** Las actualizaciones, sirven principalmente para mantener tus paquetes seguros.
 > Cuando un programador o hacker, encuentra un fallo de seguridad en un programa, se programa un código (parche de seguridad). Cuando tu le das a actualizar, se instalan estos parches automáticamente. También se instalan parches de mejoras de rendimiento para que los comandos se ejecuten mas rápido o utilicen menos batería, asi como también nuevas funcionalidades. 
 
-#### grep
-#### pkg
 #### man
+El comando **man** sirve para mostrar el manual de un comando, si lo tiene.
+```bash
+man ls
+```
+
+Con **man ls** se nos muestra el manual para el comando ls, con todas sus opciones extra.  
+  
+> man son la iniciales de manual
+
 #### exit
+Cierra la terminal
+
 
 #### Argumentos
 Los comandos de GNU/Linux aceptan argumentos especiales que van precedidos de guiones. Hay 2 formas de argumentos con guiones. La forma corta y la forma léxica del argumento. La forma corta es siempre una letra, normalmente la inicial de la forma léxica.  
   
-Uno de los argumentos que vamos a encontrar presentes en prácticamente todos los comandos es **-h**. Versión corta de **--help**. Normalmente podemos acompañar nuestros comandos de cualquiera de estos indistintamente, aunque no hay ninguna norma escrita y muchos desarrolladores muestran distintos mensajes de ayuda según utilizas la versión corta o la léxica. Veámoslo en acción 
+Uno de los argumentos que vamos a encontrar presentes en prácticamente todos los comandos es **-h**. Versión corta de **--help**. Normalmente podemos acompañar nuestros comandos de cualquiera de estos indistintamente, aunque no hay ninguna norma escrita y muchos desarrolladores muestran distintos mensajes de ayuda según utilizas la versión corta o la léxica. Yo suelo dar prioridad a las opción léxica del argumento help.
+
+```bash
+ls --help
+```
 
 
 
