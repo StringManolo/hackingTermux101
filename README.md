@@ -507,9 +507,33 @@ Si quieres que se imprima un salto de linea, puedes anteponer el argumento simpl
 ```bash
 echo "$(clear)\n\n\n\n\n\n\n\n\n\nHola, te encuentras en el directorio\n$(pwd)\nNo es genial\n?\n\n"
 ```
+  
+![Salida del comando echo en multiples lineas](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/echo.jpg)  
+  
+##### printf
+printf hace lo mismo que echo pero se ejecuta mas rápido y permite mas opciones para formatear el texto.  
+```bash
+miNombre="Manolo"
+printf "Hola, mi nombre es %s" "$miNombre"
+```
 
-![Salida del comando echo en multiples lineas](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/echo.jpg)
+Con respecto a echo, puedes apreciar que no se añade el salto de linea al final de la frase. Tienes que añadirla manualmente. También ves en el comando que las variables se separan en otros argumentos a parte. En este caso %s indica que la variable es un string (cadena de texto).  
+  
+Otra de las ventajas de printf, es que nos avisa de errores. Por ejemplo %d sirve para imprimir numeros enteros. Si le pasamos como argumento un numero que no es entero, nos avisará del error  
+```bash
+numeroPI="3.1416"
+printf "El numero PI es %d" "$numeroPI"
+```
 
+Bash nos indicará el error: **bash: printf: 3.1416: invalid number** e imprimirá solo la parte entera.  Esta es la lista de tipos que acepta:
+- %d     digit           Números enteros  
+- %f     float           Números flotantes (numeros con decimales)  
+- %s     string          Cadena de texto  
+- %x     hexadecimal     Imprime un número en hexadecimal  
+- %X     hexadecimal     Imprime un número en hexadecimal (letras en mayúsculas)  
+
+  
+##### Condicionales
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
