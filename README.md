@@ -526,11 +526,16 @@ printf "El numero PI es %d" "$numeroPI"
 ```
 
 Bash nos indicará el error: **bash: printf: 3.1416: invalid number** e imprimirá solo la parte entera.  Esta es la lista de tipos que acepta:
-- %d     digit           Números enteros  
-- %f     float           Números flotantes (numeros con decimales)  
-- %s     string          Cadena de texto  
-- %x     hexadecimal     Imprime un número en hexadecimal  
-- %X     hexadecimal     Imprime un número en hexadecimal (letras en mayúsculas)  
+
+|      ---     |     ---     |                           ---                           |
+|  secuencia   | abrv        | tipo                                                    |
+|      ---     |     ---     |                           ---                           |
+| %d           | digit       | Números enteros                                         |
+| %f           | float       | Números flotantes (numeros con decimales)               |
+| %s           | string      | Cadena de texto                                         |
+| %x           | hexadecimal | Imprime un número en hexadecimal                        |
+| %X           | hexadecimal | Imprime un número en hexadecimal (letras en mayúsculas) |
+  
 
   
 ##### Condicionales
