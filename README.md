@@ -469,6 +469,47 @@ ls --help
 -----
 
 ## Capítulo 5: Introducción a Bash
+Bash es una shell de comandos. Todos los comandos que usamos hasta ahora, han sido enviados a bash y bash es quien se ha encargado de interpretarlos y llamar a los paquetes correspondientes. Se encarga de procesar el texto que le introducimos y el símbolo dolar **$** nos está indicando que se trata de una Shell.  
+  
+No es un simple intérprete, si no que admite un gran número de instrucciones muy diversas y complejas, dando lugar a un lenguaje de programación potente ampliamente utilizado para configurar sistemas GNU/Linux, crear comandos y otro tipo de utilidades.
+
+#### Variables
+Las variables te permiten almacenar valores para poder utilizarlos mas adelante.  
+  
+Para almacenar texto en una variable usaremos la siguiente sintaxis **nombreDeLaVariable**="__valorDeLaVariable__"   
+```bash
+miNombre="Manolo"
+```
+  
+También es posible almacenar el resultado de un comando en la variable utilizando la sintaxis **nombreDeLaVariable**=__$(comando argumentos)__  
+```bash
+listaArchivosEnHome=$(ls ~)
+```
+
+Podremos referenciar la variable anteponiendo el símbolo del dolar al nombre de la variable, como veremos en el siguiente apartado.
+
+#### Imprimir en pantalla
+Para imprimir texto o el contenido de variables (en este caso en pantalla) podemos utilizar echo o printf.  
+  
+##### echo  
+echo es un comando sencillo para imprimir texto  
+```bash
+miNombre="Manolo"
+echo "Hola, mi nombre es $miNombre"
+```
+
+Puedes usar variables como en el ejemplo anterior, y también comandos:
+```bash
+echo "Hola, te encuentras en el directorio $(pwd)"
+```  
+  
+Si quieres que se imprima un salto de linea, puedes anteponer el argumento simple -e del texto. Y en el texto incluyes la secuencia de caracteres \n para indicar un salto de linea.  
+```bash
+echo "$(clear)\n\n\n\n\n\n\n\n\n\nHola, te encuentras en el directorio\n$(pwd)\nNo es genial\n?\n\n"
+```
+
+![Salida del comando echo en multiples lineas](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/echo.jpg)
+
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
