@@ -527,8 +527,7 @@ printf "El numero PI es %d" "$numeroPI"
 
 Bash nos indicará el error: **bash: printf: 3.1416: invalid number** e imprimirá solo la parte entera.  Esta es la lista de tipos que acepta:
 
-|      ---     |     ---     |                           ---                           |
-|  secuencia   | abrv        | tipo                                                    |
+|  secuencia   |    tipo     | descripción                                             |
 |      ---     |     ---     |                           ---                           |
 | %d           | digit       | Números enteros                                         |
 | %f           | float       | Números flotantes (numeros con decimales)               |
