@@ -232,13 +232,13 @@ Este es un bug de Android 11, no de Termux.
 
 ## Capítulo 4: Uso básico de la terminal
 
-Una terminal es una interfaz conducida por comandos capaz de realizar todo tipo de tareas. Usualmente realizamos las tareas utilizando interfaces, esto es, pulsando botones, arrastrando carpetas, viendo la información en forma de imágenes e iconos. La terminal usa un modelo comoletamente distinto, replazando los iconos, las imágenes, los botones y toda la gestión de ficheros por comandos y texto mostrado en pantalla.  
+Una terminal es una interfaz conducida por comandos capaz de realizar todo tipo de tareas. Usualmente realizamos las tareas utilizando interfaces, esto es, pulsando botones, arrastrando carpetas, viendo la información en forma de imágenes e iconos... La terminal utiliza un modelo completamente distinto, remplazando los iconos, las imágenes, los botones y toda la gestión de ficheros por comandos y texto que se muestra en pantalla.  
 
-Utilizar una terminal en lugar de una interfaz grafica, nos permite realizar tareas de todo tipo de forma mas ágil y rápida.  
+Utilizar una terminal en lugar de una interfaz gráfica, nos permite realizar tareas de todo tipo de forma mas ágil y rápida.  
 
 Todas las terminales de GNU/Linux, así como Termux, incluyen una gran variedad de comandos básicos que nos permiten realizar estas tareas. Este capítulo se enfoca en los comandos más básicos de Linux.  
   
-Al entrar en Termux, veremos un **$** que indica el "prompt" de la terminal, en Bash se guarda en la variable de entorno "$PS1". Este icono nos indica que podemos escribir comandos en la terminal. La sintaxis es **$ comando** y para enviar el comando para que sea procesado, pulsamos la tecla Enter. En caso de Hacker's Keyboard, esta tecla se representa como una flecha situada en la esquina inferior derecha **⏎**.  
+Al entrar en Termux, veremos un **$** que indica el "prompt" de la terminal, en Bash se guarda en la variable de entorno "$PS1". Este caracter del dolar, nos indica que podemos escribir comandos en la terminal. La sintaxis es **$ comando**, para enviar el comando y que este sea procesado, pulsamos la tecla Enter. En caso de Hacker's Keyboard, esta tecla se representa como una flecha situada en la esquina inferior derecha **⏎**.  
 
 ### Comandos básicos de Linux
 
