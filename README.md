@@ -853,8 +853,75 @@ for numero in {1..20}; do
 done
 ```
 
+##### select
+El bucle **select** es un tipo de bucle ideal para hacer menus de forma sencilla.
+```bash
+opciones="Sumar Restar Multiplicar Dividir Salir"
+select opcion in $opciones; do
+  if [ "$opcion" = "Salir" ]; then
+    echo "Adios"
+    break
+  fi
 
+  read -p "Introduce el primer número: " primerNumero
+  read -p "Introduce el segundo número: " segundoNumero
+  if [ "$opcion" = "Sumar" ]; then
+    resultado=$(( $primerNumero + $segundoNumero ))
+  elif [ "$opcion" = "Restar" ]; then
+    resultado=$(( $primerNumero - $segundoNumero ))
+  elif [ "$opcion" = "Multiplicar" ]; then
+    resultado=$(( $primerNumero * $segundoNumero ))
+  elif [ "$opcion" = "Dividir" ]; then
+    resultado=$(( $primerNumero / $segundoNumero ))
+  else
+    resultado="Opcion incorrecta."
+  fi
 
+  echo "El resultado es $resultado";
+done
+```
+
+En este ejemplo podemos ver una calculadora simple en Bash. A destacar la palabra **break** que sirve para salir de cualquier tipo de bucle. 
+
+##### funciones
+Las **funciones** en Bash nos permiten agrupar varias instrucciones bajo el mismo nombre y son similares a los comandos en su uso. Para crear una función:  
+  
+```bash
+saludar() {
+  echo "hola $1, bienvenido a mi programa"
+}
+```
+
+De esta forma creamos una función que podremos reusar las veces que queramos. La principal utilidad de las funciones es reducir el tamaño del código.
+```bash
+saludar() {
+  echo "hola $1, bienvenido a mi programa"
+}
+
+saludar "Manolo"
+saludar "Arturo"
+```
+
+Como puedes ver, puedes saludar a tantos usuarios como quieras sin necesidad de tener que escribir el mismo texto una y otra vez. Puedes poner cualquier tipo de comandos dentro de las funciones.
+
+Si quieres que quede mas claro que estás creando una función, puedes usar la palabra clave **function** y omitir los paréntesis:
+```bash
+function saludar {
+  echo "hola $1, bienvenido a mi programa"
+}
+
+saludar "Manolo"
+saludar "Arturo"
+```
+
+Puedes usar cualquier de las 2 formas, la que tu prefieras. A destacar el uso del dolar. Sirve para referenciar argumentos. $1 referencia el primer argumento. Puedes utilizar todos los que tu quieras:
+```bash
+saludar() {
+  echo "Quiero dar la bienvenida a $1, $2 y $3" 
+}
+
+saludar "Manolo" "Arturo" "Jose"
+```
 
 #### help
 [Tabla de Contenidos](#tabla-de-contenidos)
