@@ -1,1 +1,2 @@
 - Añadir case a condicionales
+- Añadir una opción para dar soporte económico al proyecto
