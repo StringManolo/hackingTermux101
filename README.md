@@ -761,7 +761,7 @@ else
 fi
 ```
 
-Si pruebas el ejemplo, pegándolo en tu terminal y pulsando enter, verás que si se cumple la condición, te dirá que eres mayor de edad, y si no se cumple, te dirá que eres menor de edad.  
+Si pruebas el ejemplo pegándolo en tu terminal y pulsando enter, verás que si se cumple la condición mostrará el texto indicando que eres mayor de edad, y si no se cumple, te dirá que eres menor de edad.  
   
 La última palabra clave es **elif**, y sirve para introducir mas if, que se ejecutarán solo si el anterior **if** no se cumple. Ejemplo:
 ```bash
@@ -787,6 +787,39 @@ en caso contrario, si (tienes menos de 65 años) entonces
   muestra "Eres un adulto"
 en caso contrario 
   muestra "Eres un anciano"
+```
+
+El comando *case* es una forma distinta de crear condicionales, en otros lenguajes se le conoce como **switch** o también **switch case** y se utiliza principalmente cuando quieres comprobar la variable con valores concretos
+```bash
+printf "1. Imprimir Directorio Actual\n2. Listar ficheros \n3. Crear Archivo\n4. Crear Carpeta\n\n0. Salir\n\nSelecciona el número correspondiente a tu opción -> "
+read opcion
+case $opcion in 
+  1)
+    echo $(pwd) 
+  ;;
+
+  2)
+    echo $(ls)
+  ;;
+
+  3)
+    read -p "Introduce el nombre que tendrá el nuevo fichero: " nombreFichero
+    touch nombreFichero
+  ;;
+
+  4)
+    read -p "Introduce el nombre que tendrá el nuevo directorio: " nombreDirectorio
+    mkdir nombreDirectorio
+  ;;
+
+  0)
+    echo "Adios" 
+  ;;
+   
+  *)
+    echo "La opción que elegiste no existe"
+  ;;
+esac
 ```
 
 #### Bucles
