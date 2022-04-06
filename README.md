@@ -898,6 +898,22 @@ for numero in {1..20}; do
 done
 ```
 
+Hay otra forma de usar el **for** que le será familiar a quien utilice el for en otros lenguajes de programación. Esta versión del **for** se le conoce como **for clásico**  
+```bash
+for ((i=1; i <= 10; i++)) do
+  echo "$i"
+done
+```
+
+Algunos lenguajes de programación no disponen del bucle **for clásico**, pero si tienen el **while**. Hay una forma simple de conseguir esta misma funcionalidad con el bucle **while** 
+```bash
+i=1
+while [ $i -le 10 ]; do
+  echo "$i"
+  ((++i))
+done
+```
+
 ##### select
 El bucle **select** es un tipo de bucle ideal para hacer menus de forma sencilla.
 ```bash
