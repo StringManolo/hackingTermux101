@@ -588,58 +588,146 @@ Si la edad del usuario es mayor que 17, entonces es mayor de edad (18 años o m�
   
 Recuerdas que te dije que **[** era un comando mas? Igual que echo o printf. Pues **[** también tiene argumentos.
 Hay distintos tipos de condiciones, aquí un listado de las mas comunes:  
-- [ -a listaDeLaCompra.txt ]  
+```bash
+[ -a listaDeLaCompra.txt ]  
+```
 Se cumple si el archivo existe  
-- [ -d ejemplo ]  
+  
+
+```bash
+[ -d ejemplo ]  
+```
 Se cumple si la carpeta existe  
-- [ -f listaDeLaCompra.txt ]  
+  
+  
+```bash
+[ -f listaDeLaCompra.txt ]  
+```
 Se cumple si el archivo existe y es un archivo normal  
-- [ -s listaDeLaCompra.txt ]  
-Se cumple si el archivo existe y no está vacio  
-- [ listaDeLaCompra.txt -nt otraListaDeLaCompra.txt ]  
+
+
+```bash
+[ -s listaDeLaCompra.txt ]  
+```
+Se cumple si el archivo existe y no está vacio   
+  
+
+```bash
+[ listaDeLaCompra.txt -nt otraListaDeLaCompra.txt ]  
+```
 Se cumple si el primer archivo es mas reciente que el segundo  
 > nt abreviado de newer than (mas nuevo que)   
-- [ listaDeLaCompra.txt -ot recetaChurros.txt ]   
+  
+
+```bash
+[ listaDeLaCompra.txt -ot recetaChurros.txt ]   
+```
 Se cumple si el primer archivo es mas viejo que el segundo  
 > ot abreviado de older than (mas viejo que)  
-- [ -z "$nombre" ]
-Se cumple si la variable está vacia  
-- [ -n "$nombre" ]  
+  
+
+```bash
+[ -z "$nombre" ]
+```
+Se cumple si la variable está vacia   
+  
+
+```bash
+[ -n "$nombre" ]  
+```
 Se cumple si la variable no está vacia  
-- [ "$nombre" = "Paco" ]
+  
+
+```bash
+[ "$nombre" = "Paco" ]
+```
 Se cumple si el contendio de la variable **$nombre** es **Paco**  
-- [ "$nombre" != "Paco" ]
-Se cumple si el contenido de la variable **$nombre** no es **Paco**
-- [ "$nombre" < "Paco" ]  
-Se cumple si el contenido de la variable **$nombre** se posiciona antes que Paco, alfabéticamente
-- [ "$nombre" > "Paco" ]  
-Se cumple si el contenido de la variable **$nombre** se posiciona después que Paco, alfabéticamente. 
-- [ -v "$nombre" ]  
-Se cumple si la variable existe
-- [ ! condicion ]
-Se cumple si la condición no se cumple
-- [ condicion -o otraCondicion ]
-Se cumple si cualquiera de las 2 condiciones se cumple (o ambas se cumplen)
-- [ condicion -a otraCondicion ]
-Se cumple solo si ambas condiciones se cumplen
-- [ 7 -eq 7 ]  
+  
+  
+```bash
+[ "$nombre" != "Paco" ]
+```
+Se cumple si el contenido de la variable **$nombre** no es **Paco**  
+  
+
+```bash
+[ "$nombre" < "Paco" ]  
+```
+Se cumple si el contenido de la variable **$nombre** se posiciona antes que Paco, alfabéticamente  
+  
+   
+```bash
+[ "$nombre" > "Paco" ]  
+```
+Se cumple si el contenido de la variable **$nombre** se posiciona después que Paco, alfabéticamente  
+  
+   
+```bash
+[ -v "$nombre" ]
+```
+Se cumple si la variable existe  
+  
+  
+```bash
+[ ! condicion ]
+```
+Se cumple si la condición no se cumple  
+  
+
+```bash
+[ condicion -o otraCondicion ]
+```
+Se cumple si cualquiera de las 2 condiciones se cumple (o ambas se cumplen)  
+  
+
+```bash
+[ condicion -a otraCondicion ]
+```
+Se cumple solo si ambas condiciones se cumplen  
+  
+
+```bash
+[ 7 -eq 7 ]  
+```
 Se cumple si el primer número es igual al segundo (recuerda que puedes usar variables)  
-> eq de equals (igual a)
-- [ 7 -ne 7 ]
-Se cumple si el primer número es distinto al segundo  
-> ne de not equal (no igual a)
-- [ 7 -lt 7 ]
+> eq de equals (igual a)  
+  
+
+```bash
+[ 7 -ne 7 ]
+```
+Se cumple si el primer número es distinto al segundo   
+> ne de not equal (no igual a)  
+  
+
+```bash
+[ 7 -lt 7 ]
+```
 Se cumple si el primer numero es menor que el segundo  
-> lt de less than (menor que)
-- [ 7 -le 7 ]  
+> lt de less than (menor que)  
+  
+  
+```bash
+[ 7 -le 7 ]  
+```
 Se cumple si el primer número es menor o igual al segundo  
-> le de less equal (menor o igual a)
-- [ 7 -gt 7 ]  
+> le de less equal (menor o igual a)  
+  
+
+```bash
+[ 7 -gt 7 ]  
+```
 Se cumple si el primer número es mayor que el segundo  
-> gt de greater than (mayor que)
-- [ 7 -ge 7 ]
+> gt de greater than (mayor que)  
+  
+
+```bash
+[ 7 -ge 7 ]
+```
 Se cumple si el primer número es mayor o igual que el segundo  
 > ge de greater equal (mayor o igual a)  
+
+
 
 
 #### help
