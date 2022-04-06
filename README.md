@@ -175,7 +175,7 @@ Este directorio se llama **prefix** y su ruta se puede visualizar en la variable
 ### Descarga
 Puedes instalar Termux descargando la última [release](https://github.com/termux/termux-app/releases) directamente desde el repositorio del proyecto en github. O desde la tienda de [F-Droid](https://f-droid.org/en/packages/com.termux/).  
   
-La descarga también está disponible en Play Store, pero descargar la app de la Play Store NO SE RECOMIENDA. El motivo esta relacionado con políticas de Google con respecto a dar soporte a nuevas versiones de Android. Si se cumpliese con dichas políticas, habría que dejar de dar soporte a versiones anteriores. [Aquí mas detalles](https://github.com/termux/termux-app#google-play-store-deprecated).  
+La descarga también está disponible en Play Store, pero descargar la app de la Play Store NO SE RECOMIENDA. El motivo está relacionado con políticas de Google con respecto a dar soporte a nuevas versiones de Android. Si se cumpliese con dichas políticas, habría que dejar de dar soporte a versiones anteriores. [Aquí mas detalles](https://github.com/termux/termux-app#google-play-store-deprecated).  
   
 Si no conoces la arquitectura de tu dispositivo, puedes pinchar [aquí](https://stringmanolo.ml/hackingTermux101/paginas/mostrarArch.html).  
   
@@ -215,9 +215,9 @@ Esta es la carpeta que Android suele utilizar para guardar la música del usuari
 * ~/storage/movies  
 Donde se suelen almacenar las películas
 * ~/storage/external-1  
-Carpeta especial creada por Termux en el almacenamiento externo (si este está disponible), normalmente una tarjeta micro-sd, aunque se permite también el acceso a pendrives y otro tipo de dispositivos de memoria externos. No instales paquetes, programas o archivos de programas aquí(como puedan ser logs de un servidor, archivos de configuración, ...), ya que Android no proporciona permisos de escritura/lectura directamente y es necesario utilizar una API a la que los programas no tienen acceso.
+Carpeta especial creada por Termux en el almacenamiento externo (si este está disponible), normalmente una tarjeta micro-sd, aunque se permite también el acceso a pendrives y otro tipo de dispositivos de memoria externos. No instales paquetes, programas o archivos de programas aquí (como puedan ser logs de un servidor, archivos de configuración, ...) , ya que Android no proporciona permisos de escritura/lectura directamente y es necesario utilizar una API a la que los programas no tienen acceso.
 
-Si utilizas Android 11 y se muestra el error __Permission denied__ (Permiso denegado) cuando intentas acceder a la carpeta shared, aún cuando le distes permisos, sigue los pasos siguientes:
+Si utilizas Android 11 y se muestra el error __Permission denied__ (Permiso denegado) cuando intentas acceder a la carpeta shared, aún cuando le diste permisos, sigue los pasos siguientes:
 - Ve a Ajustes -> Aplicaciones -> Termux -> Permisos
 - Revoca el permiso de acceso a ficheros (Storage permission)
 - Autoriza de nuevo el permiso de acceso a ficheros.
