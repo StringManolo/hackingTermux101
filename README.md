@@ -255,7 +255,7 @@ Si escribes el comando cd sin mas, se cambiará el directorio a la variable de e
   
 > Existe un símbolo especial **~** que sirve para indicar explícitamente que nos mueva a la carpeta home. Esto nos será útil cuando queramos crear o referenciar un archivo en home desde otro directorio.  
   
-Podemos movernos a cualquier directorio alcanzable poniendo su ruta relativa tras el comando cd, o poniendo su ruta absoluta desde cualquier lugar. En la siguiente imagen puedes comprobar como se cambia el directorio a la carpeta ejemplo, que existe dentro de la carpeta home, y como después se imprime el directorio actual de trabajo. Indicándonos la terminal, que nos encontramos dentro de la carpeta ejemplo que existe en home.  
+Podemos movernos a cualquier directorio alcanzable poniendo su ruta relativa tras el comando cd, o poniendo su ruta absoluta desde cualquier lugar. En la siguiente imagen puedes comprobar como se cambia el directorio a la carpeta __ejemplo__, que existe dentro de la carpeta home, y como después se imprime el directorio actual de trabajo. Indicándonos la terminal, que nos encontramos dentro de la carpeta ejemplo que existe en home.  
   
 ![Salida del comando cd ejemplo y pwd](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/cd_ejemplo.jpg)  
 
@@ -268,7 +268,7 @@ El comando **ls** muestra la lista de archivos y carpetas que contiene el direct
   
 En este ejemplo nos movemos al directorio home, desde ahí al directorio ejemplo que está dentro de home y con **ls** listamos todo lo que contiene el directorio actual.  
   
-En blanco se muestran los archivos comunes (foto_perfil.jpg, listaDeLaCompra.txt), en azul/violeta se muestran los directorios que contiene el directorio ejemplo. En este caso hay un directorio llamado documentosDelTrabajo. En verde se muestran archivos con permisos de ejecución, en esta imagen no hay ninguno.  
+En blanco se muestran los archivos comunes (foto_perfil.jpg, listaDeLaCompra.txt), en azul/violeta se muestran los directorios que contiene el directorio __ejemplo__. En este caso hay un directorio llamado __documentosDelTrabajo__. En verde se muestran archivos con permisos de ejecución, en esta imagen no hay ninguno.  
   
 > ls es una abreviatura de List (Listar)  
 
