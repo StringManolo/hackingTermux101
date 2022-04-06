@@ -1,0 +1,1 @@
+- Añadir case a condicionales

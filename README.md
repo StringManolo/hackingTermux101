@@ -149,7 +149,7 @@ Termux instala por defecto un sistema base con comandos y paquetes comunes que s
   
 Es seguro, ya que todo es código abierto y miles de profesionales revisan el código y los nuevos cambios a diario.  
 
-Tiene un montón de características extra, como poder ver los SMS, los archivos del dispotivo, etc. Esto te premite auomatizar un montón de tareas, hacer interfaces con distintas tecnologías y todo lo que se te ocurra.  
+Tiene un montón de características extra, como poder ver los SMS, los archivos del dispositivo, etc. Esto te premite automatizar un montón de tareas, hacer interfaces con distintas tecnologías y todo lo que se te ocurra.  
   
 Totalmente customizable. Puedes modificar la apariencia, añadir atajos de teclado, nuevas funcionalidades...  
 
@@ -750,6 +750,48 @@ Se cumple si el primer número es mayor o igual que el segundo
   
 &nbsp;  
 
+A parte de if, hay un par de palabras mas que podemos utilizar en los condicionales.  
+El comando **else** permite ejecutar comandos si la condición no se ha cumplido. Queda mas claro con un ejemplo:
+```bash
+read -p "Introduce tu edad y pulsa enter: " edad
+if [ "$edad" -gt 17 ]; then
+  echo "Eres mayor de edad"
+else 
+  echo "Eres menor de edad"
+fi
+```
+
+Si pruebas el ejemplo, pegándolo en tu terminal y pulsando enter, verás que si se cumple la condición, te dirá que eres mayor de edad, y si no se cumple, te dirá que eres menor de edad.  
+  
+La última palabra clave es **elif**, y sirve para introducir mas if, que se ejecutarán solo si el anterior **if** no se cumple. Ejemplo:
+```bash
+read -p "Introduce tu edad y pulsa enter: " edad
+if [ "$edad" -lt 12 ]; then
+  echo "Eres un niño"
+elif [ "$edad" -lt 18 ]; then
+  echo "Eres un adolescente"
+elif [ "$edad" -lt 65 ]; then
+  echo "Eres un adulto"
+else 
+  echo "Eres un anciano"
+fi
+```
+
+En español esto viene diciendo:
+```bash
+si (tienes menos de 12 años) entonces
+  muestra "Eres un niño"
+en caso contrario, si (tienes menos de 18 años) entonces
+  muestra "Eres un adolescente"
+en caso contrario, si (tienes menos de 65 años) entonces
+  muestra "Eres un adulto"
+en caso contrario 
+  muestra "Eres un anciano"
+```
+
+
+
+#### Bucles
 
 
 #### help
