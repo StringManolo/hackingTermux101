@@ -875,6 +875,13 @@ for palabra in $frase; do
   echo "$palabra"
 done
 ```
+
+Lo mismo que haces con palabras, puedes hacerlo directamente con la salida de comandos. Da mucho juego  
+```bash
+for archivo in $(ls ~); do
+  echo "$archivo"
+done
+```
   
 &nbsp;  
 También puedes recorrer rangos de números
