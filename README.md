@@ -255,7 +255,12 @@ Si escribes el comando cd sin mas, se cambiará el directorio a la variable de e
   
 > Existe un símbolo especial **~** que sirve para indicar explícitamente que nos mueva a la carpeta home. Esto nos será útil cuando queramos crear o referenciar un archivo en home desde otro directorio.  
   
-Podemos movernos a cualquier directorio alcanzable poniendo su ruta relativa tras el comando cd, o poniendo su ruta absoluta desde cualquier lugar. En la siguiente imagen puedes comprobar como se cambia el directorio a la carpeta __ejemplo__, que existe dentro de la carpeta home, y como después se imprime el directorio actual de trabajo. Indicándonos la terminal, que nos encontramos dentro de la carpeta ejemplo que existe en home.  
+Podemos movernos a cualquier directorio alcanzable poniendo su ruta relativa tras el comando cd, o poniendo su ruta absoluta desde cualquier lugar. En la siguiente imagen puedes comprobar como se cambia el directorio a la carpeta __ejemplo__, que existe dentro de la carpeta home, y como después se imprime el directorio actual de trabajo. Indicándonos la terminal, que nos encontramos dentro de la carpeta ejemplo que existe en home.
+
+Cuando quieras moverte al directorio anterior utiliza dos puntos.
+```bash
+cd ..
+```
   
 ![Salida del comando cd ejemplo y pwd](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/cd_ejemplo.jpg)  
 
