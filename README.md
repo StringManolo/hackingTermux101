@@ -534,11 +534,54 @@ Bash nos indicará el error: **bash: printf: 3.1416: invalid number** e imprimir
 | %s           | string      | Cadena de texto                                         |
 | %x           | hexadecimal | Imprime un número en hexadecimal                        |
 | %X           | hexadecimal | Imprime un número en hexadecimal (letras en mayúsculas) |
-  
+ 
 
-  
-##### Condicionales
+#### Leer de la terminal  
+Podemos interactura con el usuario de múltiples formas.
 
+##### read  
+El comando **read** nos permite leer datos de la entrada de la terminal. Nosotros usaremos read con el argumento simple -p (la p es de la palabra prompt, en español sugerencia) y nos srive para sugerir al usuario el tipo de datos que queremos que introduza.  
+  
+Si por ejemplo queremos preguntarle el nombre al usuario
+```bash
+read -p "Cómo te llamas? " nombre
+echo "Tu nombre es $nombre"
+```  
+  
+En este ejemplo vemos que readme se parece a echo, pero admite un argumento extra, que será el nombre de la variable en la cual queremos que se guarden los datos que introduzca el usuario.  
+  
+> read significa leer
+
+#### Condicionales  
+Los condicionales permiten realizar acciones si se cumple una condición. **if [ condición ]; then comando fi**. En español se traduciría a algo similar a **sì [ seCumpleEstaCondición ]; entonces ejecutaEsteComando fin**. Podemos ver un ejemplo.
+
+```bash
+read -p "Introduce tu edad y pulsa enter: " edad
+if [ "$edad" -gt 17 ]; then
+  echo "Eres mayor de edad"
+fi
+```
+
+En este ejemplo tenemos:
+- Un read  
+Almacena la edad que introduce el usuario en la variable edad.  
+- La palabra clave if  
+Indica que la expresión es un condicional
+- Unos corchetes (que también son comandos, aunque no lo parezcan)  
+Evaluan la siguiente expresión y delimitan donde empieza ([) y acaba (]) la condición  
+- El punto y coma (;)  
+Sirve para indicar el final de los comandos asociados a if  
+- La palabra then  
+Indica que a continuación vienen las instrucciones que queremos que se ejecuten si se ha cumplido la condición.  
+- Un echo que imprime un texto  
+Aunque podría ser cualquier otro comando, asignación de variables, etc.  
+- Y la palabra fi (es if al revés)
+Indica el final de la condición. 
+
+
+#### test
+
+#### help
 [Tabla de Contenidos](#tabla-de-contenidos)
 
 -----
