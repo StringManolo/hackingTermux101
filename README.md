@@ -308,7 +308,14 @@ cd
 mkdir ejemplo
 ```  
   
-Con estes comandos crearás una carpeta (puedes usar el nombre de carpeta/directorio indistintamente) llamada __ejemplo__ dentro de la carpeta home. Puedes listarla con ls.  
+Con estes comandos crearás una carpeta (puedes usar el nombre de carpeta/directorio indistintamente) llamada __ejemplo__ dentro de la carpeta home. Puedes listarla con ls.   
+
+Si intentas crear un nuevo directorio y un directorio hijo directamente, puede usar el argumento -p (de parents, en español directorios padres)  
+
+```bash
+mkdir ~/ejemplo/hijoDeEjemplo/hijoDeHijoDeEjemplo
+```
+
 
 > mkdir es una abreviatura de Make Directory (Crea Directorio)
 
