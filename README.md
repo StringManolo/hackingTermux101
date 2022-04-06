@@ -804,12 +804,12 @@ case $opcion in
 
   3)
     read -p "Introduce el nombre que tendrá el nuevo fichero: " nombreFichero
-    touch nombreFichero
+    touch $nombreFichero
   ;;
 
   4)
     read -p "Introduce el nombre que tendrá el nuevo directorio: " nombreDirectorio
-    mkdir nombreDirectorio
+    mkdir $nombreDirectorio
   ;;
 
   0)
