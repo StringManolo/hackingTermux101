@@ -789,9 +789,71 @@ en caso contrario
   muestra "Eres un anciano"
 ```
 
-
-
 #### Bucles
+Los bucles nos permiten correr un comando/realizar una tarea de forma repetida.  
+Existen 4 tipos de bucles basicos en Bash. Los bucles **while**, **until**, **for** y **select**.   
+  
+##### while
+El comando **while** permite ejecutar comandos mientras la condición sea verdadera. Su sintaxis es similar a la del condicional **if**. Ejemplo:
+```bash
+read -p  "Introduce tu contraseña: " contra
+while [ "$contra" != "admin123" ]; do
+  read -p "La contraseña '$contra' es incorrecta. Inténtalo de nuevo: " contra
+done
+echo "Acceso Permitido"
+```
+
+> Si no supieses la contraseña, no sabrías como salir del programa. Cuando quieras cancela la ejecución de un programa que está en bucle, presiona las teclas **CTRL** y **c**. Si no funciona, prueba con las teclas **CTRL** y **d**. 
+  
+##### until 
+El bucle **until** es prácticamente igual al bucle **while**, con la diferencia de que se ejecutará mientras no se alcance la condición.  
+```bash
+read -p  "Introduce tu contraseña: " contra
+until [ "$contra" = "admin123" ]; do
+  read -p "La contraseña '$contra' es incorrecta. Inténtalo de nuevo: " contra
+done
+echo "Acceso Permitido"
+```
+
+> Puedes usar while o until indistintamente. Until existe simplemente porque puede ser mas sencilla de leer la expresión en inglés.  
+Los ejemplos anteriores en español dirían; Para **while**:
+> Mientras (laContraseña no es igual a "admin123") haz ...  
+Para **until**:  
+> Hasta que (laContraseña no sea igual a "admin123") haz ...
+  
+##### for
+El bucle for sirve principalmente para recorrer elemenos. Los elementos pueden ser frases, palabras, secuencias numéricas, etc.  
+```bash
+frase="Hola me llamo Manolo"
+echo "La frase '$frase' tiene las siguientes palabras:"
+for palabra in $frase; do
+  echo "$palabra"
+done
+```
+  
+&nbsp;  
+También puedes recorrer rangos de números
+```bash
+echo "Los números del 1 al 20 son:"
+for numero in {1..20}; do
+  printf "%d, " $numero
+done
+```
+  
+&nbsp;  
+Si queremos omitir la última coma tras el 20, podemos usar un condicional:  
+```bash
+echo "Los números del 1 al 20 son:"
+for numero in {1..20}; do
+  if [ "$numero" -ne 20 ]; then
+    printf "%d, " $numero
+  else 
+    printf "%d" $numero
+  fi
+done
+```
+
+
 
 
 #### help
