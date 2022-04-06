@@ -481,9 +481,11 @@ ls --help
 -----
 
 ## Capítulo 5: Introducción a Bash
-Bash es una shell de comandos. Todos los comandos que usamos hasta ahora, han sido enviados a bash y bash es quien se ha encargado de interpretarlos y llamar a los paquetes correspondientes. Se encarga de procesar el texto que le introducimos y el símbolo dolar **$** nos está indicando que se trata de una Shell.  
+Bash es una shell de comandos. Todos los comandos que usamos hasta ahora, han sido enviados a Bash y Bash es quien se ha encargado de interpretarlos y llamar a los paquetes correspondientes. Se encarga de procesar el texto que le introducimos y el símbolo dolar **$** nos está indicando que se trata de una Shell normal.  
+
+> En Linux cuando eres root usando el comando **sudo su** el dolar se cambia por un hash (asterisco) #. En Android no disponemos de root por defecto, y este libro asume que no eres root. Es posible obtenerlo, pero yo no lo recomiendo en Android por motivos de seguridad del sistema.   
   
-No es un simple intérprete, si no que admite un gran número de instrucciones muy diversas y complejas, dando lugar a un lenguaje de programación potente ampliamente utilizado para configurar sistemas GNU/Linux, crear comandos y otro tipo de utilidades.
+Bash no es un simple intérprete, si no que admite un gran número de instrucciones muy diversas y tambien algunas complejas, dando lugar a un lenguaje de programación potente ampliamente utilizado para configurar sistemas GNU/Linux, crear comandos y otro tipo de utilidades.
 
 #### Variables
 Las variables te permiten almacenar valores para poder utilizarlos mas adelante.  
@@ -990,6 +992,74 @@ saludar() {
 
 saludar "Manolo" "Arturo" "Jose"
 ```
+
+#### Miscelanea (otros operadores)
+Bash permite realizar redirecciones entre comandos, salida a pantalla, entrada a comandos y ficheros. Una redirección es el envio de texto desde un fichero a otro. Todo lo que vemos en pantalla en realidad es enviado a un fichero de texto y Bash se encarga de imprimir su contenido para que lo veamos.  
+
+##### >
+El caracter **>** nos permite enviar la salida de un comando hacia un fichero. Si el nombre del fichero no existe, se creará uno nuevo.
+```bash
+echo -e "Lista de la compra:\n2 paquetes de letejas\n1 cartón de leche" > ~/miListaDeLaCompra.txt
+```
+
+Con el **>** indicamos que en lugar de mostrar el texto en pantalla queremos que se mande al archivo __miListaDeLaCompra.txt__ que está ubicado en la carpeta **~** (home). Si el archivo no existe **>** se encarga de crearlo antes de volcar la salida del comando **echo**, y si este archivo ya existía en home, se le borrará todo el contenido antes de añadir el nuevo contenido  
+  
+Ahora puedes imprimir su contenido cuando quieras
+```bash
+cat ~/miListaDeLaCompra.txt
+```
+
+> La extensión .txt no hace nada, ninguna extensión hace nada en particular. Solo se añaden para ayudar al usuario o a otros programas a intuir que tipo de datos puede contener el fichero.   
+  
+Otro uso común es ocultar la salida de un comando. Para ello redirigimos la salida a un archivo especial diseñado para ello.
+```bash
+echo "Hola" > /dev/null
+```
+
+Redirigir a __/dev/null__ es una práctica común cuando queremos correr un comando pero no nos interesa lo que nos muestre. Puede ser el caso de un servidor de una página web cuando muestra los logs en pantalla y no nos interesan.  
+
+Aunque redirigas la salida a __/dev/null__ los comandos siguen mostrando los errores en pantalla si estos se dan. Si quieres ocultar los errores, debes redirigir un archivo especial hacia __/dev/null__  
+
+```bash
+cat esteArchicoNoExiste.txt 2>/dev/null
+```
+
+##### >>
+Qué pasa si quiesieses añadir un nuevo producto a tu lista de la compra sin eliminar el contenido del fichero? Se utiliza el operador **>>** en lugar de **>**. Al igual que **>**, si no existe el fichero también se creará, pero si ya existe el fichero, en lugar de remplazar su contenido por el nuevo que indiquemos, se añadirá al que ya existe.
+```bash
+echo -e "\n6 latas de mejillones" >> ~/miListaDeLaCompra.txt
+```
+  
+> Puedes redirigir la salida de cualquier comando, no solo de echo  
+
+##### <
+
+##### <<
+
+##### |
+El operador **|** sirve para redirigir la salida de un comando hacia otro comando.  
+Existen una multitud de utilidades que son perfectas para su uso con **|**
+```bash
+echo "Hola qué tal?" | wc  
+```
+
+> El comando **wc** (word counter en español, contador de palabras) muestra el número de lineas, palabras y caracteres que tiene un texto. En este caso el texto lo pasamos del comando **echo** hacia el comando **wc** utilizando **|**
+
+
+##### ||
+El operador **||** (OR) sirve para ejecutar un comando si el anterior falla.
+```bash
+cat esteArchivoNoExiste.txt || echo "El archivo no existe"
+```
+
+Es común redirigir los errores a __/dev/null__ y mostrar nuestros errores personalizados  
+```bash
+cat archivoQueNoExiste 2>/dev/null || echo "No se pudo mostrar el contenido del archivo"
+```
+
+##### &
+
+##### &&
 
 #### help
 [Tabla de Contenidos](#tabla-de-contenidos)
