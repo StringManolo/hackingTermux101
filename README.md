@@ -461,6 +461,8 @@ Con **man ls** se nos muestra el manual para el comando ls, con todas sus opcion
   
 > man son la iniciales de manual
 
+Para salir de man utiliza la combinación de teclas **ESC : q**
+
 #### exit
 Cierra la terminal
 
@@ -1106,11 +1108,87 @@ Si corres el comando, verás un listado de los comandos internos de Bash que dis
 help history
 ```
 
+#### Extra
+Puedes reutilizar los comandos de una linea de la terminal navegando por el historial si le das a las flecha hacia arriba y hacia abajo. 
+
+Si pones # al inicio o final de una linea, estás indicando que la linea a partir del # es un comentario que Bash debe ignorar. Los comentarios son útiles para indicar lo que hace el código. Ejemplo:
+```bash
+# La siguiente linea imprime un texto en pantalla saludando
+echo "Hola"
+echo "Adios" # Esta linea imprime Adios en pantalla
+```
+
 [Tabla de Contenidos](#tabla-de-contenidos)
 
 -----
 
 ## Capítulo 6: Uso de VI y de VIM
+VI y VIM son editores de texto muy completos. VI es la versión mas pequeña y suele venir por defecto instalado en muchos sistemas. VIM es su hermano mayor e incluye cientos de características. Por si fueran pocas, la comunidad de programadores va creando sus plugins, temas y colores para VIM para extender aún mas su funcionalidad.  
+  
+Dado lo extenso de VI y VIM, pondré el foco en los comandos y atajos que yo mas utilizo, dejando de lado muchísima funcionalidad útil. VIM por si solo daría para un libro entero y no es mi idea reinventar la rueda escribiendo un libro de VIM, asique centrando el tiro. 
+
+#### Cómo instalar VIM
+VI suele venir instalado, pero VIM no. Es un paquete mas, asique usaremos el comando que ya conocemos para instalar paquetes en Termux
+```bash
+pkg install vim
+```
+
+Para abrir un archivo que ya existe o crear uno nuevo, usaremos el siguiente comando
+```bash
+vim miListaDeLaCompra.txt
+```
+
+Verás que se abre una nueva pantalla desconocida hasta ahora. A lo primero que tenemos que echar ojo es a la barra de estado de VIM. Se encuentra exactamente encima del teclado a la izquierda y si no tocas nada tras abrir el archivo, veras el mensaje: **"miListaDeLaCompra.txt" [new]** en la barra de estado de VIM.  
+  
+Si el archivo ya existía, el mensaje será: **"miListaDeLaCompra.txt" xL xB** donde xL mostrará el número de lineas que tiene el archivo y xB el número de Bytes (un caracter suele pesar al menos 1 Byte, asique es un buen indicador del número aproximado de caracteres que tiene el archivo) que tiene.  
+  
+Si pulsas la tecla **i**, verás como el estado cambia a **-- INSERT --**. Esto nos indica que ahora nos encontramos en modo insercción de texto. Si ahora pulsas las teclas, podrás escribir en el archivo al igual que haces en el mítico bloc de notas de Windows.  
+
+Una vez que tengas tu texto escrito, puedes salir del modo __inserción__ pulsando la tecla ESC. Si te fijas ahora, encima de la barra de estado, que se encontrará vacia tras pulsar ESC, se mostrará el símbolo **[+]** que nos indica que el archivo tiene cambios sin guardar.  
+  
+Hay varias formas de guardar los cambios. Si queremos guardar los cambios pero continuar usando VIM, usaremos la combinación de teclas **ESC :w**, veras que se muestra **:w** en la barra de estado. Pulsa Enter para introducir la secuencia. El **[+]** desaparecerá, indicando que ya no hay nuevos cambios sin guardar. En la barra de estado verás que se muestra el mismo tipo de mensaje que antes y al final hay una nueva palabra __written__ indicándonos que se han escrito los cambios en el archivo.  
+  
+Si quieres guardar los cambios y cerrar VIM, en lugar de **:w**, debes utilizar **:x**    
+  
+Si no hicieste cambios puedes cerrar VIM utilizando **:q**. Recuerda que no debes estar en el modo __insercion__, si estás en ese modo, en su lugar acabarás escribiendo el texto ":q" en el documento.  
+  
+Si tienes cambios en el documento pero quieres salir de todas formas y descartar los cambios que hiciste, debes introducir **:q!**. Solo se descartarán los cambios que no guardases con **:w**  
+  
+En VIM puedes tocar sobre el texto del fichero para posicionar el cursor. Tras tener el cursos posicionado, puede tocar el caracter **i** para entrar en modo __insercion__ en el caracter en el que esté el cursor. Si quieres posicionarte para escribir delante de donde tienes el cursor utiliza **a** en lugar de **i**  
+  
+También puedes entrar en modo insercción al principio de la linea usando **I**, al inicio de la linea siguiente (añadiendo un salto de linea en el proceso) utilizando **o**, en la linea anterior (añadiendo un salto de linea en el proceso) utilizando **O**, en el caracter actual (eliminándolo en el proceso) utilizando **x**  
+
+A parte de moverte tocando el texto e insertar usando teclas, también puedes moverte utilizando distintas teclas. Con **w** te mueves a la siguiente palabra, con **b** te mueves a la palabra anterior, con **$** te mueves al final de la linea actual, con **0** te mueves al inicio de la linea.
+
+Si quieres moverte a la linea anterior **k**, a la linea siguiente **j**, al caracter anterior **h**, al caracter siguiente **l**
+
+Si quieres moverte al inicio del archivo **gg**, a la última linea del archivo **G**. Puedes ir a lineas concretas poniendo **:** y el número de la linea concreta a la que quires ir. Por ejemplo si quieres ir a la tercera linea del fichero **:3** y pulsas enter.
+
+También puedes eliminar palabras, lineas, caracteres o parte concretas del archivo. Los comandos son los mismos que los de mover el cursor, pero anteponiendo **d**. Ejemplos:
+
+```bash
+# Recuerda que estos son comentarios, y su única finalidad es que tu los leas
+
+dd   # Eliminar la linea en la que está el cursor
+d$   # Eliminar desde el cursor hasta el final de la linea
+d0   # Eliminar desde el cursor hasta el inicio de la linea
+dw   # Eliminar desde el cursor hasta el final de la palabra
+dgg  # Eliminar desde el cursor hasta el inicio del archivo
+dG   # Eliminar desde el cursor hasta el final del archivo
+d16  # Eliminar desde el cursor 16 lineas
+```
+
+A veces nos equivocamos y queremos deshacer las últimas acciones, para ello puedes usar **u**. También puedes rehacer los cambios que hayas eliminado con **u** utilizando **CTRL r**. Si cierras VIM, se perderá el historial y no podrás deshacer ni rehacer.  
+  
+A parte del modo __comando__ que estamos usando y del modo __inserción__, también hay un modo visual al que podemos acceder desde el modo __comando__ pulsando **v**.  
+  
+Una vez estás en el modo visual, podras mover el cursor con las teclas para remarcar un texto. Una vez tienes el texto marcado puedes realizar múltiples acciones sobre él.   
+```bash
+y    # Copia el texto seleccionado
+p    # Pega el texto 
+#    # Corta el texto seleccionado 
+>    # Añade identación a las lineas (espacios)
+```
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
