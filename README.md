@@ -1461,6 +1461,15 @@ export darkcyan=$'\e[0;36m'           # cian oscuro
 export underlinedarkgray=$'\e[0;30m'  # subrayado gris oscuro
 ```
 
+##### prompts
+La prompt de la terminal en Termux solo muestra un dolar. Podemos usar distintos comandos para configurarla. Ya sea por utilidad o por estética. Aquí tienes el código de mi prompt:
+```bash
+PS1='\n\n${underlinedarkgray}${darkgray}(${blue}$(date +%H${darkgray}:${blue}%M${darkgray}:${blue}%S${darkgray}:${blue}%4N)${darkgray}) ${green}$(pwd)${endc}\n> '
+PS2='${blue}.${endc}  '
+```
+![Prompt de Bash, ps1](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/ps1.jpg)
+
+Como ves, esta prompt pinta la fecha, la hora, minutos, segundos... y el directorio actual de trabajo. Así sabes siempre en que carpeta te encuentras sin necesidad de recurrir al comando **pwd** directamente. 
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
