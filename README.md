@@ -1178,6 +1178,14 @@ dG   # Eliminar desde el cursor hasta el final del archivo
 d16  # Eliminar desde el cursor 16 lineas
 ```
 
+En VIM se pueden substituir todas las palabras de un texto de forma sencilla usando expresiones regulares. Si quieres substituir todas las palabras que digan "hola" por "adios", utilizas el comando
+```bash
+:%s/hola/adios/g   # substituye todos los hola por adios
+:%s/hola/adios/gi  # substituye todos los hola por adios aunque tengan mayúsculas
+```
+
+> Cuando la palabra/texto tenga caracteres especiales, debes __escaparlos__ usando la barra de escape **\\**.  
+
 A veces nos equivocamos y queremos deshacer las últimas acciones, para ello puedes usar **u**. También puedes rehacer los cambios que hayas eliminado con **u** utilizando **CTRL r**. Si cierras VIM, se perderá el historial y no podrás deshacer ni rehacer.  
   
 A parte del modo __comando__ que estamos usando y del modo __inserción__, también hay un modo visual al que podemos acceder desde el modo __comando__ pulsando **v**.  
@@ -1188,7 +1196,12 @@ y    # Copia el texto seleccionado
 p    # Pega el texto 
 x    # Corta el texto seleccionado 
 >    # Añade identación a las lineas (espacios)
+<    # Quita identación a las lineas (espacios)
+u    # Convierte a minúsculas
+U    # Convierte a mayúsculas
 ```
+
+> También puedes substituir palabras del texto seleccionado usando expresiones regulares
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
