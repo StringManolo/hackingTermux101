@@ -1142,7 +1142,7 @@ Verás que se abre una nueva pantalla desconocida hasta ahora. A lo primero que 
   
 Si el archivo ya existía, el mensaje será: **"miListaDeLaCompra.txt" xL xB** donde xL mostrará el número de lineas que tiene el archivo y xB el número de Bytes (un caracter suele pesar al menos 1 Byte, asique es un buen indicador del número aproximado de caracteres que tiene el archivo) que tiene.  
   
-Si pulsas la tecla **i**, verás como el estado cambia a **-- INSERT --**. Esto nos indica que ahora nos encontramos en modo insercción de texto. Si ahora pulsas las teclas, podrás escribir en el archivo al igual que haces en el mítico bloc de notas de Windows.  
+Si pulsas la tecla **i**, verás como el estado cambia a **-- INSERT --**. Esto nos indica que ahora nos encontramos en modo inserción de texto. Si ahora pulsas las teclas, podrás escribir en el archivo al igual que haces en el mítico bloc de notas de Windows.  
 
 Una vez que tengas tu texto escrito, puedes salir del modo __inserción__ pulsando la tecla ESC. Si te fijas ahora, encima de la barra de estado, que se encontrará vacia tras pulsar ESC, se mostrará el símbolo **[+]** que nos indica que el archivo tiene cambios sin guardar.  
   
@@ -1150,13 +1150,13 @@ Hay varias formas de guardar los cambios. Si queremos guardar los cambios pero c
   
 Si quieres guardar los cambios y cerrar VIM, en lugar de **:w**, debes utilizar **:x**    
   
-Si no hicieste cambios puedes cerrar VIM utilizando **:q**. Recuerda que no debes estar en el modo __insercion__, si estás en ese modo, en su lugar acabarás escribiendo el texto ":q" en el documento.  
+Si no hay cambios pendientes en el archivo, puedes cerrar VIM utilizando **:q**. Recuerda que no debes estar en el modo __insercion__, si estás en ese modo, en su lugar acabarás escribiendo el texto ":q" en el documento.  
   
 Si tienes cambios en el documento pero quieres salir de todas formas y descartar los cambios que hiciste, debes introducir **:q!**. Solo se descartarán los cambios que no guardases con **:w**  
   
 En VIM puedes tocar sobre el texto del fichero para posicionar el cursor. Tras tener el cursos posicionado, puede tocar el caracter **i** para entrar en modo __insercion__ en el caracter en el que esté el cursor. Si quieres posicionarte para escribir delante de donde tienes el cursor utiliza **a** en lugar de **i**  
   
-También puedes entrar en modo insercción al principio de la linea usando **I**, al inicio de la linea siguiente (añadiendo un salto de linea en el proceso) utilizando **o**, en la linea anterior (añadiendo un salto de linea en el proceso) utilizando **O**, en el caracter actual (eliminándolo en el proceso) utilizando **x**  
+También puedes entrar en modo inserción al principio de la linea usando **I**, al inicio de la linea siguiente (añadiendo un salto de linea en el proceso) utilizando **o**, en la linea anterior (añadiendo un salto de linea en el proceso) utilizando **O**, en el caracter actual (eliminándolo en el proceso) utilizando **x**  
 
 A parte de moverte tocando el texto e insertar usando teclas, también puedes moverte utilizando distintas teclas. Con **w** te mueves a la siguiente palabra, con **b** te mueves a la palabra anterior, con **$** te mueves al final de la linea actual, con **0** te mueves al inicio de la linea.
 
