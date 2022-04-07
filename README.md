@@ -1186,7 +1186,7 @@ Una vez estás en el modo visual, podras mover el cursor con las teclas para rem
 ```bash
 y    # Copia el texto seleccionado
 p    # Pega el texto 
-#    # Corta el texto seleccionado 
+x    # Corta el texto seleccionado 
 >    # Añade identación a las lineas (espacios)
 ```
 
