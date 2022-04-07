@@ -1167,9 +1167,9 @@ En VIM puedes tocar sobre el texto del fichero para posicionar el cursor. Tras t
   
 También puedes entrar en modo inserción al principio de la linea usando **I**, al inicio de la linea siguiente (añadiendo un salto de linea en el proceso) utilizando **o**, en la linea anterior (añadiendo un salto de linea en el proceso) utilizando **O**, en el caracter actual (eliminándolo en el proceso) utilizando **x**  
 
-A parte de moverte tocando el texto e insertar usando teclas, también puedes moverte utilizando distintas teclas. Con **w** te mueves a la siguiente palabra, con **b** te mueves a la palabra anterior, con **$** te mueves al final de la linea actual, con **0** te mueves al inicio de la linea.
+A parte de moverte tocando el texto e insertar usando teclas, también puedes moverte utilizando distintas teclas. Con **w** te mueves a la siguiente palabra, con **b** te mueves a la palabra anterior, con **e** te mueves al final de la palabra actual, con **$** te mueves al final de la linea actual, con **0** te mueves al inicio de la linea.
 
-Si quieres moverte a la linea anterior **k**, a la linea siguiente **j**, al caracter anterior **h**, al caracter siguiente **l**
+Si quieres moverte a la linea anterior **k**, a la linea siguiente **j**, al caracter anterior **h**, al caracter siguiente **l**. Si añades un número antes de cualquiera de estas opciones the moverás la cantidad indicada de caracteres/lineas.
 
 Si quieres moverte al inicio del archivo **gg**, a la última linea del archivo **G**. Puedes ir a lineas concretas poniendo **:** y el número de la linea concreta a la que quires ir. Por ejemplo si quieres ir a la tercera linea del fichero **:3** y pulsas enter.
 
@@ -1211,6 +1211,28 @@ U    # Convierte a mayúsculas
 ```
 
 > También puedes substituir palabras del texto seleccionado usando expresiones regulares
+
+
+En VIM también puedes abrir múltiples ventanas con la combinación **CTRL w v**. Cada vez que pulses esta combinación, abrirás una ventana nueva. Si prefieres que la ventana se abra debajo de la actual en lugar de al lado, utiliza **CTRL w s**. Puedes combinarlas y tener ambos tipos de ventanas abiertas a la vez.  
+
+Puedes modificar el ancho de la ventana usando **CTRL w >** para aumentar su ancho o **CTRL w <** para reducirlo.  
+
+Puedes modificar la altura de la ventana usando **CTRL w +** para aumentarla o **CTRL w -** para reducirla.    
+  
+
+Si vas a cerrar el archivo actual, para abrir otro distinto, en su lugar puedes hacer directamente **:open nombreDelArchivo.txt**, sirve tanto para nuevos archivos, como para archivos que ya existen. 
+
+Otra opción para abrir un nuevo archivo, esta vez, sin cerrar el actual es **:e nombreDelArchivo.txt**. Puedes cambiar entre archivos utilizando **:bn** y **:bN**  
+
+La opción **:tabnew ejemplo.txt** sirve para abrir el archivo indicado en una nueva pestaña. Puedes moverte entre las pestañas abiertas utilizando **:b#**
+
+Puedes buscar palabras si pones una **/**. Ejemplo:
+```bash
+/hola
+```
+
+Una vez tengas tu palabra resaltada, puedes fijarla usando enter. Al estar la búsqueda fija, podras moverte a la siguiente palabra que cumpla tu búsqueda utilizando el caracter **n** o a la anterior utilizando **N**
+
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
