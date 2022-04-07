@@ -1406,9 +1406,29 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 ```
 
-Ahora cuando escribas el comando **ls**, bash le añadirá el argumento __--color=auto__ de forma transparente.  
+Ahora cuando escribas el comando **ls**, Bash le añadirá el argumento __--color=auto__ de forma transparente.  
 
-
+Mas alias útiles que suelo utilizar:  
+```bash
+alias l='ls'                             # Utiliza l en lugar de ls
+alias la='ls -a'                         # Utiliza la para listar ficheros ocultos
+alias v='vim'                            # Utiliza v en lugar de vim
+alias c='clear'                          # Utiliza c en lugar de clear
+alias cl='clear && ls'                   # Utiliza cl para limpisr la pantalla y listar
+alias ..='cd ..'                         # Muevete a la carpeta 1 nivel superior
+alias ...='cd ../..'                     # Muevete a la carpeta 2 niveles superior
+alias ....='cd ../../..'                 # Muevete a la carpeta 3 niveles superior
+alias .....='cd ../../../..'             # Muevete a la carpeta 4 niveles superiores
+alias pserv='python -m http.server'      # Sirve la carpeta actual
+alias gitc='"'"'git clone'"'"'           # Clona un repositorio
+alias 775='"'"'chmod +775'"'"'           # Da permisos de ejecución 
+alias folder='du -h --max-depth=1'       # Muestra el tamaño de ficheros
+alias h='history'                        # Muestra el historial
+alias myip='curl http://ifconfig.me/ip'  # Muestra tu ip pública
+alias quit='exit'                        # Cierra la terminal
+alias q='exit'                           # Cierra la terminal
+alias sb='source ~/.bashrc'              # Actualiza los cambios en el archivo de Bash
+```
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
