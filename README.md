@@ -1286,7 +1286,7 @@ case $- in
 esac
 ```
 
-Este pequeño script/código sirve para que no se configuren las terminales de Bash que no sean interactivas. Esto sirve para evitar que se configure Bash cuando lo utilizemos para correr un comando. Por ejemplo **bash miArchivo.sh&*. En el [capítulo 9: Creando comandos](#cap%C3%ADtulo-9-creando-comandos) lo entenderás mejor.  
+Este pequeño script/código sirve para que no se configuren las terminales de Bash que no sean interactivas. Esto sirve para evitar que se configure Bash cuando lo utilizemos para correr un comando. Por ejemplo **bash miArchivo.sh**. En el [capítulo 9: Creando comandos](#cap%C3%ADtulo-9-creando-comandos) lo entenderás mejor.  
   
 ##### histappend
 El argumento __histappend__ sirve para que el historial se comparta entre pestañas, ventanas y sesiones. Nos servirá para asegurarnos que si abrimos una nueva terminal, tengamos accedible el historial, permitiéndonos reutilizar los comandos sin tener que escribirlos de 0. Si lo quieres activar añádelo a una nueva linea:  
