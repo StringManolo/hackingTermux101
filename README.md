@@ -1286,22 +1286,22 @@ case $- in
 esac
 ```
 
-Este pequeño script/código sirve para que no se configuren las terminales de Bash que nosean interactivas. Esto sirve para evitar que se configure Bash cuando lo utilizemos para correr un comando. Por ejemplo Bash miArchivo.sh. En el [capítulo 9: Creando comandos](#cap%C3%ADtulo-9-creando-comandos) lo entenderás mejor.  
+Este pequeño script/código sirve para que no se configuren las terminales de Bash que no sean interactivas. Esto sirve para evitar que se configure Bash cuando lo utilizemos para correr un comando. Por ejemplo **bash miArchivo.sh&*. En el [capítulo 9: Creando comandos](#cap%C3%ADtulo-9-creando-comandos) lo entenderás mejor.  
   
 ##### histappend
-El argumento histappend sirve para que el historial se comparta entre pestañas, ventanas y sesiones. Nos servirá para asegurarnos que si abrimos una nueva terminal, tengamos accedible el historial, permitiéndonos reutilizar los comandos sin tener que escribirlos de 0. Si lo quieres activar añádelo a una nueva linea:  
+El argumento __histappend__ sirve para que el historial se comparta entre pestañas, ventanas y sesiones. Nos servirá para asegurarnos que si abrimos una nueva terminal, tengamos accedible el historial, permitiéndonos reutilizar los comandos sin tener que escribirlos de 0. Si lo quieres activar añádelo a una nueva linea:  
 ```bash
 shopt -s histappend
 ```
 
 ##### checkwinsize
-El argumento checkwinsize hará comprobaciones automáticas tras dar o quitar zoom en Termux para ajustar las filas y columnas de las tablas que tengamos impresas en pantalla.  
+El argumento __checkwinsize__ hará comprobaciones automáticas tras dar o quitar zoom en Termux para ajustar las filas y columnas de las tablas que tengamos impresas en pantalla.  
 ```bash
 shopt -s checkwinsize
 ```
 
 ##### autocd
-El argumento autocd nos permite omitir cd para entrar en carpetas. Es útil para todas aquellas carpetas que no compartan nombre con comandos instalados.
+El argumento __autocd__ nos permite omitir cd para entrar en carpetas. Es útil para todas aquellas carpetas que no compartan nombre con comandos instalados.
 ```
 shopt -s autocd
 ```
@@ -1309,21 +1309,21 @@ shopt -s autocd
 Con este opción, si tienes una carpeta que se llama fotos, en lugar de escribir **cd fotos** para entrar en ella, podrás escribir directamente **fotos**. Si por ejemplo nombrases a tu carpeta **ls**, entonces no funcionaría porque estarías corriendo el comando **ls** en lugar de ingresar a la carpeta ls.
 
 ##### cdable_vars
-El argumento cdable_var te permitirá utilizar cd con variables si el nombre de la variable no coincide con el de una carpeta a la que puedes hacer cd
+El argumento __cdable_vars__ te permitirá utilizar cd con variables si el nombre de la variable no coincide con el de una carpeta a la que puedes hacer cd.
 ```
 shopt -s cdable_vars
 ```
 
-Cuando activemos el archico .bashrc, podremos hacer lo siguiente para ir a la carpeta ejemplo (si esta existe en HOME) desde cualquier lugar.
+Cuando activemos el archivo __.bashrc__, podremos hacer lo siguiente para ir a la carpeta __ejemplo__ (si esta existe en HOME) desde cualquier lugar.
 ```bash
 EJEMPLO=/data/data/com.termux/files/home/ejemplo
 cd EJEMPLO
 ```
 
-Si existiese una carpeta llamada **EJEMPLO**, cd entraría dentro de esta, si no existe es entonces cuando se comprobaría si *$EJEMPLO* existe y se haría cd a la ruta que tenga esta variable.
+Si existiese una carpeta llamada __EJEMPLO__, **cd** entraría dentro de esta, si no existe es entonces cuando se comprobaría si **$EJEMPLO** existe y se haría **cd** a la ruta que tenga esta variable.
 
 ##### addPath
-La función addPath nos será útil en el capìtulo 9, añádela también a este archivo. Sirve para indicarle a Bash en que carpetas tenemos comandos.
+La función **addPath** nos será útil en el capìtulo 9, añádela también a este archivo. Sirve para indicarle a Bash en que carpetas tenemos comandos.
 ```bash
 addPath() {
   if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
@@ -1343,7 +1343,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 ```
 
-Ahora cuando escribas el comando **ls**, bash le añadirá el argumento **--color=auto** de forma transparente.  
+Ahora cuando escribas el comando **ls**, bash le añadirá el argumento __--color=auto__ de forma transparente.  
 
 
 
