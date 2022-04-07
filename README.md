@@ -1154,7 +1154,7 @@ Si no hay cambios pendientes en el archivo, puedes cerrar VIM utilizando **:q**.
   
 Si tienes cambios en el documento pero quieres salir de todas formas y descartar los cambios que hiciste, debes introducir **:q!**. Solo se descartarán los cambios que no guardases con **:w**  
   
-En VIM puedes tocar sobre el texto del fichero para posicionar el cursor. Tras tener el cursos posicionado, puede tocar el caracter **i** para entrar en modo __insercion__ en el caracter en el que esté el cursor. Si quieres posicionarte para escribir delante de donde tienes el cursor utiliza **a** en lugar de **i**  
+En VIM puedes tocar sobre el texto del fichero para posicionar el cursor. Tras tener el cursor posicionado, puede tocar el caracter **i** para entrar en modo __insercion__ en el caracter en el que esté el cursor. Si quieres posicionarte para escribir delante de donde tienes el cursor utiliza **a** en lugar de **i**  
   
 También puedes entrar en modo inserción al principio de la linea usando **I**, al inicio de la linea siguiente (añadiendo un salto de linea en el proceso) utilizando **o**, en la linea anterior (añadiendo un salto de linea en el proceso) utilizando **O**, en el caracter actual (eliminándolo en el proceso) utilizando **x**  
 
