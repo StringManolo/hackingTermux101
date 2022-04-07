@@ -1032,10 +1032,6 @@ echo -e "\n6 latas de mejillones" >> ~/miListaDeLaCompra.txt
   
 > Puedes redirigir la salida de cualquier comando, no solo de echo  
 
-##### <
-
-##### <<
-
 ##### |
 El operador **|** sirve para redirigir la salida de un comando hacia otro comando.  
 Existen una multitud de utilidades que son perfectas para su uso con **|**
@@ -1058,10 +1054,58 @@ cat archivoQueNoExiste 2>/dev/null || echo "No se pudo mostrar el contenido del 
 ```
 
 ##### &
+El operador **&** sirve para crear __jobs__ (trabajos en español) mandando a comandos que se están ejecutando a un segundo plano hasta que estos finalicen por si mismos o nosostros los finalicemos de alguna de las múltiples formas que existen.
+
+```bash
+despedirse() {
+  sleep 5s
+  printf "Adios"
+  sleep 5s
+  printf ", ha sido un placer!"
+}
+
+despedirse &
+```
+
+> El comando **sleep** (dormir en español) pausa el programa durante el tiempo que le indiquemos. En este ejemplo son dos intervalos de 5s (segundos) cada uno.
+
+Puedes ver los comandos que tengas corriendo en segundo plano (background) con el comando **jobs**, la salida para este ejemplo sería:
+```bash
+[1]+  Running                 despedirse &
+```
+
+El número de la izquierda es un identificador. La primera palabra __running__ (corriendo) nos dice el estado actual del __job__ y a la derecha de todo encontramos el comando que ejecutamos.  
+  
+Puedes traer el proceso al frente (foreground) usando el comando **fg %1**, el número tiene que ser el identificador mostrado en el comando **jobs**. Y como puede forzar el cierre del proceso con las combinaciones de teclas que vimos en apartados anteriores de este mismo capítulo (CTRL C, CTRL D)  
 
 ##### &&
+El operador **&&** (AND) sirve para ejecutar un comando si el anterior funcionó correctamente.
+```bash
+cat archivoQueExista && echo "El archivo existe y se imprimió correctamente"
+```
+
+Muy útil cuando queramos que un comando solo se ejecute si el anterior funcionó
+```bash
+pkg install tree && tree
+```
+
+##### ;
+El operador **;** es útil para indicar el fin de un comando. Es de uso común cuando quieres correr varios comandos en la misma linea independientemente de si el comando anterior falla o no  
+```bash
+cat archivo1.txt; cat archivo2.txt; echo "Adios"
+```
 
 #### help
+El comando **help** nos proporciona ayuda con Bash.  
+```bash
+help
+```
+
+Si corres el comando, verás un listado de los comandos internos de Bash que disponen de un mensaje de ayuda. Puedes consultar cada uno de ellos escribiendo **help** y el nombre del comando que quieres consultar.  
+```bash
+help history
+```
+
 [Tabla de Contenidos](#tabla-de-contenidos)
 
 -----
