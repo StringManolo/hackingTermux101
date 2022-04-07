@@ -852,7 +852,16 @@ done
 echo "Acceso Permitido"
 ```
 
-> Si no supieses la contraseña, no sabrías como salir del programa. Cuando quieras cancela la ejecución de un programa que está en bucle, presiona las teclas **CTRL** y **c**. Si no funciona, prueba con las teclas **CTRL** y **d**. 
+> Si no supieses la contraseña, no sabrías como salir del programa. Cuando quieras cancelar la ejecución de un programa que está en bucle, presiona las teclas **CTRL** y **c**. Si no funciona, prueba con las teclas **CTRL** y **d**. 
+
+Otro tipo de bucles comunes son los bucles infinitos
+```bash
+while [ true ]; do
+  date
+  sleep 8s
+done
+```
+En este ejemplo vamos a mostrar la fecha cada 8 segundos. 
   
 ##### until 
 El bucle **until** es prácticamente igual al bucle **while**, con la diferencia de que se ejecutará mientras no se alcance la condición.  
