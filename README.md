@@ -1349,6 +1349,40 @@ El argumento __cdspell__ te permitirá utiliza cd sobre archivos cuando cometas 
 shopt -s cdspell
 ```
 
+##### globstar
+El argumento __globstar__ te permitirá utilizar **\*\*** para referenciar todos los archivos en el directorio y subdirectorios referenciados
+```bash
+shopt -s globstar
+```
+
+Con un ejemplo se entiende mejor. Digamos que tenemos la siguiente estructura de archivos:
+```bash
+test/
+├── adios.txt
+├── carpeta
+│   └── numeros.txt
+└── hola.txt
+```
+
+Si utilizamos el comando **cat test/\*\*** sin tener __globstar__ activado, se imprimirá:
+```bash
+adios
+cat: test/carpeta: Is a directory
+hola
+```
+
+Si hemos activado __globstar__, el resultado será:
+```bash
+cat: test/: Is a directory
+adios
+cat: test/carpeta: Is a directory
+1
+2
+3
+hola
+```
+
+
 ##### addPath
 La función **addPath** nos será útil en el capìtulo 9, añádela también a este archivo. Sirve para indicarle a Bash en que carpetas tenemos comandos.
 ```bash
