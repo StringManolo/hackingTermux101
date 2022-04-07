@@ -1126,7 +1126,12 @@ Si pones # al inicio o final de una linea, estás indicando que la linea a parti
 echo "Hola"
 echo "Adios" # Esta linea imprime Adios en pantalla
 ```
+  
+Bash te permite autompletar comandos, nombre de carpetas y ficheros... Pulsa la tecla tab para ello. Si hay varios resultados no sucederá nada, pero si vuelves a pulsar otra vez tab, los resultados disponibles se mostraran para que puedas tener una vista previa de que comando o archivo quieres autocompletar. Tendrás que escribir caracteres hasta que el texto que tengas escrito solo coincida con uno de los comandos o archivos disponibles.  
+  
+Si por ejemplo tienes un archivo que se llama miFoto_729272927282729172917291919372919172728191928372891.jpg, y quisieses eliminarlo, en lugar de escribir todo el nombre, podrías escribir solo **rm miFo** y pulsar la tecla tab para que el nombre se autocompletase. Si también existe otro archivo que se llama miFortaleza.txt, cuando pulsas tab, Bash no sabe cual de los 2 archivos autocompletar, ya que ambos empiezan por **miFo**. Si vuelves a pulsar tab, ambos saldrán en pantalla para indicarte que debes seguir escribiendo. **rm miFot** sería suciente para que se autocompletase miFoto_.... al pulsar tab.  
 
+> En Termux la tecla tab se representa por 2 flechas y esta ubicada entre **ESC** y **CTRL** 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
 -----
@@ -1257,6 +1262,90 @@ Una vez tengas tu palabra resaltada, puedes fijarla usando enter. Al estar la b�
 -----
 
 ## Capitulo 7: Configuración de Bash
+Bash tiene múltiples opciones de configuración y hay varias formas de configurarlo dependiendo del sistema. En Termux lo configuraremos utilizando el archivo .bashrc.  
+  
+Este archivo debemos crearlo en la carpeta Home. Usaremos vim para ello.
+```bash
+vim ~/.bashrc
+```
+
+Todos los comandos que escribamos en este archivo se ejecutarán cada vez que iniciemos Termux, o cuando iniciemos una nueva pestaña de Termux.  
+ 
+> Al final del capítulo veremos como activar todo lo que tengamos en el archivo sin necesidad de abrir una nueva terminal, para poder visualizar los cambios directamente en la terminal actual.  
+
+Lo primero será añadir el siguiente texto en el archivo:
+```bash
+# Si Bash no es interactivo, detiene la lectura de este archivo
+case $- in
+  *i*) 
+  ;;
+  
+  *) 
+  return
+  ;;
+esac
+```
+
+Este pequeño script/código sirve para que no se configuren las terminales de Bash que nosean interactivas. Esto sirve para evitar que se configure Bash cuando lo utilizemos para correr un comando. Por ejemplo Bash miArchivo.sh. En el [capítulo 9: Creando comandos](#cap%C3%ADtulo-9-creando-comandos) lo entenderás mejor.  
+  
+##### histappend
+El argumento histappend sirve para que el historial se comparta entre pestañas, ventanas y sesiones. Nos servirá para asegurarnos que si abrimos una nueva terminal, tengamos accedible el historial, permitiéndonos reutilizar los comandos sin tener que escribirlos de 0. Si lo quieres activar añádelo a una nueva linea:  
+```bash
+shopt -s histappend
+```
+
+##### checkwinsize
+El argumento checkwinsize hará comprobaciones automáticas tras dar o quitar zoom en Termux para ajustar las filas y columnas de las tablas que tengamos impresas en pantalla.  
+```bash
+shopt -s checkwinsize
+```
+
+##### autocd
+El argumento autocd nos permite omitir cd para entrar en carpetas. Es útil para todas aquellas carpetas que no compartan nombre con comandos instalados.
+```
+shopt -s autocd
+```
+
+Con este opción, si tienes una carpeta que se llama fotos, en lugar de escribir **cd fotos** para entrar en ella, podrás escribir directamente **fotos**. Si por ejemplo nombrases a tu carpeta **ls**, entonces no funcionaría porque estarías corriendo el comando **ls** en lugar de ingresar a la carpeta ls.
+
+##### cdable_vars
+El argumento cdable_var te permitirá utilizar cd con variables si el nombre de la variable no coincide con el de una carpeta a la que puedes hacer cd
+```
+shopt -s cdable_vars
+```
+
+Cuando activemos el archico .bashrc, podremos hacer lo siguiente para ir a la carpeta ejemplo (si esta existe en HOME) desde cualquier lugar.
+```bash
+EJEMPLO=/data/data/com.termux/files/home/ejemplo
+cd EJEMPLO
+```
+
+Si existiese una carpeta llamada **EJEMPLO**, cd entraría dentro de esta, si no existe es entonces cuando se comprobaría si *$EJEMPLO* existe y se haría cd a la ruta que tenga esta variable.
+
+##### addPath
+La función addPath nos será útil en el capìtulo 9, añádela también a este archivo. Sirve para indicarle a Bash en que carpetas tenemos comandos.
+```bash
+addPath() {
+  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+    PATH="${PATH:+"$PATH:"}$1";
+  fi
+}
+```
+
+##### alias
+En este archivo también podrás crear alias, que sirven para poder llamar a otros comando o carpetas utilizando nombres personalizados. Aquí un ejemplo con alias que sirven para añadir colores a algunos comandos. 
+```bash
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+```
+
+Ahora cuando escribas el comando **ls**, bash le añadirá el argumento **--color=auto** de forma transparente.  
+
+
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
