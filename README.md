@@ -1289,7 +1289,7 @@ esac
 Este pequeño script/código sirve para que no se configuren las terminales de Bash que no sean interactivas. Esto sirve para evitar que se configure Bash cuando lo utilizemos para correr un comando. Por ejemplo **bash miArchivo.sh**. En el [capítulo 9: Creando comandos](#cap%C3%ADtulo-9-creando-comandos) lo entenderás mejor.  
   
 ##### histappend
-El argumento __histappend__ sirve para que el historial se comparta entre pestañas, ventanas y sesiones. Nos servirá para asegurarnos que si abrimos una nueva terminal, tengamos accedible el historial, permitiéndonos reutilizar los comandos sin tener que escribirlos de 0. Si lo quieres activar añádelo a una nueva linea:  
+El argumento __histappend__ sirve para que el historial se comparta entre pestañas, ventanas y sesiones. Nos servirá para asegurarnos que si abrimos una nueva terminal, tengamos accesible el historial, permitiéndonos reutilizar los comandos sin tener que escribirlos de 0. Si lo quieres activar añádelo a una nueva linea:  
 ```bash
 shopt -s histappend
 ```
@@ -1302,7 +1302,7 @@ shopt -s checkwinsize
 
 ##### autocd
 El argumento __autocd__ nos permite omitir cd para entrar en carpetas. Es útil para todas aquellas carpetas que no compartan nombre con comandos instalados.
-```
+```bash
 shopt -s autocd
 ```
 
@@ -1310,7 +1310,7 @@ Con este opción, si tienes una carpeta que se llama fotos, en lugar de escribir
 
 ##### cdable_vars
 El argumento __cdable_vars__ te permitirá utilizar cd con variables si el nombre de la variable no coincide con el de una carpeta a la que puedes hacer cd.
-```
+```bash
 shopt -s cdable_vars
 ```
 
