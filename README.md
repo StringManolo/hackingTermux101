@@ -1131,7 +1131,27 @@ Bash te permite autompletar comandos, nombre de carpetas y ficheros... Pulsa la 
   
 Si por ejemplo tienes un archivo que se llama miFoto_729272927282729172917291919372919172728191928372891.jpg, y quisieses eliminarlo, en lugar de escribir todo el nombre, podrías escribir solo **rm miFo** y pulsar la tecla tab para que el nombre se autocompletase. Si también existe otro archivo que se llama miFortaleza.txt, cuando pulsas tab, Bash no sabe cual de los 2 archivos autocompletar, ya que ambos empiezan por **miFo**. Si vuelves a pulsar tab, ambos saldrán en pantalla para indicarte que debes seguir escribiendo. **rm miFot** sería suciente para que se autocompletase miFoto_.... al pulsar tab.  
 
-> En Termux la tecla tab se representa por 2 flechas y esta ubicada entre **ESC** y **CTRL** 
+> En Termux la tecla tab se representa por 2 flechas y esta ubicada entre **ESC** y **CTRL**  
+  
+En lugar de utilizar secuencias de caracteres para saltos de linea, puedes usar comillas simples
+```bash
+echo 'Hola
+Los saltos de linea también se imprimen asì
+No es genial?'
+```
+Si utilizas comillas simples, todo lo que escribas dentro será interpretado como texto, entre otras cosas esto te inhabilita de utilizar variables dentro. Ejemplo:
+```bash
+nombre=Manolo
+echo 'Mi nombre es $nombre'
+```
+
+Si utilizas **printf** en lugar de **echo**, si podrás insertar variables de la siguiente forma
+```bash
+nombre=Manolo
+printf 'Mi nombre es %s' $nombre
+```  
+
+
 [Tabla de Contenidos](#tabla-de-contenidos)
 
 -----
@@ -1322,6 +1342,13 @@ cd EJEMPLO
 
 Si existiese una carpeta llamada __EJEMPLO__, **cd** entraría dentro de esta, si no existe es entonces cuando se comprobaría si **$EJEMPLO** existe y se haría **cd** a la ruta que tenga esta variable.
 
+
+##### cdspell
+El argumento __cdspell__ te permitirá utiliza cd sobre archivos cuando cometas pequeños errores ortograficos. Si tienes una carpeta que se llama __ejemplo__ y escribes por error **cd ejemplos** Bash te corregirá el error automáticamente.
+```bash
+shopt -s cdspell
+```
+
 ##### addPath
 La función **addPath** nos será útil en el capìtulo 9, añádela también a este archivo. Sirve para indicarle a Bash en que carpetas tenemos comandos.
 ```bash
@@ -1330,6 +1357,8 @@ addPath() {
     PATH="${PATH:+"$PATH:"}$1";
   fi
 }
+
+export addPath
 ```
 
 ##### alias
