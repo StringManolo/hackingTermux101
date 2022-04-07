@@ -1136,11 +1136,13 @@ VI y VIM son editores de texto muy completos. VI es la versión mas pequeña y s
   
 Dado lo extenso de VI y VIM, pondré el foco en los comandos y atajos que yo mas utilizo, dejando de lado muchísima funcionalidad útil. VIM por si solo daría para un libro entero y no es mi idea reinventar la rueda escribiendo un libro de VIM, asique centrando el tiro. 
 
-#### Cómo instalar VIM
+#### Instalar VIM
 VI suele venir instalado, pero VIM no. Es un paquete mas, asique usaremos el comando que ya conocemos para instalar paquetes en Termux
 ```bash
 pkg install vim
 ```
+
+#### Abrir un fichero
 
 Para abrir un archivo que ya existe o crear uno nuevo, usaremos el siguiente comando
 ```bash
@@ -1151,19 +1153,27 @@ Verás que se abre una nueva pantalla desconocida hasta ahora. A lo primero que 
   
 Si el archivo ya existía, el mensaje será: **"miListaDeLaCompra.txt" xL xB** donde xL mostrará el número de lineas que tiene el archivo y xB el número de Bytes (un caracter suele pesar al menos 1 Byte, asique es un buen indicador del número aproximado de caracteres que tiene el archivo) que tiene.  
   
+#### Escribir en un fichero
+
 Si pulsas la tecla **i**, verás como el estado cambia a **-- INSERT --**. Esto nos indica que ahora nos encontramos en modo inserción de texto. Si ahora pulsas las teclas, podrás escribir en el archivo al igual que haces en el mítico bloc de notas de Windows.  
 
 Una vez que tengas tu texto escrito, puedes salir del modo __inserción__ pulsando la tecla ESC. Si te fijas ahora, encima de la barra de estado, que se encontrará vacia tras pulsar ESC, se mostrará el símbolo **[+]** que nos indica que el archivo tiene cambios sin guardar.  
-  
+ 
+#### Guardar los cambios
+
 Hay varias formas de guardar los cambios. Si queremos guardar los cambios pero continuar usando VIM, usaremos la combinación de teclas **ESC :w**, veras que se muestra **:w** en la barra de estado. Pulsa Enter para introducir la secuencia. El **[+]** desaparecerá, indicando que ya no hay nuevos cambios sin guardar. En la barra de estado verás que se muestra el mismo tipo de mensaje que antes y al final hay una nueva palabra __written__ indicándonos que se han escrito los cambios en el archivo.  
   
 Si quieres guardar los cambios y cerrar VIM, en lugar de **:w**, debes utilizar **:x**    
-  
+
+#### Salir de VIM
+
 Si no hay cambios pendientes en el archivo, puedes cerrar VIM utilizando **:q**. Recuerda que no debes estar en el modo __insercion__, si estás en ese modo, en su lugar acabarás escribiendo el texto ":q" en el documento.  
   
 Si tienes cambios en el documento pero quieres salir de todas formas y descartar los cambios que hiciste, debes introducir **:q!**. Solo se descartarán los cambios que no guardases con **:w**  
-  
-En VIM puedes tocar sobre el texto del fichero para posicionar el cursor. Tras tener el cursor posicionado, puede tocar el caracter **i** para entrar en modo __insercion__ en el caracter en el que esté el cursor. Si quieres posicionarte para escribir delante de donde tienes el cursor utiliza **a** en lugar de **i**  
+ 
+#### Navegación
+
+En VIM puedes tocar sobre el texto del fichero para posicionar el cursor. Tras tener el cursor posicionado, se puede usar el caracter **i** para entrar en modo __insercion__ en el caracter en el que esté el cursor. Si quieres posicionarte para escribir delante de donde tienes el cursor utiliza **a** en lugar de **i**  
   
 También puedes entrar en modo inserción al principio de la linea usando **I**, al inicio de la linea siguiente (añadiendo un salto de linea en el proceso) utilizando **o**, en la linea anterior (añadiendo un salto de linea en el proceso) utilizando **O**, en el caracter actual (eliminándolo en el proceso) utilizando **x**  
 
@@ -1173,7 +1183,9 @@ Si quieres moverte a la linea anterior **k**, a la linea siguiente **j**, al car
 
 Si quieres moverte al inicio del archivo **gg**, a la última linea del archivo **G**. Puedes ir a lineas concretas poniendo **:** y el número de la linea concreta a la que quires ir. Por ejemplo si quieres ir a la tercera linea del fichero **:3** y pulsas enter.
 
-También puedes eliminar palabras, lineas, caracteres o parte concretas del archivo. Los comandos son los mismos que los de mover el cursor, pero anteponiendo **d**. Ejemplos:
+#### Eliminar contenido
+
+También puedes eliminar palabras, lineas, caracteres o partes concretas del archivo. Los comandos son los mismos que los de mover el cursor, pero anteponiendo **d**. Ejemplos:
 
 ```bash
 # Recuerda que estos son comentarios, y su única finalidad es que tu los leas
@@ -1187,6 +1199,8 @@ dG   # Eliminar desde el cursor hasta el final del archivo
 d16  # Eliminar desde el cursor 16 lineas
 ```
 
+#### Substituir texto
+
 En VIM se pueden substituir todas las palabras de un texto de forma sencilla usando expresiones regulares. Si quieres substituir todas las palabras que digan "hola" por "adios", utilizas el comando
 ```bash
 :%s/hola/adios/g   # substituye todos los hola por adios
@@ -1197,6 +1211,8 @@ En VIM se pueden substituir todas las palabras de un texto de forma sencilla usa
 
 A veces nos equivocamos y queremos deshacer las últimas acciones, para ello puedes usar **u**. También puedes rehacer los cambios que hayas eliminado con **u** utilizando **CTRL r**. Si cierras VIM, se perderá el historial y no podrás deshacer ni rehacer.  
   
+#### Modo Visual
+
 A parte del modo __comando__ que estamos usando y del modo __inserción__, también hay un modo visual al que podemos acceder desde el modo __comando__ pulsando **v**.  
   
 Una vez estás en el modo visual, podras mover el cursor con las teclas para remarcar un texto. Una vez tienes el texto marcado puedes realizar múltiples acciones sobre él.   
@@ -1212,6 +1228,7 @@ U    # Convierte a mayúsculas
 
 > También puedes substituir palabras del texto seleccionado usando expresiones regulares
 
+#### Manejo de ventanas y pestañas
 
 En VIM también puedes abrir múltiples ventanas con la combinación **CTRL w v**. Cada vez que pulses esta combinación, abrirás una ventana nueva. Si prefieres que la ventana se abra debajo de la actual en lugar de al lado, utiliza **CTRL w s**. Puedes combinarlas y tener ambos tipos de ventanas abiertas a la vez.  
 
@@ -1219,12 +1236,13 @@ Puedes modificar el ancho de la ventana usando **CTRL w >** para aumentar su anc
 
 Puedes modificar la altura de la ventana usando **CTRL w +** para aumentarla o **CTRL w -** para reducirla.    
   
-
 Si vas a cerrar el archivo actual, para abrir otro distinto, en su lugar puedes hacer directamente **:open nombreDelArchivo.txt**, sirve tanto para nuevos archivos, como para archivos que ya existen. 
 
 Otra opción para abrir un nuevo archivo, esta vez, sin cerrar el actual es **:e nombreDelArchivo.txt**. Puedes cambiar entre archivos utilizando **:bn** y **:bN**  
 
 La opción **:tabnew ejemplo.txt** sirve para abrir el archivo indicado en una nueva pestaña. Puedes moverte entre las pestañas abiertas utilizando **:b#**
+
+#### Realizar búsquedas
 
 Puedes buscar palabras si pones una **/**. Ejemplo:
 ```bash
