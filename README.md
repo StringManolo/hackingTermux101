@@ -1521,6 +1521,14 @@ export darkcyan=$'\e[0;36m'           # cian oscuro
 export underlinedarkgray=$'\e[0;30m'  # subrayado gris oscuro
 ```
 
+Ahora podemos usar los colores, por ejemplo para resaltar palabras de los manuales:
+```bash
+export LESS_TERMCAP_mb=${green};
+export LESS_TERMCAP_md=${green};
+```
+
+> Estos colores se aplicarán a las páginas mostradas por el comando **man**
+
 ##### prompts
 La prompt de la terminal en Termux solo muestra un dolar. Podemos usar distintos comandos para configurarla. Ya sea por utilidad o por estética. Aquí tienes el código de mi prompt:
 ```bash
@@ -1529,13 +1537,24 @@ PS2='${blue}.${endc}  '
 ```
 ![Prompt de Bash, ps1](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/ps1.jpg)
 
-Como ves, esta prompt pinta la fecha, la hora, minutos, segundos... y el directorio actual de trabajo. Así sabes siempre en que carpeta te encuentras sin necesidad de recurrir al comando **pwd** directamente. 
+Como ves, esta prompt pinta la fecha, la hora, minutos, segundos... y el directorio actual de trabajo. Así sabes siempre en que carpeta te encuentras sin necesidad de recurrir al comando **pwd** directamente.   
+  
+Para que se apliquen inmediatamente todos los cambios usaremos el comando **source**
+```bash
+source ~/.bashrc
+```
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
 -----
 
 ## Capítulo 8: Sistema de Ficheros
+En Termux así como en GNU/Linux, disponemos de un sistema base que incluye múltiples archivos y carpetas. Vamos a conocer mejor la estuctura del sistema de ficheros de Termux.  
+  
+
+
+
+
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
