@@ -1195,7 +1195,10 @@ Si quieres guardar los cambios y cerrar VIM, en lugar de **:w**, debes utilizar 
 Si no hay cambios pendientes en el archivo, puedes cerrar VIM utilizando **:q**. Recuerda que no debes estar en el modo __insercion__, si estás en ese modo, en su lugar acabarás escribiendo el texto ":q" en el documento.  
   
 Si tienes cambios en el documento pero quieres salir de todas formas y descartar los cambios que hiciste, debes introducir **:q!**. Solo se descartarán los cambios que no guardases con **:w**  
- 
+
+#### Cifrar un archivo
+Es posible cifrar un archivo utilizando **:X**. VIM te pedirá una contraseña y que repitas tu contraseña. Una vez cifrado debes guardar los cambios. Tras guardar los cambios, si no saliste de VIM en la barra de estado se te indicará el algoritmo de cifrado utilizado. En mi caso es **blowfish2**. 
+
 #### Navegación
 
 En VIM puedes tocar sobre el texto del fichero para posicionar el cursor. Tras tener el cursor posicionado, se puede usar el caracter **i** para entrar en modo __insercion__ en el caracter en el que esté el cursor. Si quieres posicionarte para escribir delante de donde tienes el cursor utiliza **a** en lugar de **i**  
@@ -1561,6 +1564,122 @@ En Termux así como en GNU/Linux, disponemos de un sistema base que incluye múl
 -----
 
 ## Capítulo 9: Creando comandos
+Los comandos de Bash pueden ser alias y funciones como ya vimos en el [capitulo 7: Configuración de Bash](#capitulo-7-configuraci%C3%B3n-de-bash). La forma mas común de crear comandos es creando un archivo con código Bash y añadir en la primera linea un shebang. Vamos a crear un archivo que solo diga "Hola".  Ponle de nombre saludar con el comando **vim saludar**.
+```bash
+#!/usr/bin/env bash
+
+echo "Hola"
+```
+
+Para poder ejecutar el archivo debes darle permisos:
+```bash
+chmod 775 saludar
+```
+
+Si corres el comando **ls**, verás que saludar sale de color verde. Esto significa que tiene permisos de ejecución. Para correr ejecutables usaremos el comando **./saludar**
+
+Para poder utilizar el comando desde cualquier lugar del sistema debes mover el fichero s alguna de las carpetas listadas en la variable **"$PATH"**. Puedes imprimirla para ver el listado de carpetas. En este ejemplo, movemos el archivo a /bin, en Termux puedes correr el siguiente comando:
+```bash
+mv saludar ~/../usr/bin
+```
+
+Ahora puedes ejecutar el comando saludar desde cualquier lugar y omitiendo el **./**
+```bash
+saludar
+```
+
+La gran mayoría de veces que creemos comandos, querremos aceptar argumentos. Vamos a añadir funcionalidad a nuestro comando saludar. Puedes remplazar el contenido de saludar con el comando **vim ~/../usr/bin/saludar**, por el siguiente:  
+```bash
+#!/usr/bin/env bash
+
+argumentos="help,name:"
+argumentosSimples="hn:"
+
+procesados=$(getopt --options=$argumentosSimples --longoptions=$argumentos --name "$0" -- "$@")
+
+ayuda() {
+  echo -e "This commands says hi in spanish\nExample: saludar --name Manolo\n";
+  exit
+}
+
+while true; do
+  case "$1" in
+    -h | --help)
+      ayuda;
+      shift
+    ;;
+
+    -n | --name)
+      name="$2"
+      shift 2
+    ;;
+
+    --)
+      shift
+      break
+    ;;
+
+    *)
+       echo "Error"
+       exit 3
+    ;;
+  esac
+done
+
+if [ -n "$name" ]; then
+  echo "Hola $name"
+else
+  echo "Hola"
+fi
+```
+
+Esta sería la forma mas completa para poder procesar argumentos en Bash. Si corres el comando **saludar**, veras que te dice __Hola__. Ahora también acepta varios argumentos. Por ejemplo el argumento name (nombre en español). **saludar --name Manolo** y también el argumento **--help**. Ambos argumentos admiten su versión cortas **-n**, **-h** respectivamente.  
+
+  
+Explicación del código:  
+```bash
+#!/usr/bin/env bash
+```
+El shebang sirve para indicar a la consola que tipo de programa es. En este caso un binario de Bash. Si utilizases código Python o cualquier otro lenguaje, podrías remplazar **bash** por python o el ejecutable que correspondiese. En este caso usamos lenguaje **Bash**, asique indicamos __bash__ en el shebang.  
+  
+```bash
+argumentos="help,name:"
+```
+En la variable **$argumentos** almacenamos una lista de argumentos léxicos separados por comas. Si quieres que uno de los argumentos acepte texto del usuario debes añadirle **:**. Por ejemplo **argumentos="nombre:,edad:,ayuda,domicilio:** acepta texto para los argumentos nombre, edad y domicilio.
+  
+```bash
+argumentosSimples="hn:"
+```  
+En la variable **$argumentosSimples** almacenamos una lista (sin comas) de argumentos simples. Por ejemplo **n:e:ad:** serían los argumentos cortos para nombre, edad, ayuda y domicilio.  
+  
+```bash
+procesados=$(getopt --options=$argumentosSimples --longoptions=$argumentos --name "$0" -- "$@")
+```
+En la variable procesados almacenamos el resultado de ejecutar el comando **getopt**. Este comando sirve para procesar argumentos en Bash.  
+A **getopt** le pasamos los argumentos que hemos guardado previamente para que los procese.  
+  
+El argumento --name de **getopt** sirve para indicarle a **getopt** el nombre de nuestro comando. En este caso utilizamos la variable **"$0"**.  
+  
+> La variable **$0** almacena el primer argumento de la terminal (separado por espacios). Si por ejemplo corremos el comando **saludar --nombre manolo** tendríamos "saludar" en **$0**, --nombre en **$1** y manolo en **$2**. En los comandos/scripts/archivos de Bash, asi como en funciones, también disponemos de la variable **$#** que contiene el número de argumentos del comando.  
+  
+> En el caso de **saludar --nombre manolo** la variable "$#" imprime 2. (El nombre del comando no se cuenta, ya que **$#** solo imprime el número de argumentos. Si usases el comando **bash ./saludar --nombre manolo** también se omitiría el comando **bash**.  
+  
+> La variable "$@" contiene todos los argumentos. Al igual que en **$#** se omite el nombre del comando. 
+
+Dentro del **switch case** veras 3 comandos nuevos. **shift**, **break** y **exit**:
+##### shift  
+El comando **shift** permite "avanzar" el nùmero indicado de argumentos. Si por ejemplo tenemos el comando **saludar hola que tal estas**, detectamos el argumento __hola__ en un case y ejecutamos shift, se avanza hacia el argumento __que__. Si ponemos **shift 2**, avanzamos hasta el argumento __tal__, y asì sucesivamente. Esto nos permite ignorar elementos en un bucle.  
+  
+##### break
+El comando **break** nos permite finalizar un bucle sin dejarlo terminar de ejecutarse como haría normalmente, asì podremos avanzar en el programa cancelando el resto de iteraciones del bucle.  
+  
+##### exit
+El comando exit utilizando dentro de un script, nos permite indicar que queremos que se finalice el programa inmediatamente y el comando enviará una señal de cierre a **Bash**. 
+  
+El resto del código que queda por analizar ya lo vimos en ejemplos similares en el [capítulo 5: Introducción a Bash](#cap%C3%ADtulo-5-introducci%C3%B3n-a-bash).  
+  
+
+
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
