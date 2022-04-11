@@ -1677,15 +1677,288 @@ El comando **break** nos permite finalizar un bucle sin dejarlo terminar de ejec
 El comando exit utilizando dentro de un script, nos permite indicar que queremos que se finalice el programa inmediatamente y el comando enviará una señal de cierre a **Bash**. 
   
 El resto del código que queda por analizar ya lo vimos en ejemplos similares en el [capítulo 5: Introducción a Bash](#cap%C3%ADtulo-5-introducci%C3%B3n-a-bash).  
-  
+ 
+Bash es un lenguaje pontente y no existe una única forma de hacer las cosas. Puedes parsear los argumentos perfectamente usando un bucle for y recorriendo los argumentos
+```bash
+#!/usr/bin/bash
 
+for (( i=1; i <= "$#"; i++ )) do # bucle for clásico
+  next=$((i+1)) # Guarda el siguiente argumento en la variable next
+  if [[ ${!i} == "-h" || ${!i} == "--help" ]]; then # Si el argumento es -h o --help
+    echo "Este es el mansaje de ayuda" 
+    exit
+  elif [[ ${!i} == "-n" || ${!i} == "--name" ]]; then
+    echo "Hola ${!next}"
+    exit
+  fi
+done
+```
 
+Esta forma de hacer el mismo comando **saludar** tiene la deventaja de que no puede procesar múmtiples argumentos como **saludar -hn Manolo**, pero tiene la ventaja de que el código es mas corto.  
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
 -----
 
 ## Capítulo 10: Comandos Intermedios
+Los sistemas GNU/Linux tiene una inmensidad de comandos distintos. Muchos de ellos vienen instalador por defecto y otros podremos descargarlos. En este capítulo prestaremos atención a los mas populares.  
+
+
+### 7z
+Comprime archivos en múltiples formatos con muy buena compresión.
+
+### apt
+Descarga paquetes de Gnu/Linux
+
+### apt-get
+Descarga paquetes de Gnu/Linux
+
+### awk
+Lenguaje de programación orientado al manejo de texto
+
+### base64
+Codifica o decodifica base64
+
+### cal
+Calendario
+
+### clang 
+Compilador de C/C++/Objective C
+
+### curl
+Cliente de múltiples protolos. Principalmente utilizado por su capacidad como cliente HTTP
+
+### dialog
+Utiliza diálogos en la terminal
+
+### dig
+Consulta los registro DNS de un dominio
+
+### dpkg
+Gestor de paquetes de Debian
+
+### espeak
+Comando text-to-speach que reproduce el texto en el altavoz o crea un archivo reproducible
+
+### figlet
+Crea textos grandes a base de caracteres. 
+
+### find
+Busca archivos en sistema de ficheros
+
+### file
+Mueatra meta información a cerca de ub fichero. 
+
+### gcc
+Compila un programa escrito en C
+
+### g++
+Compila un programa escrito en C++
+
+### gdb
+Debuger para encontrar erroes en programas
+
+### gh
+Utiliza github en la terminal
+
+### git
+Maneja repositorios
+
+### grep
+Encuentra palabras y patrones en un texto
+
+### go
+Compila un programa escrito en Go
+
+### gotty
+Comparte tu terminal para que otras personas puede ver lo mismo que tú
+
+### gzip
+Comprime y descomprime archivos con extensión .z
+
+### head
+Muestra solo el número indicado de caracteres
+
+### htop
+Muestra información sobre procesos
+
+### httping
+Mide la latencia de un servidor web/http
+
+### hugo
+Generador de sitios estáticos
+
+### iverilog
+Lenguaje de programación para modelado de circuitos electrónicos
+
+### jq
+Comando para parsear JSON
+
+### less
+Abre archivos muy grandes rápidamente cargándolo en bloques
+
+### lighttpd
+Servidor web rápido, pequeño y flexible
+
+### lua
+Ejecuta código lua
+
+### luarocks
+Instala módulos de lua
+
+### logcat
+Accede al registro de mensajes de Android para debuggear aplicaciones
+
+### lynx
+Navegador Web de terminal
+
+### make
+Compila proyectos
+
+### md5sum
+Obten un hash (utilizando el algoritmo md5) de un archivo/texto
+
+### more
+Muestra texto en pantalla, facilita la navegación
+
+### mongodb
+Base de datos NoSQL
+
+### mono
+Compila C# en GNU/Linux
+
+### mpg123
+Reproductor de música
+
+### nc
+Herramienta con múltiples utiidades de red integradas
+
+### netlify
+Maneja la creación de sitios web en netlify
+
+### nmap
+Escaner de puertos de red
+
+### ncat
+Versión mejorada de nc, se instala conjuntamente a nmap
+
+### nginx
+Servidor Web y proxy web muy completo.
+
+### ngrok
+Comparte tus servicios sin abrir puertos
+
+### nodejs
+Ejecuta código javascript y crea aplicaciones de todo tipo.
+
+### npm
+Instala paquetes de node
+
+### openssl
+Suit de algorimtos criptográficos
+
+### openvpn
+Establece un tunel VPN
+
+### perl
+Intérprete del lenguaje de programación Perl
+
+### php
+Intérprete del lenguaje de programación PHP
+
+### postgresql
+Base de datos SQL
+
+### pkill
+Mata un proceso
+
+### proot
+Emula un entorno root
+
+### proxychains-ng
+Utiliza cadenas de proxies
+
+### python
+Intérprete del lenguaje python2
+
+### python3
+Intérprete del lenguaje python3
+
+### qemu
+Emula procesadores y sistemas operativos
+
+### quickjs
+Pequeño motor y librería de javascript
+
+### radare2
+Desensamblador, debugger y editor hexadecimal para trabajar con binarios
+
+### ruby
+Intérprete para el lenguaje de programación Ruby
+
+### rust
+Compilador código Rust
+
+### scp
+Copia y sube archivos utilizando un tunel SSH
+
+### sed
+Filtra y remplaza texto
+
+### shasum
+Obten un hash de un archivo/text utilizando sha
+
+### ssh
+Ingresa a máquinas remotas m
+
+### steghide
+Esconde texto en imágenes y audios
+
+### strings
+Imprime todo lo que pueda ser interpretado como texto de un archivo de bytes/caracteres
+
+### sqlite
+Pequeña y potente base de datos SQL
+
+### tail
+Muestra el final de un fichero o texto
+
+### tar
+Comprime y descomprime archivos en múltiples formatos
+
+### top
+Muestra un resumen de los procesos del sistema
+
+### tor
+Establece un circuito virtual en la red Tor.
+
+### torsocks
+Utiliza un comando con Tor. 
+
+### tsc
+Compilador del lenguaje Typescript
+
+### unrar
+Comprime y descomprime archivos .rar
+
+### unzip
+Comprime y descomprime archivos .zip
+
+### which
+Muestra la ruta de instalación de un archivo.
+
+### whois
+Cliente que nuestra información sobre direcciones
+
+### xxd
+Muestra un fichero como hexadecimal
+
+### yes
+Confirma automáticamente las opciones interactivas de un comando
+
+
+ 
+
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
