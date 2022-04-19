@@ -118,6 +118,10 @@ Bienvenido a la primera edición del libro Termux Hacking 101. Aquí vas a apren
 
 Termux es un emulador de terminal para Android y un entorno de Linux que funciona directamente sin necesidad de rootear el dispositivo o configurarlo. Un sistema base mínimo se instala automáticamente - Y muchos paquetes adicionales están disponibles desde su gestor de paquetes.
 
+Un pequeño inciso antes de comenzar. Este libro es 100% gratuito y se financia a través e donaciones. Si quieres contribuir a la creación de este libro, puedes realizar una tranferencia a la cuenta ```ES59 2080 5029 1630 0011 2266``` indicando como motivo de la transferencia "Libro Termux". Por donaciones de 20$ o más, se ofrece un día de clases particulares por Telegram. Indica tu nombre de Telegram en el asunto de la tranferencia. DONAR ES OPCIONAL, puedes leer el libro aunque no dones. Por qué deberías donar entonces? Si obtengo múltiples donaciones, me animará a seguir escribiendo el libro o a sacar nuevos libros.  
+  
+**Disfrútalo!**
+
 [Tabla de Contenidos](#tabla-de-contenidos)  
 
 -----
