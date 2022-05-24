@@ -431,7 +431,12 @@ Instala un comando en Termux.
 pkg install tree
 ```
 
-Una vez instalado, ya podras utilizarlo. Tree es similar a ls pero también muestra todos los subdirectorios.
+Una vez instalado, ya podras utilizarlo.   
+Es posible que se muestre un error si el repositorio por defecto no está disponible. Si este es tu caso, corre el comando termux-change-repo. Presiona enter sobre Main Repository para poder ver un listado de los servidores disponibles y cambia el servidos moviéndote por el listado hacia abajo, presionando espacio para marcar tu selección y enter para guardar los cambios.
+
+
+
+Tree es similar a ls pero también muestra todos los subdirectorios.
 ```bash
 tree
 ```
@@ -1556,8 +1561,100 @@ source ~/.bashrc
 -----
 
 ## Capítulo 8: Sistema de Ficheros
-En Termux así como en GNU/Linux, disponemos de un sistema base que incluye múltiples archivos y carpetas. Vamos a conocer mejor la estuctura del sistema de ficheros de Termux.  
-  
+En Termux así como en GNU/Linux, disponemos de un sistema base que incluye múltiples archivos y carpetas. Vamos a conocer mejor la estuctura del sistema de ficheros de Termux. (Puede variar un poco entre versiones)  
+
+###### com.termux/ 
+Carpeta privada de la app Termux
+
+###### com.termux/files/
+Archivos de la aplicación
+
+###### com.termux/files/home/
+Carpeta principal del usuario
+
+###### com.termux/files/home/.termux/
+Archivos de configuración de la app como atajos de teclado de Termux
+
+###### com.termux/files/home/.termux/termux.properties
+Archivo con la configuración de la app de Termux. Atajos y ajustes de teclado, modo pantalla completa, etc. Corre el comando termux-reload-settings para aplicar los cambios sin necesidad de reiniciar la app. 
+
+###### com.termux/files/home/storage/
+Se activa con el comando termux-setup-storage y te permite acceder a los archivos internos del dispositivo.
+
+###### com.termux/files/home/storage/dcim/
+La usa la cámara para guardas las fotografías de la cámara
+
+###### com.termux/files/home/storage/downloads/
+Carpeta por defecto de Android para descargas
+
+###### com.termux/files/home/storage/movies/
+Carpeta para almacenar los videos del dispositivo
+
+###### com.termux/files/home/storage/music/
+La música se puede almacenar aquì
+
+###### com.termux/files/home/storage/pictures/
+Las imágenes del dispositivo se pueden guardar aquí
+
+###### com.termux/files/home/storage/shared/
+Carpeta compartida de propósito general para todas las apps
+
+###### com.termux/files/usr/
+Imita la carpeta / de GNU/Linux
+
+###### com.termux/files/usr/bin/
+Carpeta principal para ejecutables/comandos de Termux
+
+###### com.termux/files/usr/etc/
+Archivos de configuración diversos relacionados con el sistema o programas
+
+###### com.termux/files/usr/etc/alternatives
+Selecciona los ejecutables por defecto para trabajar con ciertos tipos de archivos. Por ejemplo el enlace directo al editor de texto de Termux por defecto.
+
+###### com.termux/files/usr/etc/apt/
+Archivos del gestor de paquetes APT
+
+###### com.termux/files/usr/etc/apt/apt.conf.d
+Archivos de configuración de APT
+
+###### com.termux/files/usr/etc/apt/preferences.d
+Archivos para configurar las preferencias de APT, por ejemplo si quieres priorizar que se descarge la versión mas reciente de los paquetes por defecto, priorizar que se descargen los paquetes estables, ....
+
+###### com.termux/files/usr/etc/apt/sources.list
+
+###### com.termux/files/usr/etc/apt/trusted.gpg
+###### com.termux/files/usr/etc/apt/trusted.gpg.d
+###### com.termux/files/usr/etc/apt/trusted.gpg.d/grimler.gpg
+###### com.termux/files/usr/etc/apt/trusted.gpg.d/kcubeterm.gpg
+###### com.termux/files/usr/etc/apt/trusted.gpg.d/landfillbaby.gpg
+###### com.termux/files/usr/etc/apt/trusted.gpg.d/termux-autobuilds.gpg
+###### com.termux/files/usr/etc/apt/trusted.gpg.d/xeffyr.gpg
+###### com.termux/files/usr/etc/bash.bashrc
+###### com.termux/files/usr/etc/bindresvport.blacklist
+###### com.termux/files/usr/etc/inputrc
+###### com.termux/files/usr/etc/motd
+###### com.termux/files/usr/etc/motd-playstore
+###### com.termux/files/usr/etc/nanorc
+###### com.termux/files/usr/etc/netconfig
+###### com.termux/files/usr/etc/profile
+###### com.termux/files/usr/etc/profile.d
+###### com.termux/files/usr/etc/profile.d/gawk.csh
+###### com.termux/files/usr/etc/profile.d/gawk.sh
+###### com.termux/files/usr/etc/profile.d/init-termux-properties.sh
+###### com.termux/files/usr/etc/termux-login.sh
+###### com.termux/files/usr/etc/tls
+###### com.termux/files/usr/etc/tls/cert.pem
+###### com.termux/files/usr/etc/tls/openssl.cnf
+###### com.termux/files/usr/etc/unbound
+###### com.termux/files/usr/etc/unbound/unbound.conf
+###### com.termux/files/usr/include
+###### com.termux/files/usr/lib
+###### com.termux/files/usr/libexec
+###### com.termux/files/usr/opt
+###### com.termux/files/usr/share
+###### com.termux/files/usr/tmp
+###### com.termux/files/usr/var
+
 
 
 
