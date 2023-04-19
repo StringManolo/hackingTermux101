@@ -1850,7 +1850,7 @@ Esta forma de hacer el mismo comando **saludar** tiene la deventaja de que no pu
 -----
 
 ## Capítulo 10: Comandos Intermedios
-Los sistemas GNU/Linux tiene una inmensidad de comandos distintos. Muchos de ellos vienen instalador por defecto y otros podremos descargarlos. En este capítulo prestaremos atención a los mas populares.  
+Los sistemas GNU/Linux tiene una inmensidad de comandos distintos. Muchos de ellos vienen instalados por defecto y otros podremos descargarlos. En este capítulo prestaremos atención a los mas populares.  
 
 
 ### 7z
