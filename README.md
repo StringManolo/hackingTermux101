@@ -2164,6 +2164,32 @@ proot-distro login soscw --isolated --pwd
 ----
 
 ## Capitulo 12: Introducción a Sistemas Linux
+Linux es un sistema operativo libre y gratuito que ha ganado una gran popularidad debido a su estabilidad, seguridad y flexibilidad. Aunque Linux es conocido por ser utilizado en servidores, también es posible utilizarlo en dispositivos móviles como smartphones y tablets.
+
+#### ¿Qué es Linux?
+Linux es un sistema operativo similar a Windows o macOS, pero con una diferencia importante: es de código abierto. Esto significa que cualquiera puede descargar el código fuente de Linux y modificarlo para adaptarlo a sus necesidades. Además, Linux está disponible de forma gratuita para cualquier persona que quiera utilizarlo.
+
+#### ¿Qué es una distribución de Linux?
+Aunque Linux es un sistema operativo por sí solo, existen muchas distribuciones de Linux disponibles, cada una con sus propias características y enfoques. Una distribución de Linux es una versión de Linux que incluye un conjunto de programas y aplicaciones preinstalados y una interfaz de usuario específica. Algunas distribuciones de Linux están diseñadas para usuarios principiantes, mientras que otras están diseñadas para usuarios avanzados.
+
+
+#### Distribuciones Linux
++ Ubuntu 
+Es una de las distribuciones de Linux más populares y se utiliza ampliamente en todo el mundo. Es conocida por su facilidad de uso y su gran cantidad de aplicaciones disponibles. También tiene una gran comunidad de usuarios que puede proporcionar ayuda y soporte.  
++ Debian
+Es una distribución de Linux estable y confiable. Está diseñada para ser utilizada en servidores, pero también es adecuada para usuarios de escritorio. Debian se enfoca en la estabilidad y la seguridad, por lo que sus actualizaciones son más lentas que en otras distribuciones.
+
++ Fedora
+Es una distribución de Linux que está diseñada para usuarios avanzados. Incluye herramientas de desarrollo y es conocida por ser una plataforma para nuevas tecnologías. Fedora es la distribución de prueba para Red Hat Enterprise Linux, que es utilizado en empresas. 
+
++ Arch Linux
+Es una distribución de Linux que se enfoca en la simplicidad y el minimalismo. Está diseñada para usuarios avanzados que desean un control completo sobre su sistema. Arch Linux es una distribución rolling release, lo que significa que las actualizaciones se liberan continuamente.
+
++ Kali Linux
+Es una distribución de Linux especializada en seguridad informática. Incluye una gran cantidad de herramientas de hacking ético y pruebas de penetración.
+
++ Alpine
+Está diseñada para ser liviana y segura. Es popular en entornos de contenedores y en dispositivos de IoT.
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
