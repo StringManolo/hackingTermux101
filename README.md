@@ -1621,41 +1621,89 @@ Archivos de configuración de APT
 Archivos para configurar las preferencias de APT, por ejemplo si quieres priorizar que se descarge la versión mas reciente de los paquetes por defecto, priorizar que se descargen los paquetes estables, ....
 
 ###### com.termux/files/usr/etc/apt/sources.list
+Este es un archivo de configuración de APT (el sistema de gestión de paquetes de Debian) que indica a APT dónde buscar paquetes para instalar. En este caso, se refiere a los repositorios que se pueden usar en Termux.
 
 ###### com.termux/files/usr/etc/apt/trusted.gpg
+Archivo de claves públicas utilizados por APT para verificar la autenticidad de los paquetes descargados de los repositorios. trusted.gpg contiene las claves de confianza que se aplican a todos los repositorios.  
+
 ###### com.termux/files/usr/etc/apt/trusted.gpg.d
-###### com.termux/files/usr/etc/apt/trusted.gpg.d/grimler.gpg
-###### com.termux/files/usr/etc/apt/trusted.gpg.d/kcubeterm.gpg
-###### com.termux/files/usr/etc/apt/trusted.gpg.d/landfillbaby.gpg
-###### com.termux/files/usr/etc/apt/trusted.gpg.d/termux-autobuilds.gpg
-###### com.termux/files/usr/etc/apt/trusted.gpg.d/xeffyr.gpg
+Trusted.gpg.d es un directorio que contiene archivos adicionales de claves de confianza para repositorios específicos.
+
 ###### com.termux/files/usr/etc/bash.bashrc
+Este es un archivo de configuración de shell de Bash, que se ejecuta cada vez que se inicia una sesión de Bash en Termux. Aquí se pueden agregar alias, variables de entorno y otras configuraciones personalizadas para Bash.
+
 ###### com.termux/files/usr/etc/bindresvport.blacklist
+Se utiliza para especificar los puertos que deben evitarse al enlazar un socket en el sistema. Los puertos incluidos en este archivo son los que están reservados por el sistema operativo y no deben ser utilizados por aplicaciones normales, ya que pueden causar conflictos con otros servicios del sistema. El archivo puede ser editado para agregar o quitar puertos de la lista negra según sea necesario.
+
+
 ###### com.termux/files/usr/etc/inputrc
+Este es un archivo de configuración de readline, que controla el comportamiento de la entrada de texto en la línea de comandos. Aquí se pueden configurar atajos de teclado y otras opciones relacionadas con la entrada de texto.
+
 ###### com.termux/files/usr/etc/motd
+Archivo de mensaje de bienvenida que se muestra al iniciar sesión en la terminal.
+
 ###### com.termux/files/usr/etc/motd-playstore
+Archivo de mensaje de bienvenida que se muestra solo cuando se instala Termux desde Google Play Store.
+
 ###### com.termux/files/usr/etc/nanorc
+Archivo de configuración utilizado por el editor de texto "Nano" que contiene configuraciones para personalizar la interfaz de usuario y las funciones del editor de texto Nano, como el color del texto, los atajos de teclado, el número de espacios por tabulación y mucho más.
+
 ###### com.termux/files/usr/etc/netconfig
+Este archivo es utilizado por los programas que necesitan acceder a la red, como los navegadores web o los clientes de correo electrónico, para determinar cómo conectarse a Internet y cómo acceder a los servicios de red. El archivo netconfig también puede contener información sobre la configuración de proxy y otras opciones de red.
+
 ###### com.termux/files/usr/etc/profile
+Archivo de configuración de shell que se ejecuta cada vez que se inicia una sesión de shell en Termux. profile es el archivo de configuración principal.
+
 ###### com.termux/files/usr/etc/profile.d
+Directorio que contiene archivos de configuración adicionales que se ejecutan después de profile.
+
 ###### com.termux/files/usr/etc/profile.d/gawk.csh
+Este archivo es parte del paquete "gawk" y contiene configuraciones de variables de entorno específicas de la aplicación gawk. Es ejecutado automáticamente cuando se inicia el shell de Termux y se carga la aplicación gawk. La función de este archivo es establecer variables de entorno para la aplicación, lo que permite que el software funcione correctamente.
+
 ###### com.termux/files/usr/etc/profile.d/gawk.sh
+Este archivo agrega algunas configuraciones específicas para el programa gawk en la variable de entorno PATH, que es la ruta de búsqueda para los ejecutables. En concreto, agrega el directorio /data/data/com.termux/files/usr/bin al principio de la ruta de búsqueda y luego exporta la variable AWK para que apunte al programa gawk. Esto permite que gawk se ejecute directamente desde la línea de comandos sin tener que proporcionar la ruta completa al ejecutable.
+
 ###### com.termux/files/usr/etc/profile.d/init-termux-properties.sh
+Script de shell que se ejecuta automáticamente cada vez que se inicia una sesión de terminal en Termux. Este script se utiliza para establecer algunas propiedades de Termux, como el color de la terminal, el comportamiento del teclado, el directorio de trabajo predeterminado, etc. 
+
 ###### com.termux/files/usr/etc/termux-login.sh
+Script de inicio de sesión que se ejecuta al iniciar sesión en la aplicación Termux en un dispositivo Android. Este archivo permite personalizar el inicio de sesión de Termux y configurar variables de entorno adicionales, aliases y otras opciones personalizadas. Por ejemplo, se puede agregar un mensaje personalizado o mostrar información sobre la versión de Termux instalada en el dispositivo.
+
 ###### com.termux/files/usr/etc/tls
+Este es un directorio que contiene archivos de configuración relacionados con TLS (Transport Layer Security), que se utiliza para cifrar las comunicaciones de red.
+
 ###### com.termux/files/usr/etc/tls/cert.pem
+Archivo de certificado de seguridad que se utiliza para autenticar la identidad de otros sistemas en la red.
+
 ###### com.termux/files/usr/etc/tls/openssl.cnf
+Archivo de configuración para OpenSSL, que es una biblioteca de cifrado utilizada por muchos programas de línea de comandos.
+
 ###### com.termux/files/usr/etc/unbound
+Directorio que contiene archivos de configuración para el servidor DNS Unbound, que se utiliza para resolver nombres de dominio en direcciones IP.
+
 ###### com.termux/files/usr/etc/unbound/unbound.conf
+Archivo de configuración principal de Unbound.
+
 ###### com.termux/files/usr/include
+Generalmente contiene los archivos de cabecera (header files) de bibliotecas C que se utilizan para compilar aplicaciones en Termux. Estos archivos proporcionan las declaraciones de funciones y estructuras necesarias para que las aplicaciones se comuniquen con las bibliotecas. Las bibliotecas C son componentes esenciales del sistema operativo y proporcionan una variedad de funcionalidades, desde la gestión de archivos hasta el procesamiento de imágenes.
+
 ###### com.termux/files/usr/lib
+Carpeta donde se almacenan las bibliotecas compartidas de programas instalados en Termux. Las bibliotecas compartidas son fragmentos de código que pueden ser utilizados por diferentes programas, en lugar de tener que escribir el mismo código repetidamente en cada programa.
+
 ###### com.termux/files/usr/libexec
+Contiene archivos ejecutables que son utilizados por otros programas del sistema. En general, los archivos que se encuentran en esta carpeta no son ejecutables de forma independiente, sino que son llamados por otros programas cuando se necesitan realizar ciertas tareas específicas.
+
 ###### com.termux/files/usr/opt
+Directorio de instalación opcional para aplicaciones adicionales que no son necesarias para el funcionamiento básico de Termux. Esta carpeta se usa para instalar paquetes y software adicionales que no se encuentran en los repositorios predeterminados de Termux. Los programas instalados en esta carpeta a menudo necesitan configuración adicional para funcionar correctamente en Termux.
+
 ###### com.termux/files/usr/share
+Contiene una variedad de recursos compartidos que pueden ser utilizados por diferentes programas en el sistema.
+
 ###### com.termux/files/usr/tmp
+Directorio donde se almacenan archivos temporales creados por diferentes programas y procesos en ejecución en el sistema.
+
 ###### com.termux/files/usr/var
-
-
+Puede contener registros de actividades del sistema, archivos temporales, archivos de caché, bases de datos de aplicaciones, entre otros.
 
 
 
