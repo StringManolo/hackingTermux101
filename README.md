@@ -1843,7 +1843,7 @@ for (( i=1; i <= "$#"; i++ )) do # bucle for clásico
 done
 ```
 
-Esta forma de hacer el mismo comando **saludar** tiene la deventaja de que no puede procesar múmtiples argumentos como **saludar -hn Manolo**, pero tiene la ventaja de que el código es mas corto.  
+Esta forma de hacer el mismo comando **saludar** tiene la deventaja de que no puede procesar múltiples argumentos como **saludar -hn Manolo**, pero tiene la ventaja de que el código es mas corto.  
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
