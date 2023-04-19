@@ -2174,22 +2174,24 @@ Aunque Linux es un sistema operativo por sí solo, existen muchas distribuciones
 
 
 #### Distribuciones Linux
-+ Ubuntu  
++ [Ubuntu](https://help.ubuntu.com/)    
 Es una de las distribuciones de Linux más populares y se utiliza ampliamente en todo el mundo. Es conocida por su facilidad de uso y su gran cantidad de aplicaciones disponibles. También tiene una gran comunidad de usuarios que puede proporcionar ayuda y soporte.  
-+ Debian  
++ [Debian](https://www.debian.org/doc/) 
 Es una distribución de Linux estable y confiable. Está diseñada para ser utilizada en servidores, pero también es adecuada para usuarios de escritorio. Debian se enfoca en la estabilidad y la seguridad, por lo que sus actualizaciones son más lentas que en otras distribuciones.
 
-+ Fedora  
++ [Fedora](https://docs.fedoraproject.org/es/docs/)  
 Es una distribución de Linux que está diseñada para usuarios avanzados. Incluye herramientas de desarrollo y es conocida por ser una plataforma para nuevas tecnologías. Fedora es la distribución de prueba para Red Hat Enterprise Linux, que es utilizado en empresas. 
 
-+ Arch Linux  
++ [Arch Linux](https://wiki.archlinux.org/title/Arch_Linux_(Espa%C3%B1ol)  
 Es una distribución de Linux que se enfoca en la simplicidad y el minimalismo. Está diseñada para usuarios avanzados que desean un control completo sobre su sistema. Arch Linux es una distribución rolling release, lo que significa que las actualizaciones se liberan continuamente.
 
-+ Kali Linux  
++ [Kali Linux](https://kali-linux.net/)  
 Es una distribución de Linux especializada en seguridad informática. Incluye una gran cantidad de herramientas de hacking ético y pruebas de penetración.
 
-+ Alpine  
++ [Alpine](https://docs.alpinelinux.org/)  
 Está diseñada para ser liviana y segura. Es popular en entornos de contenedores y en dispositivos de IoT.
+
+Al igual que Termux, Linux se basa en la línea de comandos para realizar tareas, aunque también se puede instalar una interfaz gráfica. Linux también tiene una gran cantidad de herramientas y paquetes disponibles que se pueden instalar y personalizar para adaptarse a tus necesidades.
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
