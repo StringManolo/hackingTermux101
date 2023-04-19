@@ -2182,7 +2182,7 @@ Es una distribución de Linux estable y confiable. Está diseñada para ser util
 + [Fedora](https://docs.fedoraproject.org/es/docs/)  
 Es una distribución de Linux que está diseñada para usuarios avanzados. Incluye herramientas de desarrollo y es conocida por ser una plataforma para nuevas tecnologías. Fedora es la distribución de prueba para Red Hat Enterprise Linux, que es utilizado en empresas. 
 
-+ [Arch Linux](https://wiki.archlinux.org/title/Arch_Linux_(Espa%C3%B1ol)  
++ [Arch Linux](https://wiki.archlinux.org/title/Arch_Linux_(Espa%C3%B1ol))  
 Es una distribución de Linux que se enfoca en la simplicidad y el minimalismo. Está diseñada para usuarios avanzados que desean un control completo sobre su sistema. Arch Linux es una distribución rolling release, lo que significa que las actualizaciones se liberan continuamente.
 
 + [Kali Linux](https://kali-linux.net/)  
