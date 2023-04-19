@@ -2174,21 +2174,21 @@ Aunque Linux es un sistema operativo por sí solo, existen muchas distribuciones
 
 
 #### Distribuciones Linux
-+ Ubuntu 
++ Ubuntu  
 Es una de las distribuciones de Linux más populares y se utiliza ampliamente en todo el mundo. Es conocida por su facilidad de uso y su gran cantidad de aplicaciones disponibles. También tiene una gran comunidad de usuarios que puede proporcionar ayuda y soporte.  
-+ Debian
++ Debian  
 Es una distribución de Linux estable y confiable. Está diseñada para ser utilizada en servidores, pero también es adecuada para usuarios de escritorio. Debian se enfoca en la estabilidad y la seguridad, por lo que sus actualizaciones son más lentas que en otras distribuciones.
 
-+ Fedora
++ Fedora  
 Es una distribución de Linux que está diseñada para usuarios avanzados. Incluye herramientas de desarrollo y es conocida por ser una plataforma para nuevas tecnologías. Fedora es la distribución de prueba para Red Hat Enterprise Linux, que es utilizado en empresas. 
 
-+ Arch Linux
++ Arch Linux  
 Es una distribución de Linux que se enfoca en la simplicidad y el minimalismo. Está diseñada para usuarios avanzados que desean un control completo sobre su sistema. Arch Linux es una distribución rolling release, lo que significa que las actualizaciones se liberan continuamente.
 
-+ Kali Linux
++ Kali Linux  
 Es una distribución de Linux especializada en seguridad informática. Incluye una gran cantidad de herramientas de hacking ético y pruebas de penetración.
 
-+ Alpine
++ Alpine  
 Está diseñada para ser liviana y segura. Es popular en entornos de contenedores y en dispositivos de IoT.
 
 [Tabla de Contenidos](#tabla-de-contenidos)
