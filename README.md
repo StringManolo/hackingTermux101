@@ -2176,7 +2176,7 @@ Aunque Linux es un sistema operativo por sí solo, existen muchas distribuciones
 #### Distribuciones Linux
 + [Ubuntu](https://help.ubuntu.com/)    
 Es una de las distribuciones de Linux más populares y se utiliza ampliamente en todo el mundo. Es conocida por su facilidad de uso y su gran cantidad de aplicaciones disponibles. También tiene una gran comunidad de usuarios que puede proporcionar ayuda y soporte.  
-+ [Debian](https://www.debian.org/doc/) 
++ [Debian](https://www.debian.org/doc/)   
 Es una distribución de Linux estable y confiable. Está diseñada para ser utilizada en servidores, pero también es adecuada para usuarios de escritorio. Debian se enfoca en la estabilidad y la seguridad, por lo que sus actualizaciones son más lentas que en otras distribuciones.
 
 + [Fedora](https://docs.fedoraproject.org/es/docs/)  
