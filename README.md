@@ -2323,6 +2323,16 @@ Ten en cuenta que `dnf` también puede ser utilizado para instalar paquetes desd
 
 ## Capítulo 17: Introducción a Servicios
 
+Los servicios son programas que se ejecutan en segundo plano, es decir, que están funcionando en la computadora sin que el usuario tenga que interactuar directamente con ellos. 
+
+Estos programas pueden ser muy variados y realizar diferentes funciones. Por ejemplo, un servicio puede ser el que controla el acceso a una red, otro puede ser el que permite imprimir documentos, otro puede ser el que guarda archivos en un servidor, etc. 
+
+Cada servicio se comunica con otros programas o dispositivos a través de puertos específicos, que funcionan como una especie de "ventana" por donde los datos entran y salen. 
+
+Cuando utilizas una aplicación o accedes a un sitio web, estás interactuando con uno o varios servicios que están funcionando en segundo plano. Por ejemplo, si estás utilizando un navegador para acceder a un sitio web, el navegador está utilizando el servicio de red para conectarse a Internet y el servicio de DNS para buscar la dirección IP del sitio web. 
+
+En resumen, los servicios son programas que realizan funciones específicas en segundo plano, y se comunican con otros programas y dispositivos a través de puertos específicos.
+
 [Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
