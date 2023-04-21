@@ -2339,6 +2339,98 @@ En resumen, los servicios son programas que realizan funciones específicas en s
 
 ## Capítulo 18: Creando un Servidor
 
+Hay muchos tipo de servidores y muchos programas que te permiten crearlos. 
+
+#### Creando un servidor Web con Python3
+
+**1. Instalar Python 3:**
+
+Para instalar Python 3 en Termux, sigue estos pasos:
+
+1. Abre la aplicación Termux en tu dispositivo Android.
+2. Ejecuta el siguiente comando para actualizar los paquetes existentes:
+
+```
+pkg update && pkg upgrade
+```
+
+3. Ahora, ejecuta el siguiente comando para instalar Python 3:
+
+```
+pkg install python
+```
+
+4. Una vez que se complete la instalación, verifica que Python 3 esté instalado correctamente ejecutando el siguiente comando:
+
+```
+python --version
+```
+
+Debería mostrar la versión de Python instalada en tu sistema.
+
+**2. Crear una carpeta para el servidor web:**
+
+Ahora, vamos a crear una carpeta para nuestro servidor web. Para ello, ejecuta el siguiente comando:
+
+```
+mkdir mywebsite
+```
+
+Este comando creará una carpeta llamada "mywebsite" en el directorio actual.
+
+**3. Crear un archivo HTML:**
+
+Ahora, vamos a crear un archivo HTML muy simple para nuestra página web. Para ello, ejecuta los siguientes comandos:
+
+```
+cd mywebsite
+echo "<html><body><h1>Mi sitio web</h1></body></html>" > index.html
+```
+
+El primer comando nos lleva al directorio "mywebsite". El segundo comando crea un archivo llamado "index.html" en el directorio actual y agrega el código HTML necesario para mostrar un encabezado "Mi sitio web" en nuestra página.
+
+**4. Agregar un archivo de texto de ejemplo:**
+
+Para agregar un archivo de texto de ejemplo, ejecuta los siguientes comandos:
+
+```
+echo "Este es un archivo de texto de ejemplo." > example.txt
+```
+
+Este comando crea un archivo de texto llamado "example.txt" en el directorio actual y agrega el texto "Este es un archivo de texto de ejemplo." en el archivo.
+
+**5. Iniciar el servidor web:**
+
+Ahora que hemos creado nuestra carpeta y nuestros archivos, podemos iniciar el servidor web utilizando el comando `python3 -m http.server`. Para ello, ejecuta los siguientes comandos:
+
+```
+python3 -m http.server 8000
+```
+
+El comando inicia el servidor web en el puerto 8000 (puedes elegir cualquier otro puerto si lo deseas).
+
+**6. Acceder a la página web:**
+
+Para acceder a la página web, abre un navegador en tu dispositivo Android y escribe la siguiente dirección URL:
+
+```
+http://localhost:8000/
+```
+
+Deberías ver la página web con el encabezado "Mi sitio web".
+
+**7. Acceder al archivo de texto:**
+
+Para acceder al archivo de texto, abre un navegador en tu dispositivo Android y escribe la siguiente dirección URL:
+
+```
+http://localhost:8000/example.txt
+```
+
+Deberías ver el contenido del archivo de texto "example.txt".
+
+¡Listo! Ahora tienes un servidor web en ejecución en tu dispositivo Android, creado con Python 3 en Termux. Puedes personalizar la página web agregando más contenido y archivos a la carpeta "mywebsite".
+
 [Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
