@@ -2199,11 +2199,65 @@ Al igual que Termux, Linux se basa en la línea de comandos para realizar tareas
 
 ## Capitulo 13: Uso básico de Debian
 
+### Instalación de paquetes en Debian
+#### apt
+
+`apt` es el gestor de paquetes de Debian. Permite instalar, actualizar y desinstalar paquetes en el sistema. Aquí tienes algunos comandos útiles:
+
+- `apt update`: actualiza la lista de paquetes disponibles en los repositorios.
+- `apt upgrade`: actualiza todos los paquetes instalados en el sistema.
+- `apt install <nombre_del_paquete>`: instala un paquete en el sistema.
+- `apt remove <nombre_del_paquete>`: desinstala un paquete del sistema.
+- `apt search <nombre_del_paquete>`: busca un paquete en los repositorios disponibles.
+- `apt show <nombre_del_paquete>`: muestra información detallada sobre un paquete.
+
+Es importante tener en cuenta que necesitas ejecutar `apt update` para actualizar la lista de paquetes disponibles antes de instalar cualquier paquete.
+
+#### dpkg
+
+`dpkg` es la herramienta de bajo nivel para gestionar paquetes de Debian. Permite instalar, desinstalar, configurar y verificar paquetes en el sistema. Aquí tienes algunos comandos útiles:
+
+- `dpkg -i <nombre_del_paquete.deb>`: instala un paquete .deb en el sistema.
+- `dpkg -r <nombre_del_paquete>`: desinstala un paquete del sistema.
+- `dpkg -L <nombre_del_paquete>`: muestra una lista de archivos que pertenecen a un paquete.
+- `dpkg -S <nombre_del_archivo>`: muestra el paquete que contiene un archivo en particular.
+- `dpkg-reconfigure <nombre_del_paquete>`: reconfigura un paquete ya instalado.
+
+Ten en cuenta que `dpkg` no resuelve automáticamente las dependencias, por lo que es posible que necesites instalar manualmente las dependencias de un paquete antes de instalar el paquete en sí.
+
+
 [Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
 
 ## Capítulo 14: Uso básico de Ubuntu
+
+### Instalación de paquetes en Ubuntu 
+#### apt
+
+`apt` es el gestor de paquetes de Ubuntu. Permite instalar, actualizar y desinstalar paquetes en el sistema. Aquí tienes algunos comandos útiles:
+
+- `sudo apt update`: actualiza la lista de paquetes disponibles en los repositorios.
+- `sudo apt upgrade`: actualiza todos los paquetes instalados en el sistema.
+- `sudo apt install <nombre_del_paquete>`: instala un paquete en el sistema.
+- `sudo apt remove <nombre_del_paquete>`: desinstala un paquete del sistema.
+- `sudo apt search <nombre_del_paquete>`: busca un paquete en los repositorios disponibles.
+- `sudo apt show <nombre_del_paquete>`: muestra información detallada sobre un paquete.
+
+Es importante tener en cuenta que necesitas ejecutar `sudo apt update` para actualizar la lista de paquetes disponibles antes de instalar cualquier paquete.
+
+#### dpkg
+
+`dpkg` es la herramienta de bajo nivel para gestionar paquetes en Ubuntu. Permite instalar, desinstalar, configurar y verificar paquetes en el sistema. Aquí tienes algunos comandos útiles:
+
+- `sudo dpkg -i <nombre_del_paquete.deb>`: instala un paquete .deb en el sistema.
+- `sudo dpkg -r <nombre_del_paquete>`: desinstala un paquete del sistema.
+- `sudo dpkg -L <nombre_del_paquete>`: muestra una lista de archivos que pertenecen a un paquete.
+- `sudo dpkg -S <nombre_del_archivo>`: muestra el paquete que contiene un archivo en particular.
+- `sudo dpkg-reconfigure <nombre_del_paquete>`: reconfigura un paquete ya instalado.
+
+Ten en cuenta que `dpkg` no resuelve automáticamente las dependencias, por lo que es posible que necesites instalar manualmente las dependencias de un paquete antes de instalar el paquete en sí.
+
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
@@ -2211,11 +2265,57 @@ Al igual que Termux, Linux se basa en la línea de comandos para realizar tareas
 
 ## Capítulo 15: Uso básico de Alpine
 
+### Instalación de paquetes en Alpine
+#### apk
+
+`apk` es el gestor de paquetes de Alpine Linux. Permite instalar, actualizar y desinstalar paquetes en el sistema. Aquí tienes algunos comandos útiles:
+
+- `apk update`: actualiza la lista de paquetes disponibles en los repositorios.
+- `apk upgrade`: actualiza todos los paquetes instalados en el sistema.
+- `apk add <nombre_del_paquete>`: instala un paquete en el sistema.
+- `apk del <nombre_del_paquete>`: desinstala un paquete del sistema.
+- `apk search <nombre_del_paquete>`: busca un paquete en los repositorios disponibles.
+- `apk info <nombre_del_paquete>`: muestra información detallada sobre un paquete.
+
+Es importante tener en cuenta que necesitas ejecutar `apk update` para actualizar la lista de paquetes disponibles antes de instalar cualquier paquete.
+
+#### Otros comandos útiles
+
+- `apk add --no-cache <nombre_del_paquete>`: instala un paquete sin caché. Esto reduce la cantidad de espacio utilizado por el paquete.
+- `apk add --virtual <nombre_del_paquete>`: instala un paquete como una dependencia virtual. Esto es útil si necesitas instalar un paquete que no existe en los repositorios, pero que es necesario para que otro paquete funcione correctamente.
+- `apk cache clean`: limpia la caché de paquetes para liberar espacio en disco.
+
+Ten en cuenta que `apk` también puede ser utilizado para instalar paquetes desde fuentes externas, como archivos APK o repositorios de terceros. Sin embargo, debes tener cuidado al hacer esto, ya que los paquetes pueden no ser seguros o compatibles con tu sistema.
+
+
 [Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
 
 ## Capítulo 16: Uso básico de Fedora
+
+### Instalación de paquetes en Fedora
+#### dnf
+
+`dnf` es el gestor de paquetes por defecto en Fedora. Permite instalar, actualizar y desinstalar paquetes en el sistema. Aquí tienes algunos comandos útiles:
+
+- `dnf update`: actualiza todos los paquetes instalados en el sistema.
+- `dnf upgrade`: actualiza todos los paquetes instalados en el sistema, incluyendo los que requieren cambios en la configuración.
+- `dnf install <nombre_del_paquete>`: instala un paquete en el sistema.
+- `dnf remove <nombre_del_paquete>`: desinstala un paquete del sistema.
+- `dnf search <nombre_del_paquete>`: busca un paquete en los repositorios disponibles.
+- `dnf info <nombre_del_paquete>`: muestra información detallada sobre un paquete.
+
+Es importante tener en cuenta que necesitas ejecutar `dnf update` para actualizar todos los paquetes instalados en el sistema.
+
+#### Otros comandos útiles
+
+- `dnf history`: muestra un registro detallado de todas las operaciones realizadas por `dnf`, incluyendo las actualizaciones e instalaciones de paquetes.
+- `dnf repoquery <nombre_del_paquete>`: busca un paquete en los repositorios disponibles sin instalarlo.
+- `dnf list installed`: muestra una lista de todos los paquetes instalados en el sistema.
+- `dnf clean all`: limpia la caché de paquetes y metadatos para liberar espacio en disco.
+
+Ten en cuenta que `dnf` también puede ser utilizado para instalar paquetes desde fuentes externas, como archivos RPM o repositorios de terceros. Sin embargo, debes tener cuidado al hacer esto, ya que los paquetes pueden no ser seguros o compatibles con tu sistema.
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
