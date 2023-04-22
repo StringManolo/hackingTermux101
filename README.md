@@ -26,16 +26,16 @@
 * [Capítulo 18: Creando un Servidor](#cap%C3%ADtulo-18-creando-un-servidor)
 * [Capítulo 19: Ngrok y Exponer Servicios](#cap%C3%ADtulo-19-ngrok-y-exponer-servicios)
 * [Capítulo 20: Tor, Configuración y Uso](#cap%C3%ADtulo-20-tor-configuraci%C3%B3n-y-uso)
-* Capítulo 21: Servicios Ocultos
-* Capítulo 22: SSH, SHCP y SSHD
-* Capítulo 23: Bots de Telegram
-* Capítulo 24: Telegram RAT
-* Capítulo 25: Protocolo HTTP
-* Capítulo 26: Protocolo DNS
-* Capítulo 27: Servicios Web
-* Capítulo 28: Hosting Gratuitos
-* Capítulo 29: Dominios Gratuitos
-* Capítulo 30: Introducción a Programación
+* [Capítulo 21: Servicios Ocultos](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-21-servicios-ocultos)
+* [Capítulo 22: SSH, SHCP y SSHD](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-22-ssh-shcp-y-sshd)
+* [Capítulo 23: Bots de Telegram](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-23-bots-de-telegram)
+* [Capítulo 24: Telegram RAT](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-24-telegram-rat)
+* [Capítulo 25: Protocolo HTTP](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-25-protocolo-http)
+* [Capítulo 26: Protocolo DNS](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-26-protocolo-dns)
+* [Capítulo 27: Servicios Web](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-27-servicios-web)
+* [Capítulo 28: Hosting Gratuitos](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-28-hosting-gratuitos)
+* [Capítulo 29: Dominios Gratuitos](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-29-dominios-gratuitos)
+* [Capítulo 30: Introducción a Programación](https://github.com/StringManolo/hackingTermux101#cap%C3%ADtulo-30-introducci%C3%B3n-a-programaci%C3%B3n)
 * Capítulo 31: Comparación de Lenguajes
 * Capitulo 32: Introducción a C
 * Capìtulo 33: Introducción a C++
