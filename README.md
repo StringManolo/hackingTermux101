@@ -2590,6 +2590,70 @@ killall tor
 
 ## Capítulo 21: Servicios Ocultos
 
+¡Claro! Aquí está la guía actualizada utilizando `echo` en lugar de `nano` para configurar el archivo de Tor:
+
+1. En la terminal de Termux, ejecuta el siguiente comando para agregar las líneas de configuración de Tor al archivo `torrc`:
+
+```bash
+echo -e "HiddenServiceDir /data/data/com.termux/files/usr/var/lib/tor/hidden_service/mywebsite\nHiddenServicePort 80 127.0.0.1:8000" >> $PREFIX/etc/tor/torrc
+```
+
+2. Reinicia el servicio Tor ejecutando el siguiente comando:
+
+```bash
+killall tor
+tor &
+```
+
+3. Verifica que el archivo `hostname` existe en la ruta `$PREFIX/var/lib/tor/hidden_service`. Si no existe, reinicia el servicio Tor y vuelve a verificar:
+
+```bash
+killall tor
+tor &
+```
+
+4. Ejecuta el siguiente comando para obtener la dirección del Hidden Service:
+
+```bash
+cat $PREFIX/var/lib/tor/hidden_service/hostname
+```
+
+5. Copia la dirección del Hidden Service que aparece en la terminal.
+
+6. Crea una carpeta llamada `mywebsite` en la ruta `$PREFIX/var/lib/tor/hidden_service` utilizando el siguiente comando:
+
+```bash
+mkdir $PREFIX/var/lib/tor/hidden_service/mywebsite
+```
+
+7. Coloca los archivos de tu sitio web en la carpeta `mywebsite`.
+
+8. Inicia un servidor web local en la carpeta `mywebsite` usando el siguiente comando:
+
+```bash
+cd $PREFIX/var/lib/tor/hidden_service/mywebsite
+python3 -m http.server 8000 &
+```
+
+9. Verifica que el sitio web está disponible localmente abriendo un navegador y visitando la dirección `localhost:8000` en la barra de direcciones.
+
+10. Accede al sitio web a través del Hidden Service ejecutando el siguiente comando en la terminal:
+
+```bash
+torify curl http://direccion-del-hidden-service.onion/
+```
+
+Reemplaza `direccion-del-hidden-service.onion` con la dirección del Hidden Service que copiaste en el paso 5.
+
+11. Para detener el servicio Tor y el servidor web de Python, ejecuta los siguientes comandos en la terminal:
+
+```bash
+killall tor
+killall python3
+```
+
+Con estos pasos, se configurará el archivo de Tor para exponer el servidor web local en el Hidden Service.
+
 [Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
