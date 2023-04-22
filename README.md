@@ -1,4 +1,4 @@
-!g[Portada Libro](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/portada.png)
+[Portada Libro](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/portada.png)
 
 -----
 
