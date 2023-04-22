@@ -2579,3 +2579,79 @@ killall tor
 [Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
+
+## Capítulo 21: Servicios Ocultos
+
+[Tabla de Contenidos](#tabla-de-contenidos)
+
+----
+
+
+## Capítulo 22: SSH, SHCP y SSHD
+
+[Tabla de Contenidos](#tabla-de-contenidos)
+
+----
+
+
+## Capítulo 23: Bots de Telegram
+
+[Tabla de Contenidos](#tabla-de-contenidos)
+
+----
+
+
+## Capítulo 24: Telegram RAT
+
+[Tabla de Contenidos](#tabla-de-contenidos)
+
+----
+
+
+
+## Capítulo 25: Protocolo HTTP 
+
+[Tabla de Contenidos](#tabla-de-contenidos)
+
+----
+
+
+
+## Capítulo 26: Protocolo DNS
+
+[Tabla de Contenidos](#tabla-de-contenidos)
+
+----
+
+
+
+## Capítulo 27: Servicios Web
+
+[Tabla de Contenidos](#tabla-de-contenidos)
+
+----
+
+
+
+## Capítulo 28: Hosting Gratuitos
+
+[Tabla de Contenidos](#tabla-de-contenidos)
+
+----
+
+
+
+## Capítulo 29: Dominios Gratuitos 
+
+[Tabla de Contenidos](#tabla-de-contenidos)
+
+----
+
+
+## Capítulo 30: Introducción a Programación
+
+[Tabla de Contenidos](#tabla-de-contenidos)
+
+----
+
+
