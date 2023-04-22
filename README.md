@@ -2590,8 +2590,6 @@ killall tor
 
 ## Capítulo 21: Servicios Ocultos
 
-¡Claro! Aquí está la guía actualizada utilizando `echo` en lugar de `nano` para configurar el archivo de Tor:
-
 1. En la terminal de Termux, ejecuta el siguiente comando para agregar las líneas de configuración de Tor al archivo `torrc`:
 
 ```bash
