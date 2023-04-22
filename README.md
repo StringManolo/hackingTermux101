@@ -2,6 +2,14 @@
 
 -----
 
+### Languages
+
+##### ESP
+Este libro está escrito originalmente en español. Puedes acceder en otros lenguajes usando el traductor de Google, si bien no es perfecto puede ser de utilidad.
+
+##### EN
+This book is original writen in spanish. You can access it in other languages too using google translator. Even if not perfect may be usefull. [English Translation](https://stringmanolo-github-io.translate.goog/hackingTermux101/?_x_tr_sl=es&_x_tr_tl=en&_x_tr_hl=es&_x_tr_pto=wapp)  
+
 ### Tabla de Contenidos
 
 * [Prefacio](#prefacio)
