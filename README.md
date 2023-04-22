@@ -2651,7 +2651,7 @@ torify curl http://<hidden-service-address>.onion/;
 
 Reemplaza `<hidden-service-address>` con la dirección del Hidden Service que obtuviste en el paso 7.
 
-Otra forma de comprobar si funciona es utilizando el servicio tor2web. Te vas a [este](https://www.tor2web.fi/) enlace en cualquier navegador e introduces la dirección de tu servicio. Si funciona verás tu página web con el mensaje "Hello World". Esta web sirve para poder visualizar páginas de web en tu navegador sin necesidad de instalar el navegador de tor. 
+Otra forma de comprobar si funciona es utilizando el servicio tor2web. Te vas a [este](https://www.tor2web.fi/) enlace en cualquier navegador e introduces la dirección de tu servicio. Si funciona verás tu página web con el mensaje "Hello World". Esta web sirve para poder visualizar páginas web alojadas en la red tor en tu navegador sin necesidad de instalar el navegador de tor. 
 
 9. Para detener el servicio Tor y el servidor web de Python, ejecuta los siguientes comandos en la terminal:
 ```bash
