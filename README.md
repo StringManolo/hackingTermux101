@@ -2600,33 +2600,37 @@ mkdir -p $PREFIX/var/lib/tor/hidden_service/mywebsite;
 mkdir -p $PREFIX/etc/tor/hidden_service;
 ```
 
-2. Agrega las líneas de configuración de Tor al archivo `torrc` utilizando el siguiente comando:
+2. Cambia los permisos de la carpeta 
+chmod 700 $PREFIX/var/lib/tor/hidden_service/mywebsite
+
+
+3. Agrega las líneas de configuración de Tor al archivo `torrc` utilizando el siguiente comando:
 
 ```
 echo -e "HiddenServiceDir $PREFIX/var/lib/tor/hidden_service/mywebsite\nHiddenServicePort 80 127.0.0.1:8000" >> $PREFIX/etc/tor/torrc;
 ```
 
-3. Reinicia el servicio Tor ejecutando el siguiente comando:
+4. Reinicia el servicio Tor ejecutando el siguiente comando:
 
 ```
 killall tor;
 tor &
 ```
 
-4. Crea un archivo `index.html` para el sitio web utilizando el siguiente comando:
+5. Crea un archivo `index.html` para el sitio web utilizando el siguiente comando:
 
 ```
 echo "Hello, world!" > $PREFIX/var/lib/tor/hidden_service/mywebsite/index.html;
 ```
 
-5. Inicia un servidor web local en la carpeta `mywebsite` usando el siguiente comando:
+6. Inicia un servidor web local en la carpeta `mywebsite` usando el siguiente comando:
 
 ```
 cd $PREFIX/var/lib/tor/hidden_service/mywebsite;
-python3 -m http.server 8000 &;
+python3 -m http.server 8000 &
 ```
 
-6. Accede al sitio web a través del Hidden Service ejecutando el siguiente comando en la terminal:
+7. Accede al sitio web a través del Hidden Service ejecutando el siguiente comando en la terminal:
 
 ```
 torify curl http://<hidden-service-address>.onion/;
@@ -2634,7 +2638,7 @@ torify curl http://<hidden-service-address>.onion/;
 
 Reemplaza `<hidden-service-address>` con la dirección del Hidden Service que obtuviste en el paso 2.
 
-7. Para detener el servicio Tor y el servidor web de Python, ejecuta los siguientes comandos en la terminal:
+8. Para detener el servicio Tor y el servidor web de Python, ejecuta los siguientes comandos en la terminal:
 
 ```
 killall tor;
