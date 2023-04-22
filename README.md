@@ -2610,7 +2610,7 @@ echo -e "HiddenServiceDir $PREFIX/var/lib/tor/hidden_service/mywebsite\nHiddenSe
 
 ```
 killall tor;
-tor &;
+tor &
 ```
 
 4. Crea un archivo `index.html` para el sitio web utilizando el siguiente comando:
