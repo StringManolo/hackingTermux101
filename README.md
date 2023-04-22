@@ -1,4 +1,4 @@
-![Portada Libro](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/portada.png)
+!g[Portada Libro](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/portada.png)
 
 -----
 
@@ -2590,65 +2590,58 @@ killall tor
 
 ## Capítulo 21: Servicios Ocultos
 
-1. En la terminal de Termux, ejecuta el siguiente comando para agregar las líneas de configuración de Tor al archivo `torrc`:
+TODO: Añadir explicacion de servicios ocultos
 
-```bash
-echo -e "HiddenServiceDir /data/data/com.termux/files/usr/var/lib/tor/hidden_service/mywebsite\nHiddenServicePort 80 127.0.0.1:8000" >> $PREFIX/etc/tor/torrc
+
+1. Crea una carpeta para el sitio web y otra para el hidden service utilizando los siguientes comandos:
+
+```
+mkdir -p $PREFIX/var/lib/tor/hidden_service/mywebsite;
+mkdir -p $PREFIX/etc/tor/hidden_service;
 ```
 
-2. Inicia el servicio Tor ejecutando el siguiente comando:
+2. Agrega las líneas de configuración de Tor al archivo `torrc` utilizando el siguiente comando:
 
-```bash
-tor &
+```
+echo -e "HiddenServiceDir $PREFIX/var/lib/tor/hidden_service/mywebsite\nHiddenServicePort 80 127.0.0.1:8000;" >> $PREFIX/etc/tor/torrc;
 ```
 
-3. Verifica que el archivo `hostname` existe en la ruta `$PREFIX/var/lib/tor/hidden_service`. Si no existe, reinicia el servicio Tor y vuelve a verificar:
+3. Reinicia el servicio Tor ejecutando el siguiente comando:
 
-```bash
-killall tor && tor &
+```
+killall tor;
+tor &;
 ```
 
-4. Ejecuta el siguiente comando para obtener la dirección del Hidden Service:
+4. Crea un archivo `index.html` para el sitio web utilizando el siguiente comando:
 
-```bash
-cat $PREFIX/var/lib/tor/hidden_service/hostname
+```
+echo "Hello, world!" > $PREFIX/var/lib/tor/hidden_service/mywebsite/index.html;
 ```
 
-5. Copia la dirección del Hidden Service que aparece en la terminal.
+5. Inicia un servidor web local en la carpeta `mywebsite` usando el siguiente comando:
 
-6. Crea una carpeta llamada `mywebsite` en la ruta `$PREFIX/var/lib/tor/hidden_service` utilizando el siguiente comando:
-
-```bash
-mkdir $PREFIX/var/lib/tor/hidden_service/mywebsite
+```
+cd $PREFIX/var/lib/tor/hidden_service/mywebsite;
+python3 -m http.server 8000 &;
 ```
 
-7. Coloca los archivos de tu sitio web en la carpeta `mywebsite`.
+6. Accede al sitio web a través del Hidden Service ejecutando el siguiente comando en la terminal:
 
-8. Inicia un servidor web local en la carpeta `mywebsite` usando el siguiente comando:
-
-```bash
-cd $PREFIX/var/lib/tor/hidden_service/mywebsite
-python3 -m http.server 8000 &
+```
+torify curl http://<hidden-service-address>.onion/;
 ```
 
-9. Verifica que el sitio web está disponible localmente abriendo un navegador y visitando la dirección `localhost:8000` en la barra de direcciones.
+Reemplaza `<hidden-service-address>` con la dirección del Hidden Service que obtuviste en el paso 2.
 
-10. Accede al sitio web a través del Hidden Service ejecutando el siguiente comando en la terminal:
+7. Para detener el servicio Tor y el servidor web de Python, ejecuta los siguientes comandos en la terminal:
 
-```bash
-torify curl http://direccion-del-hidden-service.onion/
+```
+killall tor;
+killall python3;
 ```
 
-Reemplaza `direccion-del-hidden-service.onion` con la dirección del Hidden Service que copiaste en el paso 5.
-
-11. Para detener el servicio Tor y el servidor web de Python, ejecuta los siguientes comandos en la terminal:
-
-```bash
-killall tor
-killall python3
-```
-
-Con estos pasos, se configurará el archivo de Tor para exponer el servidor web local en el Hidden Service.
+Con estos pasos, se creará una carpeta para el sitio web y otra para el hidden service, se configurará el archivo de Tor para exponer el servidor web local en el Hidden Service, se creará un archivo `index.html` para el sitio web y se iniciará un servidor web local. Luego podrás acceder al sitio web a través del Hidden Service utilizando el comando `torify curl`.
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
