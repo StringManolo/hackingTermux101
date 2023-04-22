@@ -2,3 +2,4 @@
 - Añadir una opción para dar soporte económico al proyecto
 - Hacer tree a una instalación de Termux limpia para obtener sistema de ficheros a documentar
 - Probar a añadir etiquetas metas para mejorar la previsualización de del enlace a githubpages en Telegram
+- Revisar capítulos a partir del 12 paso a paso en instalación limpia de termux
