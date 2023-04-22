@@ -2357,13 +2357,13 @@ pkg update && pkg upgrade
 3. Ahora, ejecuta el siguiente comando para instalar Python 3:
 
 ```
-pkg install python
+pkg install python3
 ```
 
 4. Una vez que se complete la instalación, verifica que Python 3 esté instalado correctamente ejecutando el siguiente comando:
 
 ```
-python --version
+python3 --version
 ```
 
 Debería mostrar la versión de Python instalada en tu sistema.
