@@ -2603,7 +2603,7 @@ mkdir -p $PREFIX/etc/tor/hidden_service;
 2. Agrega las líneas de configuración de Tor al archivo `torrc` utilizando el siguiente comando:
 
 ```
-echo -e "HiddenServiceDir $PREFIX/var/lib/tor/hidden_service/mywebsite\nHiddenServicePort 80 127.0.0.1:8000;" >> $PREFIX/etc/tor/torrc;
+echo -e "HiddenServiceDir $PREFIX/var/lib/tor/hidden_service/mywebsite\nHiddenServicePort 80 127.0.0.1:8000" >> $PREFIX/etc/tor/torrc;
 ```
 
 3. Reinicia el servicio Tor ejecutando el siguiente comando:
