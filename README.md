@@ -2535,25 +2535,25 @@ Además, Tor también utiliza técnicas de cifrado para proteger las comunicacio
 
 #### Instalación, configuración y uso
 
-1. Abre Termux y asegúrate de que estás en la última versión actualizada. Para actualizar, escribe en la terminal:
+1 Abre Termux y asegúrate de que estás en la última versión actualizada. Para actualizar, escribe en la terminal:
 
 ```bash
 apt update && apt upgrade
 ```
 
-2. A continuación, es necesario instalar el paquete de Tor y torify. Para hacerlo, escribe en la terminal:
+2 A continuación, es necesario instalar el paquete de Tor y torify. Para hacerlo, escribe en la terminal:
 
 ```bash
 pkg install tor torsocks
 ```
 
-3. Añade las siguientes líneas al archivo de configuración de Tor, usando el comando `echo`:
+3 Añade las siguientes líneas al archivo de configuración de Tor, usando el comando `echo`:
 
 ```bash
 echo 'ControlPort 9051' >> $PREFIX/etc/tor/torrc && echo 'CookieAuthentication 1' >> $PREFIX/etc/tor/torrc
 ```
 
-4. Inicia el servicio de Tor en background usando el ampersand:
+4 Inicia el servicio de Tor en background usando el ampersand:
 
 ```bash
 tor &
@@ -2561,7 +2561,7 @@ tor &
 
 Nota: El ampersand al final del comando permite que el proceso se ejecute en segundo plano, lo que significa que puedes seguir utilizando la terminal mientras Tor está activo.
 
-5. Para asegurarte de que Tor está funcionando, ejecuta:
+5 Para asegurarte de que Tor está funcionando, ejecuta:
 
 ```bash
 torify curl -s https://check.torproject.org/ | grep -q "Congratulations"
@@ -2569,13 +2569,13 @@ torify curl -s https://check.torproject.org/ | grep -q "Congratulations"
 
 Este comando debería mostrar un mensaje de felicitación si estás usando Tor. Si no ves el mensaje, es posible que algo esté mal configurado o que Tor no esté funcionando correctamente.
 
-6. Ahora puedes usar Tor con cualquier aplicación que soporte proxies SOCKS5, incluyendo `curl`. Simplemente precede cualquier comando que quieras ejecutar con `torsocks`. Por ejemplo:
+6 Ahora puedes usar Tor con cualquier aplicación que soporte proxies SOCKS5, incluyendo `curl`. Simplemente precede cualquier comando que quieras ejecutar con `torsocks`. Por ejemplo:
 
 ```bash
 torsocks curl https://example.com
 ```
 
-7. Cuando hayas terminado de usar Tor, detén el servicio ejecutando el siguiente comando:
+7 Cuando hayas terminado de usar Tor, detén el servicio ejecutando el siguiente comando:
 
 ```bash
 killall tor
@@ -2601,50 +2601,50 @@ En resumen, los Hidden Services ofrecen una forma segura y anónima de alojar y 
 
 ### Crear un servicio oculto
 
-1. Crea una carpeta para el sitio web y otra para el hidden service utilizando los siguientes comandos:
+1 Crea una carpeta para el sitio web y otra para el hidden service utilizando los siguientes comandos:
 
 ```bash
 mkdir -p $PREFIX/var/lib/tor/hidden_service/mywebsite;
 mkdir -p $PREFIX/etc/tor/hidden_service;
 ```
 
-2. Cambia los permisos de la carpeta:  
+2 Cambia los permisos de la carpeta:  
 ```bash 
 chmod 700 $PREFIX/var/lib/tor/hidden_service/mywebsite
 ```
 
-3. Agrega las líneas de configuración de Tor al archivo `torrc` utilizando el siguiente comando:
+3 Agrega las líneas de configuración de Tor al archivo `torrc` utilizando el siguiente comando:
 
 ```bash
 echo -e "HiddenServiceDir $PREFIX/var/lib/tor/hidden_service/mywebsite\nHiddenServicePort 80 127.0.0.1:8000" >> $PREFIX/etc/tor/torrc;
 ```
 
-4. Reinicia el servicio Tor ejecutando el siguiente comando:
+4 Reinicia el servicio Tor ejecutando el siguiente comando:
 
 ```bash
 killall tor;
 tor &
 ```
 
-5. Crea un archivo `index.html` para el sitio web utilizando el siguiente comando:
+5 Crea un archivo `index.html` para el sitio web utilizando el siguiente comando:
 
 ```bash
 echo "Hello, world!" > $PREFIX/var/lib/tor/hidden_service/mywebsite/index.html;
 ```
 
-6. Inicia un servidor web local en la carpeta `mywebsite` usando el siguiente comando:
+6 Inicia un servidor web local en la carpeta `mywebsite` usando el siguiente comando:
 
 ```bash
 cd $PREFIX/var/lib/tor/hidden_service/mywebsite;
 python3 -m http.server 8000 &
 ```
 
-7. Obten la dirección de tu servicio:
+7 Obten la dirección de tu servicio:
 ```bash
 cat $PREFIX/var/lib/tor/hidden_service/mywebsite/hostname
 ```
 
-8. Accede al sitio web a través del Hidden Service ejecutando el siguiente comando en la terminal:
+8 Accede al sitio web a través del Hidden Service ejecutando el siguiente comando en la terminal:
 ```bash
 torify curl http://<hidden-service-address>.onion/;
 ```
@@ -2653,7 +2653,7 @@ Reemplaza `<hidden-service-address>` con la dirección del Hidden Service que ob
 
 Otra forma de comprobar si funciona es utilizando el servicio tor2web. Te vas a [este](https://www.tor2web.fi/) enlace en cualquier navegador e introduces la dirección de tu servicio. Si funciona verás tu página web con el mensaje "Hello World". Esta web sirve para poder visualizar páginas web alojadas en la red tor en tu navegador sin necesidad de instalar el navegador de tor. 
 
-9. Para detener el servicio Tor y el servidor web de Python, ejecuta los siguientes comandos en la terminal:
+9 Para detener el servicio Tor y el servidor web de Python, ejecuta los siguientes comandos en la terminal:
 ```bash
 killall tor;
 killall python3;
