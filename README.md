@@ -2590,8 +2590,16 @@ killall tor
 
 ## Capítulo 21: Servicios Ocultos
 
-TODO: Añadir explicacion de servicios ocultos
+### Qué es?
+Un Hidden Service (también conocido como Servicio Oculto) es un sitio web alojado en la red Tor (conocida también como Dark Web o internet profunda) que se encuentra en una ubicación desconocida para los usuarios normales de la web y que solo puede ser accedido a través de la red Tor. En lugar de tener una dirección IP pública y estar alojado en un servidor web estándar, un Hidden Service se aloja en una red anónima y utiliza una dirección web única que termina en ".onion".
 
+Cuando un usuario intenta acceder a un sitio web alojado en un Hidden Service, su conexión se enruta a través de una serie de nodos de la red Tor, lo que proporciona un alto nivel de anonimato.
+
+Los Hidden Services se pueden utilizar para una amplia variedad de propósitos, desde sitios web de periodismo y activismo político hasta mercados en línea y comunidades en línea privadas. Algunos usuarios también utilizan Hidden Services para alojar sus propios sitios web personales sin revelar su ubicación física o dirección IP pública.
+
+En resumen, los Hidden Services ofrecen una forma segura y anónima de alojar y acceder a contenido en línea, lo que los hace útiles para una variedad de aplicaciones en línea que requieren privacidad y anonimato.
+
+### Crear un servicio oculto
 
 1. Crea una carpeta para el sitio web y otra para el hidden service utilizando los siguientes comandos:
 
@@ -2651,7 +2659,7 @@ killall tor;
 killall python3;
 ```
 
-Con estos pasos, se creará una carpeta para el sitio web y otra para el hidden service, se configurará el archivo de Tor para exponer el servidor web local en el Hidden Service, se creará un archivo `index.html` para el sitio web y se iniciará un servidor web local. Luego podrás acceder al sitio web a través del Hidden Service utilizando el comando `torify curl`.
+Con estos pasos, se creará una carpeta para el sitio web y otra para el hidden service, se configurará el archivo de Tor para exponer el servidor web local en el Hidden Service, se creará un archivo `index.html` para el sitio web y se iniciará un servidor web local. Cualquier persona con conexión a tor podrá acceder a tu servicio utilizando el dominio .onion.
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
