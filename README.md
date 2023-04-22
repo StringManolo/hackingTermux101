@@ -2600,9 +2600,10 @@ mkdir -p $PREFIX/var/lib/tor/hidden_service/mywebsite;
 mkdir -p $PREFIX/etc/tor/hidden_service;
 ```
 
-2. Cambia los permisos de la carpeta 
+2. Cambia los permisos de la carpeta:  
+``` 
 chmod 700 $PREFIX/var/lib/tor/hidden_service/mywebsite
-
+```
 
 3. Agrega las líneas de configuración de Tor al archivo `torrc` utilizando el siguiente comando:
 
@@ -2630,16 +2631,22 @@ cd $PREFIX/var/lib/tor/hidden_service/mywebsite;
 python3 -m http.server 8000 &
 ```
 
-7. Accede al sitio web a través del Hidden Service ejecutando el siguiente comando en la terminal:
+7. Obten la dirección de tu servicio:
+```
+cat $PREFIX/var/lib/tor/hidden_service/mywebsite/hostname
+```
+
+8. Accede al sitio web a través del Hidden Service ejecutando el siguiente comando en la terminal:
 
 ```
 torify curl http://<hidden-service-address>.onion/;
 ```
 
-Reemplaza `<hidden-service-address>` con la dirección del Hidden Service que obtuviste en el paso 2.
+Reemplaza `<hidden-service-address>` con la dirección del Hidden Service que obtuviste en el paso 7.
 
-8. Para detener el servicio Tor y el servidor web de Python, ejecuta los siguientes comandos en la terminal:
+Otra forma de comprobar si funciona es utilizando el servicio tor2web. Te vas a [este](https://www.tor2web.fi/) enlace en cualquier navegador e introduces la dirección de tu servicio. Si funciona verás tu página web con el mensaje "Hello World". Esta web sirve para poder visualizar páginas de web en tu navegador sin necesidad de instalar el navegador de tor. 
 
+9. Para detener el servicio Tor y el servidor web de Python, ejecuta los siguientes comandos en la terminal:
 ```
 killall tor;
 killall python3;
