@@ -2350,19 +2350,19 @@ Para instalar Python 3 en Termux, sigue estos pasos:
 1. Abre la aplicación Termux en tu dispositivo Android.
 2. Ejecuta el siguiente comando para actualizar los paquetes existentes:
 
-```
+```bash
 pkg update && pkg upgrade
 ```
 
 3. Ahora, ejecuta el siguiente comando para instalar Python 3:
 
-```
+```bash
 pkg install python3
 ```
 
 4. Una vez que se complete la instalación, verifica que Python 3 esté instalado correctamente ejecutando el siguiente comando:
 
-```
+```bash
 python3 --version
 ```
 
@@ -2372,7 +2372,7 @@ Debería mostrar la versión de Python instalada en tu sistema.
 
 Ahora, vamos a crear una carpeta para nuestro servidor web. Para ello, ejecuta el siguiente comando:
 
-```
+```bash
 mkdir mywebsite
 ```
 
@@ -2382,7 +2382,7 @@ Este comando creará una carpeta llamada "mywebsite" en el directorio actual.
 
 Ahora, vamos a crear un archivo HTML muy simple para nuestra página web. Para ello, ejecuta los siguientes comandos:
 
-```
+```bash
 cd mywebsite
 echo "<html><body><h1>Mi sitio web</h1></body></html>" > index.html
 ```
@@ -2393,7 +2393,7 @@ El primer comando nos lleva al directorio "mywebsite". El segundo comando crea u
 
 Para agregar un archivo de texto de ejemplo, ejecuta los siguientes comandos:
 
-```
+```bash
 echo "Este es un archivo de texto de ejemplo." > example.txt
 ```
 
@@ -2403,7 +2403,7 @@ Este comando crea un archivo de texto llamado "example.txt" en el directorio act
 
 Ahora que hemos creado nuestra carpeta y nuestros archivos, podemos iniciar el servidor web utilizando el comando `python3 -m http.server`. Para ello, ejecuta los siguientes comandos:
 
-```
+```bash
 python3 -m http.server 8000
 ```
 
@@ -2469,25 +2469,25 @@ En conclusión, utilizar una versión open source de Ngrok proporciona una mayor
 
 2. Instala las dependencias necesarias ejecutando el siguiente comando:
 
-   ```
+   ```bash
    pkg install openssh tmux
    ```
 
 3. Descarga el cliente de ngrok opensource en tu dispositivo Android ingresando el siguiente comando:
 
-   ```
+   ```bash
    git clone https://github.com/stringmanolo/ngrok.git
    ```
 
 4. Navega hasta el directorio donde se encuentra el cliente de ngrok ingresando el siguiente comando:
 
-   ```
+   ```bash
    cd ngrok
    ```
 
 5. Configura el cliente de ngrok utilizando el asistente ingresando el siguiente comando:
 
-   ```
+   ```bash
    chmod 775 ngrokWizard.sh
    ./ngrokWizard.sh
    ```
@@ -2496,13 +2496,13 @@ En conclusión, utilizar una versión open source de Ngrok proporciona una mayor
 
 6. Una vez que hayas configurado el cliente de ngrok utilizando el asistente, puedes iniciar y detener el cliente utilizando los siguientes comandos:
 
-   ```
+   ```bash
    ./ngrokStart.sh
    ```
 
    y
 
-   ```
+   ```bash
    ./ngrokStop.sh
    ```
 
@@ -2529,25 +2529,25 @@ Además, Tor también utiliza técnicas de cifrado para proteger las comunicacio
 
 1. Abre Termux y asegúrate de que estás en la última versión actualizada. Para actualizar, escribe en la terminal:
 
-```
+```bash
 apt update && apt upgrade
 ```
 
 2. A continuación, es necesario instalar el paquete de Tor y torify. Para hacerlo, escribe en la terminal:
 
-```
+```bash
 pkg install tor torsocks
 ```
 
 3. Añade las siguientes líneas al archivo de configuración de Tor, usando el comando `echo`:
 
-```
+```bash
 echo 'ControlPort 9051' >> $PREFIX/etc/tor/torrc && echo 'CookieAuthentication 1' >> $PREFIX/etc/tor/torrc
 ```
 
 4. Inicia el servicio de Tor en background usando el ampersand:
 
-```
+```bash
 tor &
 ```
 
@@ -2555,7 +2555,7 @@ Nota: El ampersand al final del comando permite que el proceso se ejecute en seg
 
 5. Para asegurarte de que Tor está funcionando, ejecuta:
 
-```
+```bash
 torify curl -s https://check.torproject.org/ | grep -q "Congratulations"
 ```
 
@@ -2563,13 +2563,13 @@ Este comando debería mostrar un mensaje de felicitación si estás usando Tor. 
 
 6. Ahora puedes usar Tor con cualquier aplicación que soporte proxies SOCKS5, incluyendo `curl`. Simplemente precede cualquier comando que quieras ejecutar con `torsocks`. Por ejemplo:
 
-```
+```bash
 torsocks curl https://example.com
 ```
 
 7. Cuando hayas terminado de usar Tor, detén el servicio ejecutando el siguiente comando:
 
-```
+```bash
 killall tor
 ```
 
