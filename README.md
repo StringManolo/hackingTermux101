@@ -2596,18 +2596,16 @@ killall tor
 echo -e "HiddenServiceDir /data/data/com.termux/files/usr/var/lib/tor/hidden_service/mywebsite\nHiddenServicePort 80 127.0.0.1:8000" >> $PREFIX/etc/tor/torrc
 ```
 
-2. Reinicia el servicio Tor ejecutando el siguiente comando:
+2. Inicia el servicio Tor ejecutando el siguiente comando:
 
 ```bash
-killall tor
 tor &
 ```
 
 3. Verifica que el archivo `hostname` existe en la ruta `$PREFIX/var/lib/tor/hidden_service`. Si no existe, reinicia el servicio Tor y vuelve a verificar:
 
 ```bash
-killall tor
-tor &
+killall tor && tor &
 ```
 
 4. Ejecuta el siguiente comando para obtener la dirección del Hidden Service:
