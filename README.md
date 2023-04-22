@@ -2595,50 +2595,49 @@ TODO: Añadir explicacion de servicios ocultos
 
 1. Crea una carpeta para el sitio web y otra para el hidden service utilizando los siguientes comandos:
 
-```
+```bash
 mkdir -p $PREFIX/var/lib/tor/hidden_service/mywebsite;
 mkdir -p $PREFIX/etc/tor/hidden_service;
 ```
 
 2. Cambia los permisos de la carpeta:  
-``` 
+```bash 
 chmod 700 $PREFIX/var/lib/tor/hidden_service/mywebsite
 ```
 
 3. Agrega las líneas de configuración de Tor al archivo `torrc` utilizando el siguiente comando:
 
-```
+```bash
 echo -e "HiddenServiceDir $PREFIX/var/lib/tor/hidden_service/mywebsite\nHiddenServicePort 80 127.0.0.1:8000" >> $PREFIX/etc/tor/torrc;
 ```
 
 4. Reinicia el servicio Tor ejecutando el siguiente comando:
 
-```
+```bash
 killall tor;
 tor &
 ```
 
 5. Crea un archivo `index.html` para el sitio web utilizando el siguiente comando:
 
-```
+```bash
 echo "Hello, world!" > $PREFIX/var/lib/tor/hidden_service/mywebsite/index.html;
 ```
 
 6. Inicia un servidor web local en la carpeta `mywebsite` usando el siguiente comando:
 
-```
+```bash
 cd $PREFIX/var/lib/tor/hidden_service/mywebsite;
 python3 -m http.server 8000 &
 ```
 
 7. Obten la dirección de tu servicio:
-```
+```bash
 cat $PREFIX/var/lib/tor/hidden_service/mywebsite/hostname
 ```
 
 8. Accede al sitio web a través del Hidden Service ejecutando el siguiente comando en la terminal:
-
-```
+```bash
 torify curl http://<hidden-service-address>.onion/;
 ```
 
@@ -2647,7 +2646,7 @@ Reemplaza `<hidden-service-address>` con la dirección del Hidden Service que ob
 Otra forma de comprobar si funciona es utilizando el servicio tor2web. Te vas a [este](https://www.tor2web.fi/) enlace en cualquier navegador e introduces la dirección de tu servicio. Si funciona verás tu página web con el mensaje "Hello World". Esta web sirve para poder visualizar páginas de web en tu navegador sin necesidad de instalar el navegador de tor. 
 
 9. Para detener el servicio Tor y el servidor web de Python, ejecuta los siguientes comandos en la terminal:
-```
+```bash
 killall tor;
 killall python3;
 ```
