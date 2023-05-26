@@ -1,0 +1,138 @@
+
+Aprendiendo Termux
+dreosotnpS7u8
+0
+e
+d
+58
+ 
+h5
+r
+2
+b
+ 
+f1
+d
+i
+a
+0
+14gm8c8
+2
+509ci
+0
+g
+2
+e
+tm
+l
+ 
+8hi67
+ 
+ul
+  · 
+>> AQUI UN LISTADO DE REPOSITORIOS BASICOS EN TU TERMINAL<< 
+01- pkg update -y
+02- pkg upgrade -y
+03- pkg install python -y
+04- pkg install python2 -y
+05- pkg install python2-dev -y
+06- pkg install python3 -y
+07- pkg install java -y
+08- pkg install fish -y
+09- pkg install ruby -y
+10- termux-setup-storage -y
+11- pkg install git -y
+12- pkg install host -y
+13- pkg install php -y
+14- pkg install perl -y
+15- pkg install nmap -y
+16- pkg install bash -y
+17- pkg install clang -y
+18- pkg install nano -y
+19- pkg install w3m -y
+20- pkg install havij -y
+21- pkg install hydra -y
+22- pkg install figlet -y
+23- pkg install cowsay -y
+24- pkg install curl -y
+25- pkg install tar -y
+26- pkg install zip -y
+27- pkg install unzip -y
+28- pkg install tor -y
+29- pkg install google -y
+30- pkg install sudo -y
+31- pkg install wget -y
+32- pkg install wireshark -y
+33- pkg install wgetrc -y
+34- pkg install wcalc -y
+35- pkg install bmon -y
+36- pkg install vpn -y
+37- pkg install unrar -y
+38- pkg install toilet -y
+39- pkg install proot -y
+40- pkg install net-tools -y
+41- pkg install golang -y
+42- pkg install chroot -y
+43- termux-chroot -y
+44- pkg install macchanger -y
+45- pkg install openssl -y
+46- pkg install cmatrix -y
+47- pkg install openssh -y
+48- pkg install wireshark -y
+49- pkg install help -y
+50- pkg install macchanger -y
+51- pkg install lolcat -y
+52- pkg install vim -y
+>> AQUI UN LISTADO DE REPOSITORIOS BASICOS EN TU TERMINAL<< 
+01- pkg update -y
+02- pkg upgrade -y
+03- pkg instala pitón -y
+04- pkg instala python2 -y
+05- pkg instala python2-dev -y
+06- pkg instala python3 -y
+07- pkg instala java -y
+08- pkg instala pescado -y
+09- pkg instala ruby -y
+10- termux-setup-storage -y
+11- pkg instala git -y
+12- pkg instala host -y
+13- pkg install php -y
+14- pkg install perl -y
+15- pkg instala nmap -y
+16- pkg instala bash -y
+17- pkg instala clang -y
+18- pkg install nano -y
+19- pkg install w3m -y
+20- pkg instala havij -y
+21- pkg install hydra -y
+22- pkg instala figlet -y
+23- pkg instala Cowsay -y
+24- pkg instala rizo -y
+25- pkg instala tar -y
+26- pkg instala zip -y
+27- pkg install unzip -y
+28- pkg instala tor -y
+29- pkg install google -y
+30- pkg install sudo -y
+31- pkg install wget -y
+32- pkg instala wireshark -y
+33- pkg install wgetrc -y
+34- pkg install wcalc -y
+35- pkg install bmon -y
+36- Instalación de paquete VPN -y
+37- pkg install unrar -y
+38- pkg instala inodoro -y
+39- pkg instala proot -y
+40- pkg instalar herramientas de red -y
+41- Instalación de paquete Golang -y
+42- pkg instala chroot -y
+43- termux-chroot -y
+44- pkg instala macchanger -y
+45- pkg instalar abresl -y
+46- pkg instala cmatrix -y
+47- pkg instala openssh -y
+48- pkg instala wireshark -y
+49- pkg ayuda para instalar -y
+50- pkg instala macchanger -y
+51- pkg install lolcat -y
+52- pkg instala vim -y
