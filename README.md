@@ -189,7 +189,7 @@ Puedes instalar Termux descargando la última [release](https://github.com/termu
   
 La descarga también está disponible en Play Store, pero descargar la app de la Play Store NO SE RECOMIENDA. El motivo está relacionado con políticas de Google con respecto a dar soporte a nuevas versiones de Android. Si se cumpliese con dichas políticas, habría que dejar de dar soporte a versiones anteriores. [Aquí mas detalles](https://github.com/termux/termux-app#google-play-store-deprecated).  
   
-Si no conoces la arquitectura de tu dispositivo, puedes pinchar [aquí](https://stringmanolo.ml/hackingTermux101/paginas/mostrarArch.html).  
+Si no conoces la arquitectura de tu dispositivo, puedes pinchar [aquí](https://stringmanolo.github.io/hackingTermux101/paginas/mostrarArch.html).  
   
 ### Instalacion
 - Abre F-Droid en tu Android pinchando [aquí](https://f-droid.org/packages/com.termux/) 
@@ -2667,6 +2667,48 @@ Con estos pasos, se creará una carpeta para el sitio web y otra para el hidden 
 
 
 ## Capítulo 22: SSH, SHCP y SSHD
+
+### SSH
+
+SSH (Secure Shell) es un protocolo de red que permite a los usuarios acceder y controlar de forma remota otros dispositivos a través de una conexión segura. En Termux, también es posible utilizar SSH para establecer una conexión remota con otros sistemas y ejecutar comandos en ellos. A continuación, te mostraré cómo puedes utilizar SSH en Termux.
+  
+#### Instalación de OpenSSH
+Para utilizar SSH en Termux, primero debes instalar el paquete OpenSSH. Puedes hacerlo ejecutando el siguiente comando en la terminal de Termux:
+
+```bash
+pkg install openssh
+```
+
+#### Generación de claves SSH
+Antes de utilizar SSH, es recomendable generar un par de claves SSH para autenticarte de forma segura en los sistemas remotos. Puedes generar un par de claves SSH ejecutando el siguiente comando:
+
+```bash
+ssh-keygen -t rsa
+```
+
+Este comando generará una clave privada y una clave pública en tu directorio de inicio. Puedes dejar los valores predeterminados presionando "Enter" en cada pregunta.
+
+
+#### Conexión SSH
+Una vez que hayas generado las claves SSH, estás listo para establecer una conexión SSH con un sistema remoto. Utiliza el siguiente comando para conectarte a un sistema remoto
+```bash
+ssh usuario@dirección_ip
+```
+
+Reemplaza "usuario" con tu nombre de usuario en el sistema remoto y "dirección_ip" con la dirección IP del sistema remoto al que deseas conectarte.
+
+Si es la primera vez que te conectas a ese sistema, se te pedirá que confirmes la autenticidad de la clave del host. Verifica que la clave mostrada coincida con la clave del sistema remoto y responde "yes" para agregarla a la lista de conocidos.
+
+A continuación, se te solicitará la contraseña del usuario remoto. Ingrésala y presiona "Enter" para establecer la conexión
+
+Normalmente ssh se utiliza para obtener acceso a servidores privados pero tambi€n hay alguno público. En el siguiente ejemplo veremos como utilizar openssh para conectarnos a un servidor remoto:
+```bash
+openssh bandit.labs.overthewire.org -p 2220
+```
+
+### SHCP
+
+### SSHD 
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
