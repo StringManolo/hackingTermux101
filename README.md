@@ -2459,7 +2459,7 @@ Un servicio local es un servicio o aplicación que se ejecuta en un equipo local
   
 Los usuarios pueden utilizar Ngrok para exponer estos servicios locales y hacerlos accesibles desde cualquier lugar del mundo a través de una URL pública. Esto es útil para desarrolladores que necesitan probar sus aplicaciones en diferentes dispositivos o compartir sus aplicaciones con otros, ya que les permite acceder a sus servicios locales sin tener que exponerlos a Internet directamente. Además, Ngrok facilita la configuración de conexiones seguras y elimina la necesidad de abrir puertos en el router, lo que lo hace una solución fácil y segura para exponer servicios locales.
 
-#### Por qu€ utilizar una versión opensource en lugar de la oficial
+#### Por que utilizar una versión opensource en lugar de la oficial
 
 La seguridad es un factor importante cuando se trata de exponer servicios a través de Internet. Mientras que Ngrok es una herramienta popular y útil para crear túneles seguros y exponer servicios locales, algunos usuarios pueden tener preocupaciones sobre la seguridad de su código cerrado y la privacidad de sus datos.
 
