@@ -2695,16 +2695,30 @@ Una vez que hayas generado las claves SSH, estás listo para establecer una cone
 ssh usuario@dirección_ip
 ```
 
-Reemplaza "usuario" con tu nombre de usuario en el sistema remoto y "dirección_ip" con la dirección IP del sistema remoto al que deseas conectarte.
+Reemplaza "usuario" con tu nombre de usuario en el sistema remoto y "dirección_ip" con la dirección IP del sistema remoto al que deseas conectarte, también puedes usar un dominio en lugar de una IP al igual que con las páginas web.
 
 Si es la primera vez que te conectas a ese sistema, se te pedirá que confirmes la autenticidad de la clave del host. Verifica que la clave mostrada coincida con la clave del sistema remoto y responde "yes" para agregarla a la lista de conocidos.
 
 A continuación, se te solicitará la contraseña del usuario remoto. Ingrésala y presiona "Enter" para establecer la conexión
 
-Normalmente ssh se utiliza para obtener acceso a servidores privados pero tambi€n hay alguno público. En el siguiente ejemplo veremos como utilizar openssh para conectarnos a un servidor remoto:
+Normalmente ssh se utiliza para obtener acceso a servidores privados pero también hay alguno público. En el siguiente ejemplo veremos como utilizar openssh para conectarnos a un servidor remoto:
 ```bash
-openssh bandit.labs.overthewire.org -p 2220
+ssh bandit0@bandit.labs.overthewire.org -p 2220
 ```
+
+Cuando te conectas por SSH por primera vez a un servidor es normal que se te muestre un mensaje indicando la huella digital del servidor, por ejemplo:
+```bash
+The authenticity of host '[bandit.labs.overthewire.org]:2220 ([16.16.8.216]:2220)' can't be established.
+ED25519 key fingerprint is SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+```
+
+Escribiremos **yes** para continuar la conexión.
+
+Lo que estamos haciendo es conectarnos al ordenador con dirección IP 16.16.8.216 usando el protocolo SSH con el usuario bandit0. Nos pedirá una contraseña que también es bandit0. Y con esto ya estarìa, ya nos hemos conectado a un ordenador remoto a través de SSH. 
+
+Si tienes multiples dispositivos, smartphones, computadores, hostings, vpns, ... ssh es una forma segura y simple de obtener una terminal remota. En esta paete se explica solo el cliente (como conectarse a), mas adelante en este capítulo se explica como configurar el servicio ssh para que se puedan conectar a ti. 
 
 ### SHCP
 
