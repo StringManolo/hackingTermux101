@@ -2726,22 +2726,37 @@ Si tienes multiples dispositivos, smartphones, computadores, hostings, vpns, ...
 
 SSHD es el Daemon de SSH que se ejecuta en segundo plano permaneciendo a la escucha de conexiones entrantes (por defecto en el puerto 8022 en Termux). Este servicio nos sirve para permitir que la máquina sea controlada desde el exterior a través del protocolo SSH.
 
+##### Instalar Alpine en proot-distro
 En lugar de correr directamente el servidor SSH sobre Termux, vamos a hacerlo sobre proot-distro con el argumento --isolated para tener una pequeña capa extra de seguridad. Ya vimos como utilizar la herramienta proot-distro en el [capítulo 11](#cap%C3%ADtulo-11-proot-distro):  
 ```bash
 proot-distro install alpine
 ```
 
+##### Iniciar sesión interactiva aislada de Alpine
+
+A continuación, utilizaremos proot-distro para iniciar sesión en la distribución Alpine Linux de forma aislada. Ejecutamos el siguiente comando:
 ```bash
 proot-distro login alpine --isolated
 ```
 
+##### Instalar openssh en Alpine
+
+Una vez que hemos iniciado sesión en la distribución Alpine Linux, podemos instalar el paquete de OpenSSH, que nos permitirá configurar el servidor SSHD. Ejecutamos el siguiente comando:
 ```bash
 apk add openssh
 ```
 
+##### Generación de claves SSH
+
+Antes de configurar el servidor SSHD, necesitamos generar las claves SSH necesarias. Ejecutamos el siguiente comando:
+
 ```bash
 ssh-keygen -A
 ```
+
+##### Creae archivo de configuración de SSHD
+
+Este comando sobrescribe el contenido del archivo /etc/ssh/sshd_config con la configuración especificada. Aquí estamos permitiendo el inicio de sesión como usuario root, configurando el puerto de escucha en el puerto 8022, habilitando la autenticación por contraseña y desactivando algunas opciones de reenvío y redireccionamiento.
 
 ```bash
 echo 'Include /etc/ssh/sshd_config.d/*.conf
@@ -2755,47 +2770,105 @@ X11Forwarding no
 Subsystem       sftp    internal-sftp' > /etc/ssh/sshd_config
 ```
 
+###### Generación de una contraseña para el usuario root
+Para habilitar el inicio de sesión como usuario root, necesitamos establecer una contraseña. Ejecutamos el siguiente comando:
+
 ```bash
 tr -dc '[:alnum:][:punct:]' < /dev/urandom | head -c 16
 ```
 
+Este comando genera una contraseña aleatoria de 16 caracteres para el usuario root. Puedes utilizar cualquier contraaeña que tu quieras, pero debes tener en cuenta que hay miles de scanneres y herramientas de fuerza bruta scanneando servicios SSH. Si pones una contraseña frágil, te van a hackear y podrán ejecutar comandos en tu dispositivo.  
+
+##### Establecimiento de la contraseña del usuario root
+Ahora, estableceremos la contraseña generada para el usuario root. Ejecutamos el siguiente comando:
 ```bash
 passwd root
 ```
+
+Este comando solicitará que ingresemos la nueva contraseña para el usuario root.
+
+##### Inicio del servidor SSHD
+Finalmente, iniciamos el servidor SSHD ejecutando el siguiente comando:
 
 ```bash
 /usr/sbin/sshd
 ```
 
+##### Conexión al servidor SSHD
+Ahora que hemos configurado y activado el servidor SSHD, podemos conectarnos a él desde otras máquinas (pcs, smartphones, etc) y/o otras terminales. Utilizamos el comando ssh para establecer una conexión SSH. 
+
+###### Para conexión desde otra pestaña de Termux u otro software en el mismo equipo:
 ```bash
 ssh root@127.0.0.1 -p 8022
 ```
 
+###### Para conexión desde otra maquina que se encuentre en la misma red local (mismo wi-fi) 
 ```bash
 ssh root@192.168.1.40 -p 8022
 ```
+__Remplaza la IP 192.168.1.40 por la IP privada que el router te asignó (IP local de tu Smartphone)__ 
+
+###### Para conexión desde fuera de nuestra red (cualquier máquina en cualquier parte, con router en casa)
+```bash
+ssh root@93.184.216.34 -p 8022
+``` 
+__Remplaza la IP 93.184.216.34 por la IP pública de tu router y configura en el router la apertura/redirección de puertos de la IP pública hacia la IP local de tu Smartphone__
+
+###### Para conexión desde fuera de nuestra red (cualquier máquina en cualquier parte, datos móviles o no)
+Si utilzas datos móviles normalmente los proveedores de internet no te dan una IP pública única ni tampoco un router o una forma de abrir puertos, si no que te meten en una red compartida llamada CGNAT. Cuando estás en CGNAT no puedes exponer ningún tipo de servicio a internet. Para exponer nuestro servidor SSH lo que haremos será utilizar un servidor intermedio que encapsule el trafico mediante técnicas de tunelación. __Esta técnica funciona también aunque no uses datos móviles, asique si simplemente quierer ahorrarte abrir puertos, o tienes cualquier otro motivo también te sirve__ 
+
+En el [Capítulo 19: Ngrok y Exponer Servicios](#cap%C3%ADtulo-19-ngrok-y-exponer-servicios) tienes mas información.
+
+
+##### Instalar git
+
+Instalamos git para poder clonar el repositorio de un cliente código abierto de Ngrok
 
 ```bash
 apk add git
 ```
 
+##### Instalar tmux
+
+Instalamos también tmux ya que es una dependencia del cliente codigo abierto de ngrok 
+
 ```bash
 apk add tmux
 ```
 
+##### Instalar ngrok opensource
 ```bash
-git clone https://github.com/StringManolo/ngrok
-cd ngrok
-chmod 775 ngrokWizard.sh
-chmod 775 ngrokStart.sh
-chmod 775 ngrokStop.sh
-./ngrokWizard.sh
+git clone https://github.com/StringManolo/ngrok;
+cd ngrok;
+chmod 775 ngrokWizard.sh;
+chmod 775 ngrokStart.sh;
+chmod 775 ngrokStop.sh;
+./ngrokWizard.sh;
+
 ```
 
+Lee y sigue las indicaciones que se muestran en consola para configurar y ejecutar ngrok.  
 
+Una vez completado el proceso, en la salida de consola te saldrá un url con protocolo tcp acompañado de un puerto, por ejemplo: __tcp://8.tcp.ngrok.io:16459__  
 
-Nota: __Este capítulo está incompleto ya que quiero desarrollar un software de tunelación que permita exponer ssh en Termux a través de los servidores ngrok (u otros) sin utilizar códido cerrado__
+Podremos conectarnos a nuestra máquina al igual que hicimos en local pero ahora desde cualquier lugar/dispositivo;
 
+```bash
+ssh root@8.tcp.ngrok.io -p 16459
+```
+
+Puedes cerrar todo simplemente corriendo el comando __exit__  
+
+Para volver a activar el SSH ngrok y demás no necesitarás repetir todo el proceso, simplemente ingresas al Alpine linux, ejecutas el ssh y el ./ngrokStart.sh, pones el puerto 8022 y listo:
+```bash
+proot-distro login alpine --isolated
+```
+
+```bash
+/usr/sbin/sshd;
+/root/ngrok/ngrokStart.sh;
+
+```
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 

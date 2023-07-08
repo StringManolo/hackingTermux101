@@ -4,3 +4,8 @@
 - Probar a añadir etiquetas metas para mejorar la previsualización de del enlace a githubpages en Telegram
 - Revisar capítulos a partir del 12 paso a paso en instalación limpia de termux
 - Crear contraportada explicando que es Termux, qie se puede instalar gratuitamente en smartphones sin riesgo y demás características
+- Añadir protocolo de copia al capitulo de ssh y sshd
+- Comentar riesgos y prácticas de seguridad para ssh/d asi como opciones de config
+- Comentar opciones y argumentos de ssh, sscp, sshd, et
+- Añadir mas imágenes
+- Añadir páginas xon scripts útiles
