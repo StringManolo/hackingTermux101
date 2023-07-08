@@ -2666,7 +2666,7 @@ Con estos pasos, se creará una carpeta para el sitio web y otra para el hidden 
 ----
 
 
-## Capítulo 22: SSH, SHCP y SSHD
+## Capítulo 22: SSH, SCP y SSHD
 
 ### SSH
 
