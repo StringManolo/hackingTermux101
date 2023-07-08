@@ -2165,7 +2165,7 @@ proot-distro login alpine --isolated
 
 ### Ejecuta un comando desde una distribución
 ```bash
-proot-distro login soscw --isolated --pwd
+proot-distro login alpine --isolated -- pwd
 ```
 [Tabla de Contenidos](#tabla-de-contenidos)
 
