@@ -2768,7 +2768,7 @@ X11Forwarding no
 Subsystem       sftp    internal-sftp' > /etc/ssh/sshd_config
 ```
 
-###### Generación de una contraseña para el usuario root
+##### Generación de una contraseña para el usuario root
 Para habilitar el inicio de sesión como usuario root, necesitamos establecer una contraseña. Ejecutamos el siguiente comando:
 
 ```bash
@@ -2935,4 +2935,3 @@ proot-distro login alpine --isolated
 
 ----
 
-c
