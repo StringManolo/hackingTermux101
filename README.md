@@ -2724,7 +2724,75 @@ Si tienes multiples dispositivos, smartphones, computadores, hostings, vpns, ...
 
 ### SSHD 
 
-SSHD es el Daemon de SSH que se ejecuta en segundo plano permaneciendo a la escucha de conexiones entrantes (por defecto en el puerto 8022 en Termux)
+SSHD es el Daemon de SSH que se ejecuta en segundo plano permaneciendo a la escucha de conexiones entrantes (por defecto en el puerto 8022 en Termux). Este servicio nos sirve para permitir que la máquina sea controlada desde el exterior a través del protocolo SSH.
+
+En lugar de correr directamente el servidor SSH sobre Termux, vamos a hacerlo sobre proot-distro con el argumento --isolated para tener una pequeña capa extra de seguridad. Ya vimos como utilizar la herramienta proot-distro en el [capítulo 11](#cap%C3%ADtulo-11-proot-distro):  
+```bash
+proot-distro install alpine
+```
+
+```bash
+proot-distro login alpine --isolated
+```
+
+```bash
+apk add openssh
+```
+
+```bash
+ssh-keygen -A
+```
+
+```bash
+echo 'Include /etc/ssh/sshd_config.d/*.conf
+Port 8022
+PermitRootLogin yes
+AuthorizedKeysFile      .ssh/authorized_keys
+PasswordAuthentication yes
+AllowTcpForwarding no
+GatewayPorts no
+X11Forwarding no
+Subsystem       sftp    internal-sftp' > /etc/ssh/sshd_config
+```
+
+```bash
+tr -dc '[:alnum:][:punct:]' < /dev/urandom | head -c 16
+```
+
+```bash
+passwd root
+```
+
+```bash
+/usr/sbin/sshd
+```
+
+```bash
+ssh root@127.0.0.1 -p 8022
+```
+
+```bash
+ssh root@192.168.1.40 -p 8022
+```
+
+```bash
+apk add git
+```
+
+```bash
+apk add tmux
+```
+
+```bash
+git clone https://github.com/StringManolo/ngrok
+cd ngrok
+chmod 775 ngrokWizard.sh
+chmod 775 ngrokStart.sh
+chmod 775 ngrokStop.sh
+./ngrokWizard.sh
+```
+
+
 
 Nota: __Este capítulo está incompleto ya que quiero desarrollar un software de tunelación que permita exponer ssh en Termux a través de los servidores ngrok (u otros) sin utilizar códido cerrado__
 
@@ -2793,4 +2861,4 @@ Nota: __Este capítulo está incompleto ya que quiero desarrollar un software de
 
 ----
 
-
+c
