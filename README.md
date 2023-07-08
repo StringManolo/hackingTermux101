@@ -35,7 +35,7 @@ This book is original writen in spanish. You can access it in other languages to
 * [Capítulo 19: Ngrok y Exponer Servicios](#cap%C3%ADtulo-19-ngrok-y-exponer-servicios)
 * [Capítulo 20: Tor, Configuración y Uso](#cap%C3%ADtulo-20-tor-configuraci%C3%B3n-y-uso)
 * [Capítulo 21: Servicios Ocultos](#cap%C3%ADtulo-21-servicios-ocultos)
-* [Capítulo 22: SSH, SHCP y SSHD](#cap%C3%ADtulo-22-ssh-shcp-y-sshd)
+* [Capítulo 22: SSH, SCP y SSHD](#cap%C3%ADtulo-22-ssh-scp-y-sshd)
 * [Capítulo 23: Bots de Telegram](#cap%C3%ADtulo-23-bots-de-telegram)
 * [Capítulo 24: Telegram RAT](#cap%C3%ADtulo-24-telegram-rat)
 * [Capítulo 25: Protocolo HTTP](#cap%C3%ADtulo-25-protocolo-http)
@@ -2718,9 +2718,7 @@ Escribiremos **yes** para continuar la conexión.
 
 Lo que estamos haciendo es conectarnos al ordenador con dirección IP 16.16.8.216 usando el protocolo SSH con el usuario bandit0. Nos pedirá una contraseña que también es bandit0. Y con esto ya nos hemos conectado a un ordenador remoto a través de SSH. 
 
-Si tienes multiples dispositivos, smartphones, computadores, hostings, vpns, ... ssh es una forma segura y simple de obtener una terminal remota. En esta paete se explica solo el cliente (como conectarse a), mas adelante en este capítulo se explica como configurar el servicio ssh para que se puedan conectar a ti. 
-
-### SHCP
+Si tienes multiples dispositivos, smartphones, computadores, hostings, vpns, ... SSH es una forma segura y simple de obtener una terminal remota. En esta parte se explica solo el cliente (como conectarse a), a continuación se explica como configurar el servicio ssh para que una maquina sea accesible a través de SSH. 
 
 ### SSHD 
 
@@ -2869,6 +2867,9 @@ proot-distro login alpine --isolated
 /root/ngrok/ngrokStart.sh;
 
 ```
+
+### SCP
+
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
