@@ -2716,13 +2716,18 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
 Escribiremos **yes** para continuar la conexión.
 
-Lo que estamos haciendo es conectarnos al ordenador con dirección IP 16.16.8.216 usando el protocolo SSH con el usuario bandit0. Nos pedirá una contraseña que también es bandit0. Y con esto ya estarìa, ya nos hemos conectado a un ordenador remoto a través de SSH. 
+Lo que estamos haciendo es conectarnos al ordenador con dirección IP 16.16.8.216 usando el protocolo SSH con el usuario bandit0. Nos pedirá una contraseña que también es bandit0. Y con esto ya nos hemos conectado a un ordenador remoto a través de SSH. 
 
 Si tienes multiples dispositivos, smartphones, computadores, hostings, vpns, ... ssh es una forma segura y simple de obtener una terminal remota. En esta paete se explica solo el cliente (como conectarse a), mas adelante en este capítulo se explica como configurar el servicio ssh para que se puedan conectar a ti. 
 
 ### SHCP
 
 ### SSHD 
+
+SSHD es el Daemon de SSH que se ejecuta en segundo plano permaneciendo a la escucha de conexiones entrantes (por defecto en el puerto 8022 en Termux)
+
+Nota: __Este capítulo está incompleto ya que quiero desarrollar un software de tunelación que permita exponer ssh en Termux a través de los servidores ngrok (u otros) sin utilizar códido cerrado__
+
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
@@ -2741,7 +2746,6 @@ Si tienes multiples dispositivos, smartphones, computadores, hostings, vpns, ...
 [Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
-
 
 
 ## Capítulo 25: Protocolo HTTP 
