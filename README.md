@@ -2865,10 +2865,32 @@ proot-distro login alpine --isolated
 ```bash
 /usr/sbin/sshd;
 /root/ngrok/ngrokStart.sh;
-
 ```
 
 ### SCP
+
+SCP (Secure Copy) es un protocolo basado en SSH que permite la transferencia segura de archivos entre sistemas remotos. Con SCP, puedes copiar archivos y directorios de forma segura de un sistema a otro.
+
+##### Copiar archivos desde el sistema local al sistema remoto
+Para copiar archivos desde el sistema local al sistema remoto utilizando SCP, utiliza el siguiente comando:
+```bash
+scp miArchivo.txt root@127.0.0.1:/home/archivos -p 8022
+```
+
+El comando te pedirá la contraseña del usuario remoto. Ingrésala y presiona "Enter" para iniciar la transferencia del archivo.
+
+##### Copiar archivos desde el sistema remoto al sistema local
+Para copiar archivos desde el sistema remoto al sistema local utilizando SCP, utiliza el siguiente comando:
+```bash
+scp root@127.0.0.1:/home/archivos/logServidor.txt ~/logs/ -p 8022
+
+```
+
+##### Copiar directorios recursivamente
+Para copiar un directorio completo de forma recursiva desde el sistema local al sistema remoto o viceversa, utiliza el siguiente comando:
+```
+scp -r fotos root@127.0.0.1:/home/imagenes
+```
 
 
 [Tabla de Contenidos](#tabla-de-contenidos)
