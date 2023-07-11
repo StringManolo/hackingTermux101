@@ -2899,6 +2899,53 @@ scp -r fotos root@127.0.0.1:/home/imagenes
 
 
 ## Capítulo 23: Bots de Telegram
+Telegram es una app de mensajería que puede resultar de gran utilidad para desarrolladores y hackers, en parte gracias a los bots.  
+  
+Los bots son programas normales pero con la capacidad añadida de que pueden usar telegram. Esto te permite enviar texto desde telegram a tu dispositivo y viceversa, esto nos da infinitas posibilidades.
+
+##### Listado de bots útiles:  
+- [Conversor De Archivos](https://t.me/newfileconverterbot)   
+Le pasas un archivo y te lo convierte a otro formato. Soporta 874 formatos.  
+- [Email Temporal DropMail](https://t.me/DropMailBot)   
+Te da emails temporales que duran 10 minutos.  
+- [Email Temporal TempMail](https://t.me/TempMail_org_bot)  
+Otro bot de email temporales.  
+- [Email Mailable](https://t.me/mailableBot)  
+Este bot the permite crear tu dirección de correo, mandar y recibir correos desde Telegram  
+- [GMAIL](https://t.me/GmailBot)  
+Bot oficial de gmail. Te llevan los emails a telegram y puedes contestarles, enviar correos, etc.  
+- [Subir Archivos AnonFile](https://t.me/anonfileuploaderbot)  
+Te permite subir archivos a anonfiles.com desde telegram y te da el enlace de descarga
+- [Traductor De Idiomas](https://t.me/BabelgramBot)  
+Traduce conversaciones entre distintos idiomas.  
+- [Imagenes de mapas y satellites](https://t.me/openmap_bot)  
+Le introduces una dirección y te da una imagen de la zona.   
+- [Convierte audios a texto](https://t.me/TranscribeME_bot)  
+Le mandas un audio y te da en texto lo que dice la persona.  
+- [Obten el texto de imágenes](https://t.me/TexifyBot)  
+Le mandas una imagen y te da el texto que salga en ella.  
+- [Convierte texto a voz](https://t.me/text_to_speach_bot)  
+Le mandas un texto y te devuelve un audio leyendo el texto.  
+- [Convierte Web a imagen/es o pdf](https://t.me/BetterWebShotBot)
+Le pones la url y te permite obtener una (o varias) imagen o pdf de la web.  
+- [Antivirus VirusTotal](https://t.me/VirusTotalAV_bot)  
+Le mandas un archivo y comprueba si tiene virus.   
+- [Antivirus DrWeb](https://t.me/DrWebBot)  
+Le mandas un archivo y comprueba si tiene virus.  
+- [BD de Smartphones](https://t.me/SmartphoneDBot)  
+Introduces la marca/modelo y te sale todo el listado de modelos y todas sus especificaciones.  
+- [Ejecuta código javascript](https://t.me/injsbot)    
+Ejecuta el código javascript que le envies y te devuelve el resultado.   
+- [Ejecuta código en múltiples lenguajes](https://t.me/RextesterRoBot)  
+Ejecuta código en muchos lenguajes distintos y te da el resultado.   
+- [Descarga Youtube/Tiktok](https://t.me/redownload_bot)  
+Descarga videos como video o audio.  
+- [Crea códigos QR](https://t.me/qr_livebot)
+Introduce un texto o url y te genera la imagen QR.  
+
+
+_Estos bots están todos operativos y son accesibles gratuitamente en el momento en el que se ha escrito este artículo. Esto puede cambiar si lo lees mucho tiempo después de que se escribiese_
+
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
