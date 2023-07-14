@@ -1,6 +1,0 @@
-defaults:
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "layout"
