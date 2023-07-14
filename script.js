@@ -15,6 +15,13 @@ document.addEventListener("DOMContentLoaded", function() {
       paragraph.innerHTML = paragraph.innerHTML.replace(filename, span.outerHTML);
       
       break;
+    } else if (text.includes(`echo "$(clear)\n\n\n\n\n\n\n\n\n\nHola, te encuentras en el directorio\n$(pwd)\nNo es genial\n?\n\n"`)) {
+      var filename2 = `echo "$(clear)\n\n\n\n\n\n\n\n\n\nHola, te encuentras en el directorio\n$(pwd)\nNo es genial\n?\n\n"`;
+      var span2 = document.createElement("span");
+      span2.textContent = filename2;
+      span2.classList.add("long-filename");
+
+      paragraph.innerHTML = paragraph.innerHTML.replace(filename2, span2.outerHTML);
     }
   }
 });
