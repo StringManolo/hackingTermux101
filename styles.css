@@ -1,58 +1,69 @@
-/* styles.css */
-
-/* Reset default styles */
-body, h1, h2, h3, h4, h5, h6, p, ul, ol {
-  margin: 0;
-  padding: 0;
-}
-
-/* Set a base font and background color */
 body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
 }
 
-/* Set container styles */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+h2 {
+    font-size: 24px;
+    margin-top: 30px;
 }
 
-/* Set header styles */
-h1 {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
+h3 {
+    font-size: 20px;
+    margin-top: 20px;
 }
 
-/* Set paragraph styles */
+h5 {
+    font-size: 16px;
+    margin-top: 15px;
+}
+
 p {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
-/* Set link styles */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
 a {
-  color: #007bff;
-  text-decoration: none;
+    text-decoration: none;
+    color: blue;
 }
 
-a:hover {
-  text-decoration: underline;
+hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ccc;
 }
 
-/* Code block styles */
-pre {
-  background-color: #f7f7f7;
-  padding: 10px;
-  border-radius: 4px;
-  overflow: auto;
+.language-bash {
+    background-color: #f1f1f1;
+    padding: 10px;
+    overflow-x: auto;
 }
 
-code {
-  font-family: Consolas, Monaco, 'Courier New', Courier, monospace;
-  font-size: 14px;
-  color: #333;
+.highlighter-rouge {
+    color: #333;
 }
+
+.highlighter-rouge .c { color: #960050; } /* Comment */
+.highlighter-rouge .nv { color: #00736b; } /* Name.Variable */
+.highlighter-rouge .s2 { color: #df0000; } /* String.Symbol */
+.highlighter-rouge .nt { color: #009000; } /* Name.Tag */
+.highlighter-rouge .k { color: #0000ff; } /* Keyword */
+.highlighter-rouge .p { color: #555; } /* Punctuation */
+.highlighter-rouge .nb { color: #333; } /* Name.Builtin */
+.se { color: #333; font-weight: bold; } /* String.Escape */
