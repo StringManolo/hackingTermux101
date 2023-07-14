@@ -16,7 +16,7 @@ body {
 /* Esta clase se añade dinámicamente con js */
 .long-filename {
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: scroll;
   white-space: nowrap;
   max-width: 200px; /* Ajusta el ancho máximo deseado */
   display: inline-block;
