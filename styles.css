@@ -26,6 +26,8 @@ p {
 img {
     max-width: 100%;
     height: auto;
+    display: block; /* Para centrar la imagen correctamente */
+    margin: 0 auto; /* Para centrar la imagen correctamente */
 }
 
 ul {
@@ -40,7 +42,11 @@ li {
 
 a {
     text-decoration: none;
-    color: blue;
+    color: #007bff;
+}
+
+a:hover {
+    color: #0056b3;
 }
 
 hr {
