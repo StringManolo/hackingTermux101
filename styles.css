@@ -40,6 +40,8 @@ h5 {
 
 p {
   margin-bottom: 10px;
+  overflow: auto;
+  width: 200px;
 }
 
 img {
