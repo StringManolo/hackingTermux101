@@ -1,0 +1,58 @@
+/* styles.css */
+
+/* Reset default styles */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a base font and background color */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #f2f2f2;
+}
+
+/* Set container styles */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Set header styles */
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Set paragraph styles */
+p {
+  margin-bottom: 10px;
+}
+
+/* Set link styles */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Code block styles */
+pre {
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+code {
+  font-family: Consolas, Monaco, 'Courier New', Courier, monospace;
+  font-size: 14px;
+  color: #333;
+}
