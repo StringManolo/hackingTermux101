@@ -2,6 +2,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h2 {
@@ -26,8 +29,8 @@ p {
 img {
     max-width: 100%;
     height: auto;
-    display: block; /* Para centrar la imagen correctamente */
-    margin: 0 auto; /* Para centrar la imagen correctamente */
+    display: block;
+    margin: 0 auto;
 }
 
 ul {
@@ -73,3 +76,9 @@ hr {
 .highlighter-rouge .p { color: #555; } /* Punctuation */
 .highlighter-rouge .nb { color: #333; } /* Name.Builtin */
 .se { color: #333; font-weight: bold; } /* String.Escape */
+
+@media (orientation: portrait) {
+    body {
+        align-items: flex-start;
+    }
+}
