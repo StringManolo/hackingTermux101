@@ -68,6 +68,7 @@ hr {
     background-color: #f1f1f1;
     padding: 10px;
     overflow-x: auto;
+    word-break: break-word;
     overflow-wrap: break-word;
 }
 
