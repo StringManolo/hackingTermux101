@@ -74,7 +74,7 @@ hr {
   border-top: 1px solid #ccc;
 }
 
-.language-bash {
+.language-bash .language-plaintext {
   background-color: #f1f1f1;
   padding: 10px;
   overflow-x: auto;
