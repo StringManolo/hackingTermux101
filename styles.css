@@ -114,9 +114,11 @@ hr {
 @media (orientation: portrait) {
   body {
     align-items: flex-start;
+    font-size: 1.25rem;
   }
 }
 
+/*
 @media (max-width: 600px) {
   body {
     padding: 10px;
@@ -148,3 +150,4 @@ hr {
     font-size: 12px;
   }
 }
+*/
