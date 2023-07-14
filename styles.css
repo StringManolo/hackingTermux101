@@ -114,7 +114,7 @@ hr {
 @media (orientation: portrait) {
   body {
     align-items: flex-start;
-    font-size: 1.75rem;
+    font-size: 1.25rem;
   }
 }
 
