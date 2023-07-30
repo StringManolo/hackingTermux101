@@ -2984,7 +2984,7 @@ Podemos primero hacer un listado de las funcionalidades:
 - Usuarios logeados pueden correr comandos en el sistema  
 - Usuarios no logeados pueden correr comandos como /help o /login  
   
-Una vez tenemos la lista de lo que queremos que haga el programa, podemos escribir como serìa el código en español en un lenguaje inventado:
+Una vez tenemos la lista de lo que queremos que haga el programa, podemos escribir como sería el código en español en un lenguaje inventado:
 
 ```
 -comentario- VariablesGlobales:
@@ -3041,7 +3041,7 @@ Para poder interactuar con Telegram, lo primero será crear un bot de telegram q
   
 Una vez dentro del chat de tg con BotFather le escribirás el comando /newbot para iniciar la creación de un nuevo bot. Te pedirá que escribas el nombre del bot. Puedes ponerle por ejemplo: RAT_De_TuNombre  
   
-Tras enviarle el nombre de tu bot, te dirá que necesita un nombre de uusuario para la cuenta del bot. Es decir, te está pidiendo el @ del bot. Una de las condiciones de las cuentas de bots es que su nolbre de cuenta debe terminar por la palabra bot. Asique puede llamarlo RAT_De_TuNombre_Bot en mi caso sería RAT_De_Manolo_Bot  
+Tras enviarle el nombre de tu bot, te dirá que necesita un nombre de usuario para la cuenta del bot. Es decir, te está pidiendo el @ del bot. Una de las condiciones de las cuentas de bots es que su nombre de cuenta debe terminar por la palabra bot. Asique puedes llamarlo RAT_De_TuNombre_Bot que en mi caso sería RAT_De_Manolo_Bot  
   
 Si el nombre es válido, verás un mensaje como:
 ```
@@ -3054,7 +3054,8 @@ Keep your token secure and store it safely, it can be used by anyone to control 
 For a description of the Bot API, see this page: https://core.telegram.org/bots/api
 ```
 
-En este mensaje se incluye una url para poder hablar con el bot y un token que debes poner en las peticiones que hagas al bot, por ejemplo para obtener los mensajes que le enviaron al bot.  
+En este mensaje se incluye una url para poder hablar con el bot y un token que debes poner en las peticiones que hagas al bot, por ejemplo para obtener los mensajes que le enviaron al bot. 
+  
 *IMPORTANTE*: _Este token no debes compartirlo con nadie, ya que se puede utilizar para controlar el bot y por tanto si lo tienes funcionando en tu sistema o en otro, un desconocido que tenga tu token del bot podría también controlar el sistema sin que tu lo sepas._
 
 Podemos probar que todo funciona correctamente con un comando de curl. Abre un chat con el bot usando el enlace que te dio BotFather y envíale el mensaje Hola!  
@@ -3083,7 +3084,7 @@ Este formato se conoce como JSON y es bastante utilizado por muchos servicios. C
 curl -s curl 'https://api.telegram.org/bot5863933391:HBGUBfzdfpp0QtZVSvGaWUMbWvJi7dWLJK9/getUpdates' | jq .result[0].message.text
 ```  
 
-Veremos como resultado el mensaje 'Hola' que le escribimos al bot en el chat. La sintaxis de jq es sencilla de entender, los puntos son oara acceder a porpiedades (es decir los nombres) y los corchetes son para acceder al mensaje en concreto. Por ejemplo con [0] accedemos al primer mensaje, con [1] accedemos al segundo, con [9] accedemos al décimo, etc. En este caso solo tenemos el de Hola, pero si le envias mas cosas al chat del bot, tendrás mas.  
+Veremos como resultado el mensaje 'Hola' que le escribimos al bot en el chat. La sintaxis de jq es sencilla de entender, los puntos son para acceder a propiedades (es decir los nombres), y los corchetes son para acceder al mensaje en concreto. Por ejemplo con [0] accedemos al primer mensaje, con [1] accedemos al segundo, con [9] accedemos al décimo, etc. En este caso solo tenemos el de Hola, pero si le envias mas cosas al chat del bot, tendrás mas.  
   
 Si espaciamos el JSON podemos ver mejor su estructura visualmente:  
 ```json
@@ -3140,9 +3141,9 @@ Si espaciamos el JSON podemos ver mejor su estructura visualmente:
 Le añadí otro mensaje para que veas como queda.  
 
 
-Pues ahora que ya vemos mas o menos como funciona, lo que haremos es usar Bash obtener estos mensajes programáticamente, analizarlos y tomar decisiones en base al texto que recibamos, por ejemplo si recivimos el mensaje /saluda podremos obtener el nombre del usuario que nos envió ese mensaje, el id del chat y enviarle un mensaje tal que 'Hola Manolo' al mismo chat que nos envió el mensaje /saluda. Con esta sencilla técnica si detectamos el mensaje '/run ls' podremos ejecutar el comando ls usando Bash y enviarle al chat del usuario la respuesta del comando ls. Así de esta forma es como tener una terminal remota, ya que todos los comandos que le ponemos en el chat de telegram nuestro programa en bash los ejecutará y nos enviará la respuesta.  
+Pues ahora que ya vemos mas o menos como funciona, lo que haremos es usar Bash para obtener estos mensajes programáticamente, analizarlos y tomar decisiones en base al texto que recibamos, por ejemplo si recibimos el mensaje /saluda podremos obtener el nombre del usuario que nos envió ese mensaje, el id del chat y enviarle un mensaje tal que 'Hola Manolo' al mismo chat que nos envió el mensaje /saluda. Con esta sencilla técnica si detectamos el mensaje '/run ls' podremos ejecutar el comando ls usando Bash y enviarle al chat del usuario la respuesta del comando ls. Así de esta forma es como tener una terminal remota, ya que todos los comandos que le ponemos en el chat de telegram nuestro programa en bash los ejecutará y nos enviará la respuesta.  
   
-Pues procedamos a implementar en bash nuestra primera función LeerMensajes que hicimos en pseudocódugo en español. _Para programar usaré VIM como editor de texto. Si no lo manejas puedes revisar el [Capítulo 6: Uso de VI y de VIM](#cap%C3%ADtulo-6-uso-de-vi-y-de-vim) o puedes utilizar cualquier otro editor de texto. _
+Pues procedamos a implementar en bash nuestra primera función LeerMensajes que hicimos en pseudocódugo en español. _Para programar usaré VIM como editor de texto. Si no lo manejas puedes revisar el_ [Capítulo 6: Uso de VI y de VIM](#cap%C3%ADtulo-6-uso-de-vi-y-de-vim) _o puedes utilizar cualquier otro editor de texto._
 
 Crearé el archivo llamado rat.sh con el siguiente comando:
 ```bash
@@ -3166,12 +3167,18 @@ echo $mensajes
 ```
 
 Explicación del código:  
-- Utilizo una variable para almacenar el token, ya que si lo metes directamente en el url y en el futuro utilizas otro bot, o cambias el token de tu bot tendrìas que cambiarlo de todas las urls. En cambio usando la variable TOKEN tan solo hay que cambiarle el token ahí.
-- Obtengo una referencia local a la segunda variable que se pase en la llamda a la función (es una técnica para poder rellenar la variable mensajes con lo que queramos)
-- Creo un texto tal que curl 'https://.....' despues le añado el TOKEN, después el resto de la url.  
+- Utilizo una variable para almacenar el token, ya que si lo metes directamente en el url y en el futuro utilizas otro bot, o cambias el token de tu bot tendrías que cambiarlo de todas las urls. En cambio usando la variable TOKEN tan solo hay que cambiarle el token ahí.  
+
+- Obtengo una referencia local a la segunda variable que se pase en la llamada a la función (es una técnica para poder rellenar la variable mensajes con lo que queramos)  
+
+- Creo un texto tal que curl 'https://.....' después le añado el TOKEN, después el resto de la url.  
+
 - Evaluo el texto para ejecutarlo como comando.  
+
 - Le asigno a mensajes la respuesta del comando (el JSON).  
+
 - Añadí también un código de ejemplo de como se utiliza la función para guardar el JSON en una variable y lo imprimo en consola.  
+
   
 Si sales del editor y ejecutas el código con el comando:
 ```bash
