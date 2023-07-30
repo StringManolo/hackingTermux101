@@ -3029,7 +3029,6 @@ bucleInfinito:
 
   BorrarMensajes
   Esperar 5 segundos
-
 ```  
   
 Como puedes observar el código es bastante sencillo. Esto es lo que sería la lógica principal del programa. Obviamente se omiten pequeños detalles como manejo de errores, obtener el nombre del usuario de los mensajes, etc. Ya que el objetivo de hacer este pseudocódigo es definir la lógica principal/estructura que queremos que tenga nuestro programa.   
@@ -3063,7 +3062,6 @@ Podemos probar que todo funciona correctamente con un comando de curl. Abre un c
 Utiliza el siguiente comando para solicitar los mensajes del bot con curl:
 ```bash
 curl 'https://api.telegram.org/botYOUR_BOT_TOKEN/getUpdates'
-
 ```
 
 Obviamente remplaza YOUR_BOT_TOKEN por el token de tu bot. En mi caso sería: 
