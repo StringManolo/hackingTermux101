@@ -3173,7 +3173,7 @@ Explicación del código:
 
 - Creo un texto tal que curl 'https://.....' después le añado el TOKEN, después el resto de la url.  
 
-- Evaluo el texto para ejecutarlo como comando.  
+- Evalúo el texto para ejecutarlo como comando.  
 
 - Le asigno a mensajes la respuesta del comando (el JSON).  
 
@@ -3274,8 +3274,8 @@ EnviarMensaje() {
 ```
   
 Explicación del código:  
-- Esta función es prácticamnete igual a las otras 2 pero es un poco más larga porque contiene una solución para casos en los que el mensaje de consola es demasiado largo como para enviarlo directamente en un solo mensaje de Telegram. Ya el tamaño máximo de un mensaje de telegram es unos 4.000 caracteres.
-- También al enviar el mensaje con curl y utlizando una url es necesario escapar ciertos caracteres, y por eso se incluye la función CodificarMensaje.
+- Esta función es prácticamente igual a las otras 2 pero es un poco más larga porque contiene una solución para casos en los que el mensaje de consola es demasiado largo como para enviarlo directamente en un solo mensaje de Telegram (Ya que el tamaño máximo de un mensaje de telegram es unos 4.000 caracteres).
+- También al enviar el mensaje con curl y utilizando una url es necesario escapar ciertos caracteres, y por eso se incluye la función CodificarMensaje.
 
 ##### Ahora la función de Login:
 ```bash
@@ -3295,7 +3295,7 @@ Login() {
 }
 ```
 
-Explicacion del código:  
+Explicación del código:  
 - En esta función recorremos la lista de usuariosLogeados para comprobar si el @usuario se encuentra en ella. De momento la lista está vacia, la llenaremos mas adelante cuando el usuario mande el mensaje '/login contraseña' siendo contraseña una variable global que contenga una contraseña que tu quieras usar para el login.
 
 ##### La función para correr comandos podría quedar tal que:
@@ -3351,10 +3351,13 @@ CorrerComando() {
 ```
   
 Explicación del código:  
-- Aquí creamos una global CONTRASEÑA para compararla con la que ponga el usuario tras el comando /login. Si coinciden le añadismos a la lista de usaurios logeados.
-- Definimos un comando /start y un texto hola a los que el bot siempre responderá. Aquí podrías añadir los comando típicos como /help o /ayuda para que el bot indique a cualquier usuario como se utiliza, etc.  
+- Aquí creamos una global CONTRASEÑA para compararla con la que ponga el usuario tras el comando /login. Si coinciden lo añadimos a la lista de usuarios logeados.  
+
+- Definimos un comando */start* y un texto *hola* a los que el bot siempre responderá. Aquí podrías añadir los comandos típicos como puedan ser /help o /ayuda para que el bot indique a cualquier usuario como se utiliza, etc.  
+
 - Definimos el comando /login para que los usuarios puedan obtener privilegios.  
-- Definimos el comando /run que solo lo podrán usar usuarios loggeados y que nos sirve para correr comandos en la máquina que está corriendo el código. Creando así una terminal remota. Haciendo esta comprobaciin podemos hacer login en el bot en un chat privado, meter el bot en un chat público y correr comandos sobre él sin que los demás usuarios del chat público puedan hacerlo al no saber ellos la contraseña de login.  
+
+- Definimos el comando /run que solo lo podrán usar usuarios logeados y que nos sirve para ejecutar comandos en la máquina que está corriendo el código. Creando así una terminal remota. Hacer esta comprobación nos posibilita el hacer login en el bot desde un chat privado, meter el bot en un chat público y correr comandos sobre él sin que los demás usuarios del chat público puedan hacerlo (al no saber ellos la contraseña de login).  
 
 ##### Ahora solo nos falta la lógica principal:
 ```bash
@@ -3397,7 +3400,7 @@ done
 ```
   
 Explicación de código:
-- Hacemos un bucle infinito para que el bot esté todo el rato compribando si le llegan mensajes nuevos y ejecutándolos cuando corresponda.  
+- Hacemos un bucle infinito para que el bot esté todo el rato comprobando si le llegan mensajes nuevos y ejecutándolos cuando corresponda.  
 - Hacemos algunas comprobaciones para detectar errores.  
 - Extraemos la información necesaria, como el nombre del usuario, a que chat le responderemos y los mensajes que nos manda.  
 - Le ponemos el id de actualización a la variable ultimoId para que se borren los mensajes tras procesarlos.  
@@ -3604,7 +3607,7 @@ Para ejecutarlo simplemente usa el comando:
 bash rat.sh 
 ```
 
-*NOTA*: _La versión en inglés, que es una versión mas completa y actualizada de este programa se encuentra en [https://github.com/stringmanolo/tgbot.sh](ps://github.com/stringmanolo/tgbot.sh), esa versión carga el token y la contraseña de archivos llamados token.txt y password.txt que se encuentren en la misma carpeta que el programa. En el repositorio se encuentras las instrucciones, que son prácticamente idénticas que estas._
+*NOTA*: _La versión en inglés, que es una versión mas completa y actualizada de este programa se encuentra en_ [https://github.com/stringmanolo/tgbot.sh](https://github.com/stringmanolo/tgbot.sh)_, esa versión carga el token y la contraseña de archivos llamados token.txt y password.txt que se encuentren en la misma carpeta que el programa. En el repositorio se encuentran las instrucciones, que son prácticamente idénticas que estas._
 
 Aquí tienes un video de la versión en inglés del bot en funcionamiento:  
 [![Videoturorial image preview](https://raw.githubusercontent.com/StringManolo/tgbot.sh/master/images/tgbotshvideopreview.jpg)](https://youtu.be/-_QyXqj41-Q)
