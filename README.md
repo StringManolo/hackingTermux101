@@ -2972,7 +2972,7 @@ Si te suena el término botnet, normalmente las botnets son un montón de sistem
 - curl
 
 ### Creando el RAT
-En el [Capítulo 5: Introducción a Bash](#cap%C3%ADtulo-5-introducci%C3%B3n -a-bash) aprendimos un poco sobre el lenguaje Bash, asique será el que vamos a utilizar para crear el bot.  
+En el [Capítulo 5: Introducción a Bash](#cap%C3%ADtulo-5-introducci%C3%B3n-a-bash) aprendimos un poco sobre el lenguaje Bash, asique será el que vamos a utilizar para crear el bot.  
 
 Antes de programar algo, sobre todo si somos inexpertos, es importante definir la lógica y las funcionalidades que queremos que tenga nuestro programa. Para hacer esto podemos usar pseudocódigo o bien el propio idioma español. Esto nos permitirá definir una idea clara de como y que será el programa.  
 
