@@ -3814,7 +3814,8 @@ Hay 2 formas de enviar los parámetros y podemos clasificarlos según que parte 
   _No hay una estandarización de que parámetros utilizar o que nombres deben tener, es decir, que cada web utiliza lo que le da la gana. Por ejemplo Google usa ese formato de lr=lang_es para los idiomas mientras que otra página puede usar lang=spanish, otra idioma=francés, otra l=1, etc._
 
   Como puedes deducir para enviar estos parámetros en una petición HTTP usamos el apartado de la ruta:
-  ```bash
+
+```bash
 echo 'GET /search?q=termux&lr_lang_es HTTP/1.1
 Host: www.google.com
 User-Agent: Mozilla/5.0
@@ -3822,7 +3823,7 @@ Accept: */*
 
 
 ' | ncat google.com 80
-``` 
+```
   
 - Parámetros en el cuerpo de la petición
   Los parámetros en el cuerpo de la petición se suelen utilizar con el método POST y normalemnte son parámetros que no queremos que se vean en la url. Por ejemplo si estamos en un lugar público no nos gustaría que nuestra contraseña saliese en la url del navegador como pasaba con la búsqueda en Google. Entonces lo que hacemos es enviarlos en después de las cabeceras. Este espacio después de las cabceras es lo que se conoce como _cuerpo de la petición_. La petición anterior se vería de la siguiente forma si usamos el cuerpo de la petición en lugar de la ruta:
@@ -3865,7 +3866,7 @@ q=Termux
 
 ```
   Como ya comentamos anteriormente para realizar este tipo de peticiones "correctas" puedes utilizar curl, ya que es mas sencillo:
-  ```bash
+```bash
 curl -v 'https://duckduckgo.com/?q=termux'
 ```
   Cuando necesites mas control es cuando debes usar el crafting manual de las peticiones con ncat. 
