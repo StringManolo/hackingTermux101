@@ -3826,8 +3826,9 @@ Accept: */*
 ```
   
 - Parámetros en el cuerpo de la petición
-  Los parámetros en el cuerpo de la petición se suelen utilizar con el método POST y normalemnte son parámetros que no queremos que se vean en la url. Por ejemplo si estamos en un lugar público no nos gustaría que nuestra contraseña saliese en la url del navegador como pasaba con la búsqueda en Google. Entonces lo que hacemos es enviarlos en después de las cabeceras. Este espacio después de las cabceras es lo que se conoce como _cuerpo de la petición_. La petición anterior se vería de la siguiente forma si usamos el cuerpo de la petición en lugar de la ruta:
-  ```bash
+  Los parámetros en el cuerpo de la petición se suelen utilizar con el método POST y normalemnte son parámetros que no queremos que se vean en la url. Por ejemplo si estamos en un lugar público no nos gustaría que nuestra contraseña saliese en la url del navegador como pasaba con la búsqueda en Google. Entonces lo que hacemos es enviarlos en después de las cabeceras. Este espacio después de las cabceras es lo que se conoce como _cuerpo de la petición_. La petición anterior se vería de la siguiente forma si usamos el cuerpo de la petición en lugar de la ruta:  
+  
+```bash
 echo 'GET /search HTTP/1.1
 Host: www.google.com
 
@@ -3836,11 +3837,13 @@ q=Termux&lr=lang_es
 
 
 ' | ncat google.com 80
-```
+```  
+  
   Si haces esta petición veras que Google te responde con el Error 400 Bad Request (mala petición) y es que muchos servidores no admiten que envies el cuerpo de la petición con el método GET.  
   
   El equivalente usando POST sería:
-  ```bash
+
+```bash
 POST /search HTTP/1.1
 Host: www.google.com
 Content-Type: application/x-www-form-urlencoded
@@ -3852,8 +3855,9 @@ q=Termux&lr=lang_es
 ```
 
   Si vemos la respuesta de google nos dice 405 Method Not Allowed (metodo no permitido), es decir, google.com/search en este caso no acepta que le hagamos las consultas por POST. Eso ya es decisión de cada web. Otros buscadores como duckduckgo si que permiten tanto la búsqueda por parámetros en GET como por POST  
-  Aquí el ejemplo de muestra de como duckduckgo si que acepta que le enviemos el parámetro en el cuerpo de la petición:
-  ```bash
+  Aquí el ejemplo de muestra de como duckduckgo si que acepta que le enviemos el parámetro en el cuerpo de la petición:  
+  
+```bash
 echo 'POST / HTTP/1.1
 Host: duckduckgo.com
 Content-Type: application/x-www-form-urlencoded
@@ -3864,8 +3868,10 @@ q=Termux
 
 ' | ncat duckduckgo.com 80
 
-```
-  Como ya comentamos anteriormente para realizar este tipo de peticiones "correctas" puedes utilizar curl, ya que es mas sencillo:
+```  
+
+  Como ya comentamos anteriormente para realizar este tipo de peticiones "correctas" puedes utilizar curl, ya que es mas sencillo:  
+
 ```bash
 curl -v 'https://duckduckgo.com/?q=termux'
 ```
@@ -3873,15 +3879,18 @@ curl -v 'https://duckduckgo.com/?q=termux'
   
 
 ##### Respuesta HTTP
-Cuando realizamos una petición HTTP el servidor también nos responde utilizando el protocolo HTTP. Por ejemplo si hacemos la petición:
+Cuando realizamos una petición HTTP el servidor también nos responde utilizando el protocolo HTTP. Por ejemplo si hacemos la petición:  
+
 ```bash
 echo 'GET / HTTP/1.1
 Host: example.com
 
 
 ' | ncat example.com 80
-```
-El servidor web ubicado en example.com puerto 80 nos responderá lo siguiente:
+```  
+
+El servidor web ubicado en example.com puerto 80 nos responderá lo siguiente:  
+
 ```http
 HTTP/1.1 200 OK
 Age: 425281
@@ -3971,8 +3980,10 @@ Host: example.com
 
 
 ' | ncat example.com 443
-```
-Si hacemos esto sin más estaremos enviando una petición HTTP sin cifrar a un tunel que requiere cifrado y el servidor o cerrará el tunel TCP sin respondernos o nos avisará que estamos enviando texto sin cifrar. En el caso concreto de example.com simplemente cierra el tunel y ncat nos avisará con el mensaje: *Ncat: Connection reset by peer.* en español *Ncat; Conexión restablecida por la otra parte* Es decir, la otra parte de la comunicación (el servidor de example.com) nos cerró la conexión (tunel) porque le enviamos texto sin cifrar en lugar de negociar el cifrado. La parte de negociación del cifrado es un tema complejo que pertenece al protocolo TLS y no tiene que ver con el protocolo HTTP, asique no es algo que corresponda explicar en este capítulo. Si quieres usar un tunel cifrado simplemente añade la flag --ssl al comando ncat y el programa se encargará automáticamente de negociar el cifrado.
+```  
+
+Si hacemos esto sin más estaremos enviando una petición HTTP sin cifrar a un tunel que requiere cifrado y el servidor o cerrará el tunel TCP sin respondernos o nos avisará que estamos enviando texto sin cifrar. En el caso concreto de example.com simplemente cierra el tunel y ncat nos avisará con el mensaje: *Ncat: Connection reset by peer.* en español *Ncat; Conexión restablecida por la otra parte* Es decir, la otra parte de la comunicación (el servidor de example.com) nos cerró la conexión (tunel) porque le enviamos texto sin cifrar en lugar de negociar el cifrado. La parte de negociación del cifrado es un tema complejo que pertenece al protocolo TLS y no tiene que ver con el protocolo HTTP, asique no es algo que corresponda explicar en este capítulo. Si quieres usar un tunel cifrado simplemente añade la flag --ssl al comando ncat y el programa se encargará automáticamente de negociar el cifrado.  
+
 ```bash
 echo 'GET / HTTP/1.1
 Host: example.com
@@ -3992,7 +4003,8 @@ Aquí un resumen de lo que pasa cuando utilizas la flag --ssl:
 6. Una vez establecida la conexión segura, el cliente y el servidor pueden intercambiar datos cifrados.  
 
 ##### Servidor Web mínimo
-A parte de enviar peticiones a un servidor, podemos crear un servidor mínimo que nos responda a las peticiones, ncat nos sirve para hacer una versión mínima de HTTP.
+A parte de enviar peticiones a un servidor, podemos crear un servidor mínimo que nos responda a las peticiones, ncat nos sirve para hacer una versión mínima de HTTP.  
+
 ```bash
 #!/usr/bin/env bash
 
@@ -4011,16 +4023,19 @@ while true; do
 done
 ```
 
-Puedes guardar este archivo como servidor_web.sh darle permisos y ejecutarlo con el comando:
+Puedes guardar este archivo como servidor_web.sh darle permisos y ejecutarlo con el comando:  
+
 ```bash
 chmod 775 ./servidor_web.sh
 ./servidor_web.sh
 ```
 
-Ahora podrás interactuar con él en el puerto 8080. Como ves en su código lo único que hace es enviar siempre la misma respuesta. Si tienes un archivo index.html te lo enviará en la respuesta. Puedes probar a crear el index.html con el comando:
+Ahora podrás interactuar con él en el puerto 8080. Como ves en su código lo único que hace es enviar siempre la misma respuesta. Si tienes un archivo index.html te lo enviará en la respuesta. Puedes probar a crear el index.html con el comando:  
+
 ```bash
 echo '<h1>Esta es mi web de ejemplo</h1>' > index.html
 ```  
+
 Y ahora puedes verla desde el navegador visitando la URL http://localhost:8080 o http://127.0.0.1:8080
 
 También puedes usar url o ncat desde otra sesión de la terminal en lugar del navegador.
