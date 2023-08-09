@@ -3807,7 +3807,7 @@ Los parámetros http sirven para enviar información adicional, por ejemplo podr
 
 Hay 2 formas de enviar los parámetros y podemos clasificarlos según que parte de la petición utilicemos para enviarlos. _Parámetros de consulta_ o _parámetros en el cuerpo de la petición_.  
   
-- Parámetros de consulta
+- Parámetros de consulta  
     Si alguna vez te fijaste en la url/enlace de Google tras buscar algo veras que entee otros parámetros contiene uno llamado q. Por ejemplo https://www.google.com/search?q=termux  
     *q* viene de la palabra *q*uery en español consulta. Para indicar que vamos a pasar parámetros a un recurso se utiliza el símbolo de cierre de interrogación. Después indicamos el nombre del parámetro, (en este caso google usa *q*) seguido de un *=* y del valor de dicho parámetro que en este caso es lo que queremos buscar en google. Si lo pones en el navegador verás que te lleva a la búsqueda de la palabra termux en Google. Si quieres pasar mas de un parámetro tienes que usar *&* como separador para que el servidor sepa donde acaba un parámetro y donde empieza el siguiente. Por ejemplo si quieres que solo te responda páginas en inglés google utiliza el parámetro lr (language response en español idioma de respuesta) y como valor utiliza lang_país por ejemplo para inglés la url sería: https://www.google.com/search?q=termux&lr=lang_en para español sería https://www.google.com/search?q=termux&lr=lang_es para frances lang_fr, para portugués lang_pt, etc.  
 
