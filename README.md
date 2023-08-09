@@ -3619,7 +3619,360 @@ Aquí tienes un video de la versión en inglés del bot en funcionamiento:
 
 ## Capítulo 25: Protocolo HTTP 
 
+HyperText Transfer Protocol (HTTP) en español Protocolo de transferencia de hipertexto es un protocolo de transferencia de datos que permite la comunicación entre un servidor y un cliente. (Un protocolo es un conjunto de reglas que definen la forma de interacción entre el cliente y el servidor.) Es el idioma fundamental de la web. Cuando introduces una url en el navegador, el navegador establece un tunel con el servidor web y le envia la petición HTTP. Esta petición incluye información sobre el recurso que se quiere solicitar, por ejemplo el index.html, que es el contenido que se quiere mostrar en el navegador.   
+  
+
+##### Petición HTTP
+```http
+GET / HTTP/1.1
+Host: example.com
+
+
+```  
+
+Vamos a explicar que es cada apartado:
+- El primer apartado es el _método_, en este caso GET que en español significa OBTÉN.
+    Los métodos le dicen al servidor que tipo de operación queremos realizar, en este caso con GET le decimos que queremos *obtener* un recurso. Si usásemos por ejemplo el método POST le indicaríamos que queremos enviarle información al servidor.  
+- El segundo apartado es la path o _ruta_ que le indica cual es el recurso/la ubicación del recurso que queremos obtener.  
+    Cuando utilizamos / (un directorio/carpeta) el servidor busca automáticamente si existe un index.html en dicha carpeta. Si usásemos /imagenes/foto.jpg buscaría foto.jpg dentro de la carpeta imagenes.  
+- El tercer apartado es la _versión del protocolo_  
+    Hay distinas versiones del protocolo http, cada una con sus normas específicas, pero por lo general son todas casi idénticas.  
+  
+Estos cuatro apartados siempre deben aparecer en la primera linea de la petición seguidos de un salto de linea. Esta linea se conoce como Request Line (linea de solicitud).
+  
+Tras la linea de solicitud van las cabeceras de la petición, cada cabecera se compone por el _nombre del encabezado_ dos puntos (_:_) y el _valor del encabezado_.  
+En este caso el nombre del encabezado es Host y el valor es example.com. Esta cabecera sirve para indicarle al servidor web el nombre del dominio al que estamos realizando la petición. Es importante porque un mismo servidor puede tener alojadas cientos de páginas webs distintas de dominios distintos, lo que usualmente se conoce como hosting/hosting compartido. Si no le ponemos la cabecera host el servidor web no tiene forma de saber que página de las que tiene alojadas es la que estamos solicitando.
+Tras el primer encabezado puedes añadir todas las cabeceras que quieras.
+  
+Una vez incluiste todos los encabezados debes añadir 2 saltos de linea al final de la petición para indicar el final de la misma.  
+  
+Esta petición es enviada al servidor mediante un tunel de red que se ha establecido utilizando la IP y una vez llega al servidor, este la lee y responde en consecuencia en base a lo que tu le indicaste en dicha petición. Si por ejemplo le pediste una imagen, la buscará en la carpeta imagenes, la leera y te enviará una respuesta HTTP en la que al final de la misma viene la imagen. Antes de ver como son las respuestas http, veremos cuales son los métodos y cabeceras mas comunes.  
+
+###### Métodos HTTP
+Los métodos mas comunes son:  
+  
+- *GET*: Solicita datos de un recurso específico en el servidor. Se utiliza para recuperar información y no debe tener efectos secundarios en el servidor.
+
+- *POST*: Envía datos al servidor para ser procesados. Se utiliza para enviar información que el servidor debe manejar, como enviar datos de un formulario.
+
+- *PUT*: Actualiza un recurso existente en el servidor. Se utiliza para modificar o reemplazar completamente un recurso en el servidor.
+
+- *DELETE*: Elimina un recurso en el servidor. Se utiliza para solicitar la eliminación de un recurso específico.
+
+- *PATCH*: Aplica modificaciones parciales a un recurso existente en el servidor. Permite actualizar solo partes específicas de un recurso.
+
+- *HEAD*: Similar a GET, pero solicita solo los encabezados del recurso sin el cuerpo de la respuesta. Se utiliza para obtener información sobre el recurso sin descargar su contenido completo.
+
+- *OPTIONS*: Solicita información sobre las capacidades de comunicación del servidor. Permite al cliente averiguar qué métodos o encabezados son admitidos por el servidor.
+
+- *CONNECT*: Se utiliza para establecer una conexión en red con el recurso identificado por la URI. A menudo se utiliza para establecer una conexión segura a través de un proxy.
+
+- *TRACE*: Realiza una solicitud de bucle de retorno al servidor. Se utiliza para probar y depurar la ruta de la solicitud a través de varios servidores.
+
+Otros métodos mas o menos establecidos con los que te puedes encontrar pero que son menos comunes son: COPY, MOVE, LINK, UNLINK, LOCK, UNLOCK, PURGE, REBIND y SEARCH. Su uso es tan infrecuente que no merece la pena comentar para que sirven, solo con que tengas conocimiento de la existencia de otros métodos es suficiente. 
+  
+###### Cabeceras HTTP
+Las cabeceras http mas comunes son:  
+  
+- *Host*: Indica el nombre de dominio del servidor al que se está haciendo la solicitud.
+- *User-Agent*: Identifica el software y la versión utilizados por el cliente.
+- *Accept*: Especifica los tipos de contenido que el cliente está dispuesto a aceptar.
+- *Content-Type*: Indica el tipo de contenido en el cuerpo de la petición o respuesta.
+- *Authorization*: Proporciona credenciales de autenticación para acceder a recursos protegidos.
+- *Cookie*: Envia información de cookies almacenada previamente por el servidor.
+- *Cache-Control*: Controla el almacenamiento en caché de la respuesta en el cliente o el servidor.
+- *Content-Length*: Indica la longitud del cuerpo de la solicitud o respuesta en bytes.
+- *Origin*: Indica la URL de origen de una solicitud de recursos cruzados (CORS).
+- *Referer (Referer)*: Indica la URL de la página desde la cual se originó la solicitud.
+- *User-Agent*: Identifica el software del cliente, como un navegador o una aplicación.
+- *If-None-Match*: Permite la validación de la caché condicional utilizando una entidad de etag.
+- *If-Modified-Since*: Permite la validación de la caché condicional utilizando una fecha.
+- *Accept-Language*: Indica las preferencias de idioma del cliente para la respuesta.
+- *Accept-Encoding*: Indica las codificaciones de contenido que el cliente acepta.
+- *Connection*: Controla si la conexión al servidor debe mantenerse abierta o cerrarse.
+
+Al contrario que con los métodos que solo unos pocos con comunes con las cabeceras hay decenas de ellas que son comunes, aquí solo se comentan las más comunes, pero jay muchas otras y si te las encuentras tendrás que buscar que hacen.  
+
+###### Handcrafting (construcción manual)
+Un término común en hacking es el handcrafting de peticiones. Se refiere al hecho de nosotros escribir a mano las cabeceras http en lugar de usar una heramienta como pueda ser un navegador para que lo haga todo automático. Esto nos permite controlar con detalle exactamente lo que queremos enviar, por ejemplo si queremos mandar caracteres raros para probar si el servidor funciona correctamente o si por el contrario crashea (peta, detiene la ejecución).  
+Hay múltiples herramientas que nos permiten enviar peticiones HTTP desde la terminal. Una similar a un navegador es curl. Instálala con el comando:  
+```bash
+pkg install curl
+```
+  
+Curl nos permite enviar y construir las peticiones HTTP de forma automática pero nos da la opción de modificar sus campos. Esto está bien si queremos interactuar con el servidor de forma correcta. Por ejemplo si quieres solicitar la web de example.com usas el comando:  
+```bash
+curl 'http://example.com'
+```   
+Curl lo que hace es crear automáticamente la petición y enviarla al servidor. Con el comando anterior curl enviará la siguiente petición:
+```http
+GET / HTTP/1.1
+Host: example.com
+User-Agent: curl/7.82.0
+Accept: */*
+
+
+```
+  
+Si quieres editar las cabeceras puedes usar el argumento -H.
+```bash
+curl 'http://example.com' -H 'User-Agent: Mozilla/5.0'
+```
+Curl creará la siguiente petición:
+```http
+GET / HTTP/1.1
+Host: example.com
+User-Agent: Mozilla/5.0
+Accept: */*
+
+
+```
+
+Si quieres cambiar el método puedes usar el argumento -X:
+```bash
+curl 'http://example.com' -X 'PUT'
+```
+Curl creará la siguiente petición:
+```http
+PUT / HTTP/1.1
+Host: example.com
+User-Agent: Mozilla/5.0
+Accept: */*
+
+
+```
+
+Curl tiene muchísimas opciones. Es muy buena herramienta para un uso normal. En cambio si queremos tener total control de lo enviado podemos usar otras herramientas. Mi favorita es ncat. Ncat te permite enviar lo que tu escribas. Vienen con el paquete de nmap asique para instalar ncat usaremos el comando:
+```bash
+pkg install nmap
+```
+
+Para enviar una petición HTTP con ncat podemos escribirla primero en un archivo con un editor de texto y hacer cat del archivo y pasárselo a ncat o directamente con el comando echo de bash:
+```bash
+echo 'GET / HTTP/1.1
+Host: example.com
+
+
+' | ncat example.com 80
+```
+
+ncat nos permitirá poner cualquier cosa, lo cual puede ser muy útil para testear la seguridad de un servidor web. Por ejemplo podrìamos enviar la siguiente petición:
+```bash
+echo '/ GET HTTP/1.1
+Host: example.com
+
+
+' | ncat example.com 80
+```
+El servidor nos responderá con una respuesta código de error 501 (Not Implemented) que indica que el método */* no lo ha implementado el servidor, es decir que el servidor no reconoce ese método, ya que solo reconoce GET, HEAD, ... pero no /  
+  
+De esto podríamos inferir que lo que está haciendo es tomar lo primero que le mandamos antes de un espacio y entiende que eso es el método de la petición, lo que nos puede llevar a la pregunta de, y si en lugar de GET o / que pasaría si le ponemos un espacio?  
+```bash
+echo ' / HTTP/1.1
+Host: example.com
+
+
+' | ncat example.com 80
+Y efectivamente, si no encuentra GET u otro método valido nos seguirá respondiendo que el que le pasamos no está implementado.  
+  
+Hay programas que hacen esto automáticamente, se les conoce como fuzzers y son muy útiles para encontrar fallos de seguridad.
+
+*IMPORTANTE*: Estas pruebas se realizan únicamente con fines educativos, el uso de estas técnicas de testing sin que te de permiso del dueño del servidor es ilegal, ya que imagínate que enviándole una petición malformada el servidor no sabe como responder y se congela su proceso. El dueño del servidor podría denunciarte porque le has dejado el servidor fuera de servicio y el resto de visitantes no han podido acceder. A demás de ser un delito informático también puede ocasionarle costes a la empresa del servidor, por ejemplo podrían dejar de ganar dinero con anuncios ya que la web no está dispoible y tener que invertir el tiempo de sus empleados en revisar la petición, corregir el fallo y volver a poner el servidor online. Estarían en su derecho de demandarte y solicitarte como compensación que abones dichos costes. En resumen, cárcel y multa. Asique para este tipo de pruebas utiliza tus propias webs y servidores en local, así podrás testear en ellas todo lo que quieras sin perjudicar a nadie. En el [Capítulo 18: Creando un Servidor](#cap%C3%ADtulo-18-creando-un-servidor) ya se explicó como crear un servidor web en local con python3. En los siguientes apartados de este capítulo también veremos como hacerlo con ncat.  
+ 
+###### Parámetros HTTP
+Los parámetros http sirven para enviar información adicional, por ejemplo podrías indicarle al servidor el idioma en que quieres que te devuelva cierto recurso. O para hacer login en la página web podrías enviarle tu usuario y contraseña.
+
+Hay 2 formas de enviar los parámetros y podemos clasificarlos según que parte de la petición utilicemos para enviarlos. _Parámetros de consulta_ o _parámetros en el cuerpo de la petición_.  
+  
+- Parámetros de consulta
+    Si alguna vez te fijaste en la url/enlace de Google tras buscar algo veras que entee otros parámetros contiene uno llamado q. Por ejemplo https://www.google.com/search?q=termux  
+    *q* viene de la palabra *q*uery en español consulta. Para indicar que vamos a pasar parámetros a un recurso se utiliza el símbolo de cierre de interrogación. Después indicamos el nombre del parámetro, (en este caso google usa *q*) seguido de un *=* y del valor de dicho parámetro que en este caso es lo que queremos buscar en google. Si lo pones en el navegador verás que te lleva a la búsqueda de la palabra termux en Google. Si quieres pasar mas de un parámetro tienes que usar *&* como separador para que el servidor sepa donde acaba un parámetro y donde empieza el siguiente. Por ejemplo si quieres que solo te responda páginas en inglés google utiliza el parámetro lr (language response en español idioma de respuesta) y como valor utiliza lang_país por ejemplo para inglés la url sería: https://www.google.com/search?q=termux&lr=lang_en para español sería https://www.google.com/search?q=termux&lr=lang_es para frances lang_fr, para portugués lang_pt, etc.  
+
+    _No una una estandarización de que parámetros utilizar o que nombres deben tener, es decir, que cada web utiliza lo que le da la gana. Por ejemplo Google usa ese formato de lr_lang_es para los idiomas mientras que otra página puede usar lang=spanish, otra idioma=francés, otra l=1, etc._
+
+    Como puedes deducir para enviar estos parámetros en una petición HTTP usamos el apartado de la ruta:
+    ```bash
+echo 'GET /search?q=termux&lr_lang_es HTTP/1.1
+Host: www.google.com
+User-Agent: Mozilla/5.0
+Accept: */*
+
+
+' | ncat google.com 80
+``` 
+  
+- Parámetros en el cuerpo de la petición
+    Los parámetros en el cuerpo de la petición se suelen utilizar con el método POST y normalemnte son parámetros que no queremos que se vean en la url. Por ejemplo si estamos en un lugar público no nos gustaría que nuestra contraseña saliese en la url del navegador como pasaba con la búsqueda en Google. Entonces lo que hacemos es enviarlos en después de las cabeceras. Este espacio después de las cabceras es lo que se conoce como _cuerpo de la petición_. La petición anterior se vería de la siguiente forma si usamos el cuerpo de la petición en lugar de la ruta:
+    ```bash
+echo 'GET /search HTTP/1.1
+Host: www.google.com
+
+q=Termux&lr=lang_es
+
+
+
+' | ncat google.com 80
+```
+    Si haces esta petición veras que Google te responde con el Error 400 Bad Request (mala petición) y es que muchos servidores no admiten que envies el cuerpo de la petición con el método GET.  
+  
+    El equivalente usando POST sería:
+    ```bash
+POST /search HTTP/1.1
+Host: www.google.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 19
+
+q=Termux&lr=lang_es
+
+
+```
+
+    Si vemos la respuesta de google nos dice 405 Method Not Allowed (metodo no permitido), es decir, google.com/search en este caso no acepta que le hagamos las consultas por POST. Eso ya es decisión de cada web. Otros buscadores como duckduckgo si que permiten tanto la búsqueda por parámetros en GET como por POST  
+    Aquí el ejemplo de muestra de como duckduckgo si que acepta que le enviemos el parámetro en el cuerpo de la petición:
+    ```bash
+echo 'POST / HTTP/1.1
+Host: duckduckgo.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 8
+
+q=Termux
+
+
+' | ncat duckduckgo.com 80
+
+```
+    Como ya comentamos anteriormente para realizar este tipo de peticiones "correctas" puedes utilizar curl, ya que es mas sencillo:
+    ```bash
+curl -v 'https://duckduckgo.com/?q=termux'
+```
+    Cuando necesites mas control es cuando debes usar el crafting manual de las peticiones con ncat. 
+
+
+
+
+##### Respuesta HTTP
+Cuando realizamos una petición HTTP el servidor también nos responde utilizando el protocolo HTTP. Por ejemplo si hacemos la petición:
+```bash
+echo 'GET / HTTP/1.1
+Host: example.com
+
+
+' | ncat example.com 80
+```
+El servidor web ubicado en example.com puerto 80 nos responderá lo siguiente:
+```http
+HTTP/1.1 200 OK
+Age: 425281
+Cache-Control: max-age=604800
+Content-Type: text/html; charset=UTF-8
+Date: Wed, 09 Aug 2023 15:31:53 GMT
+Etag: "3147526947+ident"
+Expires: Wed, 16 Aug 2023 15:31:53 GMT
+Last-Modified: Thu, 17 Oct 2019 07:18:26 GMT
+Server: ECS (dcb/7FA5)
+Vary: Accept-Encoding
+X-Cache: HIT
+Content-Length: 1256
+
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+    body {
+        background-color: #f0f0f2;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    }
+    div {
+        width: 600px;
+        margin: 5em auto;
+        padding: 2em;
+        background-color: #fdfdff;
+        border-radius: 0.5em;
+        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+    }
+    a:link, a:visited {
+        color: #38488f;
+        text-decoration: none;
+    }
+    @media (max-width: 700px) {
+        div {
+            margin: 0 auto;
+            width: auto;
+        }
+    }
+    </style>
+</head>
+
+<body>
+<div>
+    <h1>Example Domain</h1>
+    <p>This domain is for use in illustrative examples in documents. You may use this
+    domain in literature without prior coordination or asking for permission.</p>
+    <p><a href="https://www.iana.org/domains/example">More information...</a></p>
+</div>
+</body>
+</html>
+```
+
+Como puedes observar la primera linea nos indica la versión del protocolo con la que nos responde, un número que se conoce como _código de estado_ y una descripción corta en texto con lo que significa ese código _frase de estado_. Por ejemplo 200 nos dice que todo está OK, que en respuesta a GET suele significar que encontró el rescurso que le pedimos (el /index.html). Otro código de respuesta muy conocido es el 404 Not Found (no encontrado que nos suele aparecer cuando solicitamos un recurso que no existe en el servidor.   
+  
+A partir de ahí también nos responde con cabeceras. Vamos a ver que significa cada una de las cabeceras que nos envió:
+Claro, aquí tienes el significado de cada cabecera en la respuesta HTTP:
+
+- *Age*: Indica cuánto tiempo ha pasado desde que la respuesta fue generada por el servidor (en segundos).  
+- *Cache-Control*: Especifica las directivas de control de caché que deben aplicarse tanto a la solicitud como a la respuesta. En este caso, `max-age=604800` indica que el contenido se puede almacenar en caché durante 604800 segundos (7 días).  
+- *Content-Type*: Indica el tipo de contenido del cuerpo de la respuesta. En este caso, `text/html; charset=UTF-8` indica que el contenido es HTML con codificación UTF-8.  
+- *Date*: Muestra la fecha y hora en que se generó la respuesta.  
+- *Etag*: Proporciona una etiqueta que identifica única e individualmente la versión actual del recurso. Se utiliza para la validación de la caché condicional.  
+- *Expires*: Indica la fecha y hora en que expira el contenido almacenado en caché.  
+- *Last-Modified*: Muestra la fecha y hora en que se modificó por última vez el recurso en el servidor.  
+- *Server*: Indica el software del servidor que respondió a la solicitud.  
+- *Vary*: Indica qué encabezados de solicitud se utilizaron para determinar la respuesta almacenada en caché. En este caso, `Accept-Encoding` indica que la respuesta puede variar según la codificación de contenido aceptada.  
+- *X-Cache*: Proporciona información sobre el estado de la caché en el servidor. `HIT` indica que la respuesta se sirvió desde la caché.  
+- *Content-Length*: Indica la longitud del cuerpo de la respuesta en bytes. Mas o menos equivale al número de caracteres que tiene el archivo que le solicitamos. 
+  
+Tras las cabeceras de respuesta se incluye el contenido del archivo solicitado, en este caso es el index.html de la página example.com. Si lo guardas y lo abres en un navegador verías la web de example.com
+
+##### HTTPS
+Ya sabes que es HTTP, pero entonces que es HTTPS, otro protocolo? En verdad no, cuando nos referimos a HTTPS nos estamos refieriendo a HTTP pero enviado en un tunel seguro. Si conectamos directamente a un servidor por ejemplo con el comando ncat example.com 80 estamos estableciendo un tunel TCP/IP con el servidor de example.com por el cual mandaremos el mensaje siguiendo el protocolo HTTP. El puerto 80 es el puerto por defecto para el protocolo HTTP sin cifrar, si queremos establecer un canal cifrado usaremos el puerto 443. Por ejemplo:
+```bash
+echo 'GET / HTTP/1.1
+Host: example.com
+
+
+' | ncat example.com 443
+```
+Si hacemos esto sin más estaremos enviando una petición HTTP sin cifrar a un tunel que requiere cifrado y el servidor o cerrará el tunel TCP sin respondernos o nos avisará que estamos enviando texto sin cifrar. En el caso concreto de example.com simplemente cierra el tunel y ncat nos avisará con el mensaje: *Ncat: Connection reset by peer.* en español *Ncat; Conexión restablecida por la otra parte* Es decir, la otra parte de la comunicación (el servidor de example.com) nos cerró la conexión (tunel) porque le enviamos texto sin cifrar en lugar de negociar el cifrado. La parte de negociación del cifrado es un tema complejo que pertenece al protocolo TLS y no tiene que ver con el protocolo HTTP, asique no es algo que corresponda explicar en este capítulo. Si quieres usar un tunel cifrado simplemente añade la flag --ssl al comando ncat y el programa se encargará automáticamente de negociar el cifrado.
+```bash
+echo 'GET / HTTP/1.1
+Host: example.com
+
+
+' | ncat example.com 443 --ssl
+```
+
+Verás la misma respuesta si utilizas http en el puerto 80 que si utilizas https en el puerto 443, la diferencia es que el mensaje viaja cifrado, esto quiere decir que si alguien te está espiando en el wi-fi en lugar de ver las peticiones tal como tu las escribes verá "caracteres sin sentido" (el tráfico cifrado). Asique siempre que puedas utiliza https ya que es lo mismo pero en lugar de usar un tunel sin cifrado, las peticiones y respuestas van cifradas y solo tú y example.com teneis las contraseñas para descifrarlas.  
+  
+Aquí un resumen de lo que pasa cuando utilizas la flag --ssl:
+1. El cliente (ncat) se conecta al servidor en el puerto 443.  
+2. El servidor responde con su certificado digital.  
+3. El cliente verifica la autenticidad del certificado.  
+4. El cliente y el servidor intercambian información para acordar el cifrado y la clave.  
+5. Se genera una clave de sesión para cifrar y descifrar los datos.  
+6. Una vez establecida la conexión segura, el cliente y el servidor pueden intercambiar datos cifrados.  
+
+
 [Tabla de Contenidos](#tabla-de-contenidos)
+
+
 
 ----
 
