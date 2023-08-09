@@ -3825,8 +3825,9 @@ Accept: */*
 ' | ncat google.com 80
 ```
   
-- Parámetros en el cuerpo de la petición
-  Los parámetros en el cuerpo de la petición se suelen utilizar con el método POST y normalemnte son parámetros que no queremos que se vean en la url. Por ejemplo si estamos en un lugar público no nos gustaría que nuestra contraseña saliese en la url del navegador como pasaba con la búsqueda en Google. Entonces lo que hacemos es enviarlos en después de las cabeceras. Este espacio después de las cabceras es lo que se conoce como _cuerpo de la petición_. La petición anterior se vería de la siguiente forma si usamos el cuerpo de la petición en lugar de la ruta:  
+- Parámetros en el cuerpo de la petición  
+  
+  Los parámetros en el cuerpo de la petición se suelen utilizar con el método POST y normalmente son parámetros que no queremos que se vean en la url. Por ejemplo si estamos en un lugar público no nos gustaría que nuestra contraseña saliese en la url del navegador como pasaba con la búsqueda en Google. Entonces lo que hacemos es enviarlos después de las cabeceras. Este espacio después de las cabceras es lo que se conoce como _cuerpo de la petición_. La petición anterior se vería de la siguiente forma si usamos el cuerpo de la petición en lugar de la ruta:  
   
 ```bash
 echo 'GET /search HTTP/1.1
@@ -3844,13 +3845,16 @@ q=Termux&lr=lang_es
   El equivalente usando POST sería:
 
 ```bash
-POST /search HTTP/1.1
+echo 'POST /search HTTP/1.1
 Host: www.google.com
 Content-Type: application/x-www-form-urlencoded
 Content-Length: 19
 
 q=Termux&lr=lang_es
 
+
+
+' | ncat google.com 80
 
 ```
 
