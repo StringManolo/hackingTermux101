@@ -3714,6 +3714,7 @@ Al contrario que con los métodos que solo unos pocos son comunes, con las cabec
 
 ###### Handcrafting (construcción manual)
 Un término común en hacking es el handcrafting de peticiones. Se refiere al hecho de nosotros escribir a mano las cabeceras http en lugar de usar una heramienta como pueda ser un navegador para que lo haga todo automático. Esto nos permite controlar con detalle exactamente lo que queremos enviar, por ejemplo si queremos mandar caracteres raros para probar si el servidor funciona correctamente o si por el contrario crashea (peta, detiene la ejecución).  
+   
 Hay múltiples herramientas que nos permiten enviar peticiones HTTP desde la terminal. Una similar a un navegador es curl. Instálala con el comando:  
 ```bash
 pkg install curl
@@ -3761,7 +3762,7 @@ Accept: */*
 
 ```
 
-Curl tiene muchísimas opciones. Es muy buena herramienta para un uso normal. En cambio si queremos tener total control de lo enviado podemos usar otras herramientas. Mi favorita es ncat. Ncat te permite enviar lo que tu escribas. Vienen con el paquete de nmap asique para instalar ncat usaremos el comando:
+Curl tiene muchísimas opciones. Es muy buena herramienta para un uso normal. En cambio si queremos tener total control de lo enviado podemos usar otras herramientas. Mi favorita es ncat. Ncat te permite enviar lo que tu escribas. Viene con el paquete de nmap asique para instalar ncat usaremos el comando:
 ```bash
 pkg install nmap
 ```
@@ -3775,7 +3776,7 @@ Host: example.com
 ' | ncat example.com 80
 ```
 
-ncat nos permitirá poner cualquier cosa, lo cual puede ser muy útil para testear la seguridad de un servidor web. Por ejemplo podrìamos enviar la siguiente petición:
+ncat nos permitirá poner cualquier cosa, lo cual puede ser muy útil para testear la seguridad de un servidor web. Por ejemplo podríamos enviar la siguiente petición:
 ```bash
 echo '/ GET HTTP/1.1
 Host: example.com
@@ -3792,6 +3793,7 @@ Host: example.com
 
 
 ' | ncat example.com 80
+```
 Y efectivamente, si no encuentra GET u otro método valido nos seguirá respondiendo que el que le pasamos no está implementado.  
   
 Hay programas que hacen esto automáticamente, se les conoce como fuzzers y son muy útiles para encontrar fallos de seguridad.
