@@ -3619,10 +3619,12 @@ Aquí tienes un video de la versión en inglés del bot en funcionamiento:
 
 ## Capítulo 25: Protocolo HTTP 
 
-HyperText Transfer Protocol (HTTP) en español Protocolo de transferencia de hipertexto es un protocolo de transferencia de datos que permite la comunicación entre un servidor y un cliente. (Un protocolo es un conjunto de reglas que definen la forma de interacción entre el cliente y el servidor.) Es el idioma fundamental de la web. Cuando introduces una url en el navegador, el navegador establece un tunel con el servidor web y le envia la petición HTTP. Esta petición incluye información sobre el recurso que se quiere solicitar, por ejemplo el index.html, que es el contenido que se quiere mostrar en el navegador.   
+HyperText Transfer Protocol (HTTP) en español Protocolo de transferencia de hipertexto es un protocolo de transferencia de datos que permite la comunicación entre un servidor y un cliente. _Un protocolo es un conjunto de reglas que definen la forma de interacción entre el cliente y el servidor._  
+  
+Es el idioma fundamental de la web. Cuando introduces una url en el navegador este establece un tunel con el servidor web y le envia la petición HTTP. Esta petición incluye información sobre el recurso que se quiere solicitar, por ejemplo el index.html, que es el contenido que se quiere mostrar en el navegador.   
   
 
-##### Petición HTTP
+##### Petición HTTP 
 ```http
 GET / HTTP/1.1
 Host: example.com
@@ -3638,9 +3640,10 @@ Vamos a explicar que es cada apartado:
 - El tercer apartado es la _versión del protocolo_  
     Hay distinas versiones del protocolo http, cada una con sus normas específicas, pero por lo general son todas casi idénticas.  
   
-Estos cuatro apartados siempre deben aparecer en la primera linea de la petición seguidos de un salto de linea. Esta linea se conoce como Request Line (linea de solicitud).
+Estos tres apartados siempre deben aparecer en la primera linea de la petición seguidos de un salto de linea. Esta linea se conoce como Request Line (linea de solicitud).
   
-Tras la linea de solicitud van las cabeceras de la petición, cada cabecera se compone por el _nombre del encabezado_ dos puntos (_:_) y el _valor del encabezado_.  
+Tras la linea de solicitud van las cabeceras de la petición, cada cabecera se compone por el _nombre del encabezado_ dos puntos (_:_) y el _valor del encabezado_.   
+  
 En este caso el nombre del encabezado es Host y el valor es example.com. Esta cabecera sirve para indicarle al servidor web el nombre del dominio al que estamos realizando la petición. Es importante porque un mismo servidor puede tener alojadas cientos de páginas webs distintas de dominios distintos, lo que usualmente se conoce como hosting/hosting compartido. Si no le ponemos la cabecera host el servidor web no tiene forma de saber que página de las que tiene alojadas es la que estamos solicitando.
 Tras el primer encabezado puedes añadir todas las cabeceras que quieras.
   
