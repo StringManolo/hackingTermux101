@@ -3710,7 +3710,7 @@ Las cabeceras http mas comunes son:
 - *Connection*: Controla si la conexión al servidor debe mantenerse abierta o cerrarse.  
 
 
-Al contrario que con los métodos que solo unos pocos con comunes con las cabeceras hay decenas de ellas que son comunes, aquí solo se comentan las más comunes, pero jay muchas otras y si te las encuentras tendrás que buscar que hacen.  
+Al contrario que con los métodos que solo unos pocos son comunes, con las cabeceras hay decenas de ellas que se usan frecuentemente, aquí solo se comentan las más típicas, pero hay muchas más y si te las encuentras tendrás que buscar que hace cada una.  
 
 ###### Handcrafting (construcción manual)
 Un término común en hacking es el handcrafting de peticiones. Se refiere al hecho de nosotros escribir a mano las cabeceras http en lugar de usar una heramienta como pueda ser un navegador para que lo haga todo automático. Esto nos permite controlar con detalle exactamente lo que queremos enviar, por ejemplo si queremos mandar caracteres raros para probar si el servidor funciona correctamente o si por el contrario crashea (peta, detiene la ejecución).  
