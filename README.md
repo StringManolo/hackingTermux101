@@ -3677,22 +3677,38 @@ Otros métodos mas o menos establecidos con los que te puedes encontrar pero que
 ###### Cabeceras HTTP
 Las cabeceras http mas comunes son:  
   
-- *Host*: Indica el nombre de dominio del servidor al que se está haciendo la solicitud.
-- *User-Agent*: Identifica el software y la versión utilizados por el cliente.
-- *Accept*: Especifica los tipos de contenido que el cliente está dispuesto a aceptar.
-- *Content-Type*: Indica el tipo de contenido en el cuerpo de la petición o respuesta.
-- *Authorization*: Proporciona credenciales de autenticación para acceder a recursos protegidos.
-- *Cookie*: Envia información de cookies almacenada previamente por el servidor.
-- *Cache-Control*: Controla el almacenamiento en caché de la respuesta en el cliente o el servidor.
-- *Content-Length*: Indica la longitud del cuerpo de la solicitud o respuesta en bytes.
-- *Origin*: Indica la URL de origen de una solicitud de recursos cruzados (CORS).
-- *Referer (Referer)*: Indica la URL de la página desde la cual se originó la solicitud.
-- *User-Agent*: Identifica el software del cliente, como un navegador o una aplicación.
-- *If-None-Match*: Permite la validación de la caché condicional utilizando una entidad de etag.
-- *If-Modified-Since*: Permite la validación de la caché condicional utilizando una fecha.
-- *Accept-Language*: Indica las preferencias de idioma del cliente para la respuesta.
-- *Accept-Encoding*: Indica las codificaciones de contenido que el cliente acepta.
-- *Connection*: Controla si la conexión al servidor debe mantenerse abierta o cerrarse.
+- *Host*: Indica el nombre de dominio del servidor al que se está haciendo la solicitud.  
+
+- *User-Agent*: Identifica el software y la versión utilizados por el cliente.  
+
+- *Accept*: Especifica los tipos de contenido que el cliente está dispuesto a aceptar.  
+
+- *Content-Type*: Indica el tipo de contenido en el cuerpo de la petición o respuesta.  
+
+- *Authorization*: Proporciona credenciales de autenticación para acceder a recursos protegidos.  
+
+- *Cookie*: Envia información de cookies almacenada previamente por el servidor.  
+
+- *Cache-Control*: Controla el almacenamiento en caché de la respuesta en el cliente o el servidor.  
+
+- *Content-Length*: Indica la longitud del cuerpo de la solicitud o respuesta en bytes.  
+
+- *Origin*: Indica la URL de origen de una solicitud de recursos cruzados (CORS).  
+
+- *Referer (Referer)*: Indica la URL de la página desde la cual se originó la solicitud.  
+
+- *User-Agent*: Identifica el software del cliente, como un navegador o una aplicación.  
+
+- *If-None-Match*: Permite la validación de la caché condicional utilizando una entidad de etag.  
+
+- *If-Modified-Since*: Permite la validación de la caché condicional utilizando una fecha.  
+
+- *Accept-Language*: Indica las preferencias de idioma del cliente para la respuesta.  
+
+- *Accept-Encoding*: Indica las codificaciones de contenido que el cliente acepta.  
+
+- *Connection*: Controla si la conexión al servidor debe mantenerse abierta o cerrarse.  
+
 
 Al contrario que con los métodos que solo unos pocos con comunes con las cabeceras hay decenas de ellas que son comunes, aquí solo se comentan las más comunes, pero jay muchas otras y si te las encuentras tendrás que buscar que hacen.  
 
