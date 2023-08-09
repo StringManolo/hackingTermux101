@@ -3758,7 +3758,7 @@ Curl creará la siguiente petición:
 ```http
 PUT / HTTP/1.1
 Host: example.com
-User-Agent: Mozilla/5.0
+User-Agent: curl/7.82.0
 Accept: */*
 
 
