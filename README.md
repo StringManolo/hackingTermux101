@@ -1191,7 +1191,7 @@ Para abrir un archivo que ya existe o crear uno nuevo, usaremos el siguiente com
 vim miListaDeLaCompra.txt
 ```
 
-Verás que se abre una nueva pantalla desconocida hasta ahora. A lo primero que tenemos que echar ojo es a la barra de estado de VIM. Se encuentra exactamente encima del teclado a la izquierda y si no tocas nada tras abrir el archivo, veras el mensaje: **"miListaDeLaCompra.txt" [new]** en la barra de estado de VIM.  
+Verás que se abre una nueva pantalla desconocida hasta ahora. A lo primero que tenemos que echar ojo es a la barra de estado de VIM. Se encuentra exactamente encima del teclado a la izquierda y si no tocas nada tras abrir el archivo, verás el mensaje: **"miListaDeLaCompra.txt" [new]** en la barra de estado de VIM.  
   
 Si el archivo ya existía, el mensaje será: **"miListaDeLaCompra.txt" xL xB** donde xL mostrará el número de lineas que tiene el archivo y xB el número de Bytes (un caracter suele pesar al menos 1 Byte, asique es un buen indicador del número aproximado de caracteres que tiene el archivo) que tiene.  
   
@@ -1203,7 +1203,7 @@ Una vez que tengas tu texto escrito, puedes salir del modo __inserción__ pulsan
  
 #### Guardar los cambios
 
-Hay varias formas de guardar los cambios. Si queremos guardar los cambios pero continuar usando VIM, usaremos la combinación de teclas **ESC :w**, veras que se muestra **:w** en la barra de estado. Pulsa Enter para introducir la secuencia. El **[+]** desaparecerá, indicando que ya no hay nuevos cambios sin guardar. En la barra de estado verás que se muestra el mismo tipo de mensaje que antes y al final hay una nueva palabra __written__ indicándonos que se han escrito los cambios en el archivo.  
+Hay varias formas de guardar los cambios. Si queremos guardar los cambios pero continuar usando VIM, usaremos la combinación de teclas **ESC :w**, verás que se muestra **:w** en la barra de estado. Pulsa Enter para introducir la secuencia. El **[+]** desaparecerá, indicando que ya no hay nuevos cambios sin guardar. En la barra de estado verás que se muestra el mismo tipo de mensaje que antes y al final hay una nueva palabra __written__ indicándonos que se han escrito los cambios en el archivo.  
   
 Si quieres guardar los cambios y cerrar VIM, en lugar de **:w**, debes utilizar **:x**    
 
@@ -1790,7 +1790,7 @@ else
 fi
 ```
 
-Esta sería la forma mas completa para poder procesar argumentos en Bash. Si corres el comando **saludar**, veras que te dice __Hola__. Ahora también acepta varios argumentos. Por ejemplo el argumento name (nombre en español). **saludar --name Manolo** y también el argumento **--help**. Ambos argumentos admiten su versión cortas **-n**, **-h** respectivamente.  
+Esta sería la forma mas completa para poder procesar argumentos en Bash. Si corres el comando **saludar**, verás que te dice __Hola__. Ahora también acepta varios argumentos. Por ejemplo el argumento name (nombre en español). **saludar --name Manolo** y también el argumento **--help**. Ambos argumentos admiten su versión cortas **-n**, **-h** respectivamente.  
 
   
 Explicación del código:  
@@ -1823,7 +1823,7 @@ El argumento --name de **getopt** sirve para indicarle a **getopt** el nombre de
   
 > La variable "$@" contiene todos los argumentos. Al igual que en **$#** se omite el nombre del comando. 
 
-Dentro del **switch case** veras 3 comandos nuevos. **shift**, **break** y **exit**:
+Dentro del **switch case** verás 3 comandos nuevos. **shift**, **break** y **exit**:
 ##### shift  
 El comando **shift** permite "avanzar" el nùmero indicado de argumentos. Si por ejemplo tenemos el comando **saludar hola que tal estas**, detectamos el argumento __hola__ en un case y ejecutamos shift, se avanza hacia el argumento __que__. Si ponemos **shift 2**, avanzamos hasta el argumento __tal__, y asì sucesivamente. Esto nos permite ignorar elementos en un bucle.  
   
@@ -3205,7 +3205,7 @@ BorrarMensajes() {
 Explicación del código:
 - El código es prácticamente igual que la función LeerMensajes
 - Cambiamos el método del endpoint a /getUpdates?offset=$ultimoId    
-Por el resto es lo mismo. Esto lo explican en la documentación de Telegram Bot API. Al pasarle el id de update del JSON se borran automáticamente los mensajes anteriores. El id de update lo veras en el json, en este caso la variable ultimoId es una variable global como TOKEN que modificaremos mas adelante.  
+Por el resto es lo mismo. Esto lo explican en la documentación de Telegram Bot API. Al pasarle el id de update del JSON se borran automáticamente los mensajes anteriores. El id de update lo verás en el json, en este caso la variable ultimoId es una variable global como TOKEN que modificaremos mas adelante.  
   
 ##### La siguiente función es la de EnviarMensaje:  
 ```bash
@@ -3808,13 +3808,13 @@ Los parámetros http sirven para enviar información adicional, por ejemplo podr
 Hay 2 formas de enviar los parámetros y podemos clasificarlos según que parte de la petición utilicemos para enviarlos. _Parámetros de consulta_ o _parámetros en el cuerpo de la petición_.  
   
 - Parámetros de consulta  
-    Si alguna vez te fijaste en la url/enlace de Google tras buscar algo veras que entee otros parámetros contiene uno llamado q. Por ejemplo https://www.google.com/search?q=termux  
-    *q* viene de la palabra *q*uery en español consulta. Para indicar que vamos a pasar parámetros a un recurso se utiliza el símbolo de cierre de interrogación. Después indicamos el nombre del parámetro, (en este caso google usa *q*) seguido de un *=* y del valor de dicho parámetro que en este caso es lo que queremos buscar en google. Si lo pones en el navegador verás que te lleva a la búsqueda de la palabra termux en Google. Si quieres pasar mas de un parámetro tienes que usar *&* como separador para que el servidor sepa donde acaba un parámetro y donde empieza el siguiente. Por ejemplo si quieres que solo te responda páginas en inglés google utiliza el parámetro lr (language response en español idioma de respuesta) y como valor utiliza lang_país por ejemplo para inglés la url sería: https://www.google.com/search?q=termux&lr=lang_en para español sería https://www.google.com/search?q=termux&lr=lang_es para frances lang_fr, para portugués lang_pt, etc.  
+  Si alguna vez te fijaste en la url/enlace de Google tras buscar algo verías que entre otros parámetros contiene uno llamado q. Por ejemplo https://www.google.com/search?q=termux    
+  *q* viene de la palabra *q*uery en español consulta. Para indicar que vamos a pasar parámetros a un recurso se utiliza el símbolo de cierre de interrogación. Después indicamos el nombre del parámetro, (en este caso google usa *q*) seguido de un *=* y del valor de dicho parámetro que en este caso es lo que queremos buscar en google. Si lo pones en el navegador verás que te lleva a la búsqueda de la palabra termux en Google. Si quieres pasar mas de un parámetro tienes que usar *&* como separador para que el servidor sepa donde acaba un parámetro y donde empieza el siguiente. Por ejemplo si quieres que solo te responda páginas en inglés google utiliza el parámetro lr (language response en español idioma de respuesta) y como valor utiliza lang_país por ejemplo para inglés la url sería: https://www.google.com/search?q=termux&lr=lang_en para español sería https://www.google.com/search?q=termux&lr=lang_es para frances lang_fr, para portugués lang_pt, etc.  
 
-    _No una una estandarización de que parámetros utilizar o que nombres deben tener, es decir, que cada web utiliza lo que le da la gana. Por ejemplo Google usa ese formato de lr_lang_es para los idiomas mientras que otra página puede usar lang=spanish, otra idioma=francés, otra l=1, etc._
+  _No una una estandarización de que parámetros utilizar o que nombres deben tener, es decir, que cada web utiliza lo que le da la gana. Por ejemplo Google usa ese formato de lr_lang_es para los idiomas mientras que otra página puede usar lang=spanish, otra idioma=francés, otra l=1, etc._
 
-    Como puedes deducir para enviar estos parámetros en una petición HTTP usamos el apartado de la ruta:
-    ```bash
+  Como puedes deducir para enviar estos parámetros en una petición HTTP usamos el apartado de la ruta:
+  ```bash
 echo 'GET /search?q=termux&lr_lang_es HTTP/1.1
 Host: www.google.com
 User-Agent: Mozilla/5.0
@@ -3825,8 +3825,8 @@ Accept: */*
 ``` 
   
 - Parámetros en el cuerpo de la petición
-    Los parámetros en el cuerpo de la petición se suelen utilizar con el método POST y normalemnte son parámetros que no queremos que se vean en la url. Por ejemplo si estamos en un lugar público no nos gustaría que nuestra contraseña saliese en la url del navegador como pasaba con la búsqueda en Google. Entonces lo que hacemos es enviarlos en después de las cabeceras. Este espacio después de las cabceras es lo que se conoce como _cuerpo de la petición_. La petición anterior se vería de la siguiente forma si usamos el cuerpo de la petición en lugar de la ruta:
-    ```bash
+  Los parámetros en el cuerpo de la petición se suelen utilizar con el método POST y normalemnte son parámetros que no queremos que se vean en la url. Por ejemplo si estamos en un lugar público no nos gustaría que nuestra contraseña saliese en la url del navegador como pasaba con la búsqueda en Google. Entonces lo que hacemos es enviarlos en después de las cabeceras. Este espacio después de las cabceras es lo que se conoce como _cuerpo de la petición_. La petición anterior se vería de la siguiente forma si usamos el cuerpo de la petición en lugar de la ruta:
+  ```bash
 echo 'GET /search HTTP/1.1
 Host: www.google.com
 
@@ -3836,10 +3836,10 @@ q=Termux&lr=lang_es
 
 ' | ncat google.com 80
 ```
-    Si haces esta petición veras que Google te responde con el Error 400 Bad Request (mala petición) y es que muchos servidores no admiten que envies el cuerpo de la petición con el método GET.  
+  Si haces esta petición veras que Google te responde con el Error 400 Bad Request (mala petición) y es que muchos servidores no admiten que envies el cuerpo de la petición con el método GET.  
   
-    El equivalente usando POST sería:
-    ```bash
+  El equivalente usando POST sería:
+  ```bash
 POST /search HTTP/1.1
 Host: www.google.com
 Content-Type: application/x-www-form-urlencoded
@@ -3850,9 +3850,9 @@ q=Termux&lr=lang_es
 
 ```
 
-    Si vemos la respuesta de google nos dice 405 Method Not Allowed (metodo no permitido), es decir, google.com/search en este caso no acepta que le hagamos las consultas por POST. Eso ya es decisión de cada web. Otros buscadores como duckduckgo si que permiten tanto la búsqueda por parámetros en GET como por POST  
-    Aquí el ejemplo de muestra de como duckduckgo si que acepta que le enviemos el parámetro en el cuerpo de la petición:
-    ```bash
+  Si vemos la respuesta de google nos dice 405 Method Not Allowed (metodo no permitido), es decir, google.com/search en este caso no acepta que le hagamos las consultas por POST. Eso ya es decisión de cada web. Otros buscadores como duckduckgo si que permiten tanto la búsqueda por parámetros en GET como por POST  
+  Aquí el ejemplo de muestra de como duckduckgo si que acepta que le enviemos el parámetro en el cuerpo de la petición:
+  ```bash
 echo 'POST / HTTP/1.1
 Host: duckduckgo.com
 Content-Type: application/x-www-form-urlencoded
@@ -3864,14 +3864,12 @@ q=Termux
 ' | ncat duckduckgo.com 80
 
 ```
-    Como ya comentamos anteriormente para realizar este tipo de peticiones "correctas" puedes utilizar curl, ya que es mas sencillo:
-    ```bash
+  Como ya comentamos anteriormente para realizar este tipo de peticiones "correctas" puedes utilizar curl, ya que es mas sencillo:
+  ```bash
 curl -v 'https://duckduckgo.com/?q=termux'
 ```
-    Cuando necesites mas control es cuando debes usar el crafting manual de las peticiones con ncat. 
-
-
-
+  Cuando necesites mas control es cuando debes usar el crafting manual de las peticiones con ncat. 
+  
 
 ##### Respuesta HTTP
 Cuando realizamos una petición HTTP el servidor también nos responde utilizando el protocolo HTTP. Por ejemplo si hacemos la petición:
