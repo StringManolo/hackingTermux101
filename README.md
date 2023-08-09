@@ -3960,7 +3960,6 @@ Content-Length: 1256
 Como puedes observar la primera linea nos indica la versión del protocolo con la que nos responde, un número que se conoce como _código de estado_ y una descripción corta en texto con lo que significa ese código _frase de estado_. Por ejemplo 200 nos dice que todo está OK, que en respuesta a GET suele significar que encontró el rescurso que le pedimos (el /index.html). Otro código de respuesta muy conocido es el 404 Not Found (no encontrado que nos suele aparecer cuando solicitamos un recurso que no existe en el servidor.   
   
 A partir de ahí también nos responde con cabeceras. Vamos a ver que significa cada una de las cabeceras que nos envió:
-Claro, aquí tienes el significado de cada cabecera en la respuesta HTTP:
 
 - *Age*: Indica cuánto tiempo ha pasado desde que la respuesta fue generada por el servidor (en segundos).  
 - *Cache-Control*: Especifica las directivas de control de caché que deben aplicarse tanto a la solicitud como a la respuesta. En este caso, `max-age=604800` indica que el contenido se puede almacenar en caché durante 604800 segundos (7 días).  
