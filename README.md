@@ -3973,7 +3973,7 @@ A partir de ahí también nos responde con cabeceras. Vamos a ver que significa 
 - *X-Cache*: Proporciona información sobre el estado de la caché en el servidor. `HIT` indica que la respuesta se sirvió desde la caché.  
 - *Content-Length*: Indica la longitud del cuerpo de la respuesta en bytes. Mas o menos equivale al número de caracteres que tiene el archivo que le solicitamos. 
   
-Tras las cabeceras de respuesta se incluye el contenido del archivo solicitado, en este caso es el index.html de la página example.com. Si lo guardas y lo abres en un navegador verías la web de example.com
+Tras las cabeceras de respuesta se incluye el contenido del archivo solicitado, en este caso es el index.html de la página example.com. Si lo guardas y lo abres en un navegador verás la web de example.com
 
 ##### HTTPS
 Ya sabes que es HTTP, pero entonces que es HTTPS, otro protocolo? En verdad no, cuando nos referimos a HTTPS nos estamos refieriendo a HTTP pero enviado en un tunel seguro. Si conectamos directamente a un servidor por ejemplo con el comando ncat example.com 80 estamos estableciendo un tunel TCP/IP con el servidor de example.com por el cual mandaremos el mensaje siguiendo el protocolo HTTP. El puerto 80 es el puerto por defecto para el protocolo HTTP sin cifrar, si queremos establecer un canal cifrado usaremos el puerto 443. Por ejemplo:
@@ -3985,7 +3985,7 @@ Host: example.com
 ' | ncat example.com 443
 ```  
 
-Si hacemos esto sin más estaremos enviando una petición HTTP sin cifrar a un tunel que requiere cifrado y el servidor o cerrará el tunel TCP sin respondernos o nos avisará que estamos enviando texto sin cifrar. En el caso concreto de example.com simplemente cierra el tunel y ncat nos avisará con el mensaje: *Ncat: Connection reset by peer.* en español *Ncat; Conexión restablecida por la otra parte* Es decir, la otra parte de la comunicación (el servidor de example.com) nos cerró la conexión (tunel) porque le enviamos texto sin cifrar en lugar de negociar el cifrado. La parte de negociación del cifrado es un tema complejo que pertenece al protocolo TLS y no tiene que ver con el protocolo HTTP, asique no es algo que corresponda explicar en este capítulo. Si quieres usar un tunel cifrado simplemente añade la flag --ssl al comando ncat y el programa se encargará automáticamente de negociar el cifrado.  
+Si hacemos esto sin más estaremos enviando una petición HTTP sin cifrar a un tunel que requiere cifrado y el servidor o cerrará el tunel TCP sin respondernos o nos avisará que estamos enviando texto sin cifrar. En el caso concreto de example.com simplemente cierra el tunel y ncat nos avisará con el mensaje: *Ncat: Connection reset by peer.* en español *Ncat: Conexión restablecida por la otra parte*. Es decir, la otra parte de la comunicación (el servidor de example.com) nos cerró la conexión (tunel) porque le enviamos texto sin cifrar en lugar de negociar el cifrado. La parte de negociación del cifrado es un tema complejo que pertenece al protocolo TLS y no tiene que ver con el protocolo HTTP, asique no es algo que corresponda explicar en este capítulo. Si quieres usar un tunel cifrado simplemente añade la flag --ssl al comando ncat y el programa se encargará automáticamente de negociar el cifrado.  
 
 ```bash
 echo 'GET / HTTP/1.1
