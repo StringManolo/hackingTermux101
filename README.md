@@ -2439,6 +2439,8 @@ Deberías ver el contenido del archivo de texto "example.txt".
 
 ¡Listo! Ahora tienes un servidor web en ejecución en tu dispositivo Android, creado con Python 3 en Termux. Puedes personalizar la página web agregando más contenido y archivos a la carpeta "mywebsite".
 
+En el final del [Capítulo 25: Protocolo HTTP](#cap%C3%ADtulo-25-protocolo-http) también tienes un servidor web mínino usando Bash y ncat. 
+
 [Tabla de Contenidos](#tabla-de-contenidos)
 
 ----
@@ -3798,7 +3800,7 @@ Y efectivamente, si no encuentra GET u otro método valido nos seguirá respondi
   
 Hay programas que hacen esto automáticamente, se les conoce como fuzzers y son muy útiles para encontrar fallos de seguridad.
 
-*IMPORTANTE*: Estas pruebas se realizan únicamente con fines educativos, el uso de estas técnicas de testing sin que te de permiso del dueño del servidor es ilegal, ya que imagínate que enviándole una petición malformada el servidor no sabe como responder y se congela su proceso. El dueño del servidor podría denunciarte porque le has dejado el servidor fuera de servicio y el resto de visitantes no han podido acceder. A demás de ser un delito informático también puede ocasionarle costes a la empresa del servidor, por ejemplo podrían dejar de ganar dinero con anuncios ya que la web no está dispoible y tener que invertir el tiempo de sus empleados en revisar la petición, corregir el fallo y volver a poner el servidor online. Estarían en su derecho de demandarte y solicitarte como compensación que abones dichos costes. En resumen, cárcel y multa. Asique para este tipo de pruebas utiliza tus propias webs y servidores en local, así podrás testear en ellas todo lo que quieras sin perjudicar a nadie. En el [Capítulo 18: Creando un Servidor](#cap%C3%ADtulo-18-creando-un-servidor) ya se explicó como crear un servidor web en local con python3. En los siguientes apartados de este capítulo también veremos como hacerlo con ncat.  
+*IMPORTANTE*: Estas pruebas se realizan únicamente con fines educativos, el uso de estas técnicas de testing sin que te de permiso el dueño del servidor, es ilegal, ya que imagínate que enviándole una petición malformada el servidor no sabe como responder y se congela su proceso. El dueño del servidor podría denunciarte porque le has dejado el servidor fuera de servicio y el resto de visitantes no han podido acceder. A demás de ser un delito informático también puede ocasionarle costes a la empresa del servidor, por ejemplo podrían dejar de ganar dinero con anuncios ya que la web no está disponible y tener que invertir el tiempo de sus empleados en revisar la petición, corregir el fallo y volver a poner el servidor online. Estarían en su derecho de demandarte y solicitarte como compensación que abones dichos costes. En resumen, cárcel y multa. Asique para este tipo de pruebas utiliza tus propias webs y servidores en local, así podrás testear en ellas todo lo que quieras sin perjudicar a nadie. En el [Capítulo 18: Creando un Servidor](#cap%C3%ADtulo-18-creando-un-servidor) ya se explicó como crear un servidor web en local con python3. En los siguientes apartados de este capítulo también veremos como hacerlo con ncat.  
  
 ###### Parámetros HTTP
 Los parámetros http sirven para enviar información adicional, por ejemplo podrías indicarle al servidor el idioma en que quieres que te devuelva cierto recurso. O para hacer login en la página web podrías enviarle tu usuario y contraseña.
@@ -3989,6 +3991,40 @@ Aquí un resumen de lo que pasa cuando utilizas la flag --ssl:
 4. El cliente y el servidor intercambian información para acordar el cifrado y la clave.  
 5. Se genera una clave de sesión para cifrar y descifrar los datos.  
 6. Una vez establecida la conexión segura, el cliente y el servidor pueden intercambiar datos cifrados.  
+
+##### Servidor Web mínimo
+A parte de enviar peticiones a un servidor, podemos crear un servidor mínimo que nos responda a las peticiones, ncat nos sirve para hacer una versión mínima de HTTP.
+```bash
+#!/usr/bin/env bash
+
+# Puerto en el que escuchará el servidor web
+PUERTO=8080
+
+# Función para manejar las solicitudes HTTP
+manejar_solicitud() {
+    cat index.html
+}
+
+# Iniciar el servidor web
+while true; do
+    respuesta=$(manejar_solicitud)
+    echo -ne "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n$respuesta\r\n" | ncat -lk -p $PUERTO
+done
+```
+
+Puedes guardar este archivo como servidor_web.sh darle permisos y ejecutarlo con el comando:
+```bash
+chmod 775 ./servidor_web.sh
+./servidor_web.sh
+```
+
+Ahora podrás interactuar con él en el puerto 8080. Como ves en su código lo único que hace es enviar siempre la misma respuesta. Si tienes un archivo index.html te lo enviará en la respuesta. Puedes probar a crear el index.html con el comando:
+```bash
+echo '<h1>Esta es mi web de ejemplo</h1>' > index.html
+```  
+Y ahora puedes verla desde el navegador visitando la URL http://localhost:8080 o http://127.0.0.1:8080
+
+También puedes usar url o ncat desde otra sesión de la terminal en lugar del navegador.
 
 
 [Tabla de Contenidos](#tabla-de-contenidos)
