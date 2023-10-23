@@ -126,7 +126,7 @@ Bienvenido a la primera edición del libro Termux Hacking 101. Aquí vas a apren
 
 Termux es un emulador de terminal para Android y un entorno de Linux que funciona directamente sin necesidad de rootear el dispositivo o configurarlo. Un sistema base mínimo se instala automáticamente - Y muchos paquetes adicionales están disponibles desde su gestor de paquetes.
 
-Un pequeño inciso antes de comenzar. Este libro es 100% gratuito y se financia a través e donaciones. Si quieres contribuir a la creación de este libro, puedes realizar una tranferencia a la cuenta ```ES59 2080 5029 1630 0011 2266``` indicando como motivo de la transferencia "Libro Termux". Por donaciones de 20$ o más, se ofrece un día de clases particulares por Telegram. Indica tu nombre de Telegram en el asunto de la tranferencia. DONAR ES OPCIONAL, puedes leer el libro aunque no dones. Por qué deberías donar entonces? Si obtengo múltiples donaciones, me animará a seguir escribiendo el libro o a sacar nuevos libros.  
+Un pequeño inciso antes de comenzar. Este libro es 100% gratuito y se financia a través de donaciones. Si quieres contribuir a la creación de este libro, puedes realizar una tranferencia a la cuenta ```ES59 2080 5029 1630 0011 2266``` indicando como motivo de la transferencia "Libro Termux". Por donaciones de 20$ o más, se ofrece un día de clases particulares por Telegram. Indica tu nombre de Telegram en el asunto de la tranferencia. DONAR ES OPCIONAL, puedes leer el libro aunque no dones. Por qué deberías donar entonces? Si obtengo múltiples donaciones, me animará a seguir escribiendo el libro o a sacar nuevos libros.  
   
 **Disfrútalo!**
 
@@ -138,7 +138,7 @@ Un pequeño inciso antes de comenzar. Este libro es 100% gratuito y se financia 
 
 Para poder utilizar Termux, necesitas un dispositivo Android. Termux soporta versiones de **android** comprendidas **entre** la **versión 7 y** la **última version** de Android.  
 
-Necesitas un **mínimo** de **300 megas de espacio** en disco. Yo te **recomiendo** como **mínimo 8 gigas disponibles de memoria interna**. 64 Gigas está genial y suele ser mas que suficiente, depende del uso que le des.  
+Necesitas un **mínimo** de **300 megas de espacio** en disco. Yo te **recomiendo** como **mínimo 8 gigas disponibles de memoria interna**. 64 Gigas está genial y suele ser más que suficiente, depende del uso que le des.  
   
 Antes de empezar, algunos programas extra son recomendados, aunque no necesarios.
 * [Hackers Keyboard](https://github.com/klausw/hackerskeyboard/releases/download/1.40.7/hackerskeyboard-v1.40.7.apk)  
@@ -263,7 +263,7 @@ El comando **pwd** nos va a mostrar la ruta completa de la carpeta en la cual no
 
 #### cd  
 El comando **cd** sirve para cambiar el directorio en el cual estamos trabajando. Es el equivalente a moverse a una carpeta haciendo doble-click en ella desde cualquier interfaz gráfica.  
-Si escribes el comando cd sin mas, se cambiará el directorio a la variable de entorno "$HOME", por defecto /data/data/com.termux/files/home.  
+Si escribes el comando cd sin más, se cambiará el directorio a la variable de entorno "$HOME", por defecto /data/data/com.termux/files/home.  
   
 > Existe un símbolo especial **~** que sirve para indicar explícitamente que nos mueva a la carpeta home. Esto nos será útil cuando queramos crear o referenciar un archivo en home desde otro directorio.  
   
@@ -304,7 +304,7 @@ El comando **touch** crea ficheros vacios en el directorio actual.
 touch miListaDeLaCompra.txt
 ```
   
-Con este comando crearás un archivo miListaDeLaCompra.txt en el directorio actual, que podras ver en el listado del directorio en el que crees el archivo. Por ejemplo si quisieses crear el archivo en home y listar el contenido de home, usarías los siguientes comandos:  
+Con este comando crearás un archivo miListaDeLaCompra.txt en el directorio actual, que podrás ver en el listado del directorio en el que crees el archivo. Por ejemplo si quisieses crear el archivo en home y listar el contenido de home, usarías los siguientes comandos:  
 ```bash
 cd
 touch miListaDeLaCompra.txt
@@ -332,7 +332,7 @@ mkdir ~/ejemplo/hijoDeEjemplo/hijoDeHijoDeEjemplo
 > mkdir es una abreviatura de Make Directory (Crea Directorio)
 
 #### cp
-El comando **cp** permire copiar archivos. Puedes copiarlos en el mismo directorio o en otro directorio. Tambien puedes modificar el nombre de destino.
+El comando **cp** permire copiar archivos. Puedes copiarlos en el mismo directorio o en otro directorio. También puedes modificar el nombre de destino.
 ```bash
 cp miListaDeLaCompra.txt miSegundaListaDeLaCompra.txt
 ```
@@ -383,7 +383,7 @@ Si corres el comando:
 pkg
 ```
 
-Te mostrará la lista de subcomandos que soporta y una breve descripción de que hace cada uno. Aquí me limito a explicar los subcomandos mas básicos:  
+Te mostrará la lista de subcomandos que soporta y una breve descripción de que hace cada uno. Aquí me limito a explicar los subcomandos más básicos:  
 
 * ##### pkg list-all  
 Muestra un listado todos los comandos/programas/paquetes disponibles para instalar. El listado es bastante grande.  
@@ -507,7 +507,7 @@ Bash es una shell de comandos. Todos los comandos que usamos hasta ahora, han si
 Bash no es un simple intérprete, si no que admite un gran número de instrucciones muy diversas y tambien algunas complejas, dando lugar a un lenguaje de programación potente ampliamente utilizado para configurar sistemas GNU/Linux, crear comandos y otro tipo de utilidades.
 
 #### Variables
-Las variables te permiten almacenar valores para poder utilizarlos mas adelante.  
+Las variables te permiten almacenar valores para poder utilizarlos más adelante.  
   
 Para almacenar texto en una variable usaremos la siguiente sintaxis **nombreDeLaVariable**="__valorDeLaVariable__"   
 ```bash
@@ -544,7 +544,7 @@ echo "$(clear)\n\n\n\n\n\n\n\n\n\nHola, te encuentras en el directorio\n$(pwd)\n
 ![Salida del comando echo en multiples lineas](https://github.com/StringManolo/hackingTermux101/raw/master/imagenes/echo.jpg)  
   
 ##### printf
-printf hace lo mismo que echo pero se ejecuta mas rápido y permite mas opciones para formatear el texto.  
+printf hace lo mismo que echo pero se ejecuta más rápido y permite más opciones para formatear el texto.  
 ```bash
 miNombre="Manolo"
 printf "Hola, mi nombre es %s" "$miNombre"
@@ -552,7 +552,7 @@ printf "Hola, mi nombre es %s" "$miNombre"
 
 Con respecto a echo, puedes apreciar que no se añade el salto de linea al final de la frase. Tienes que añadirla manualmente. También ves en el comando que las variables se separan en otros argumentos a parte. En este caso %s indica que la variable es un string (cadena de texto).  
   
-Otra de las ventajas de printf, es que nos avisa de errores. Por ejemplo %d sirve para imprimir numeros enteros. Si le pasamos como argumento un numero que no es entero, nos avisará del error  
+Otra de las ventajas de printf, es que nos avisa de errores. Por ejemplo %d sirve para imprimir números enteros. Si le pasamos como argumento un número que no es entero, nos avisará del error  
 ```bash
 numeroPI="3.1416"
 printf "El numero PI es %d" "$numeroPI"
@@ -573,7 +573,7 @@ Bash nos indicará el error: **bash: printf: 3.1416: invalid number** e imprimir
 Podemos interactura con el usuario de múltiples formas.
 
 ##### read  
-El comando **read** nos permite leer datos de la entrada de la terminal. Nosotros usaremos read con el argumento simple -p (la p es de la palabra prompt, en español sugerencia) y nos srive para sugerir al usuario el tipo de datos que queremos que introduza.  
+El comando **read** nos permite leer datos de la entrada de la terminal. Nosotros usaremos read con el argumento simple -p (la p es de la palabra prompt, en español sugerencia) y nos sirve para sugerir al usuario el tipo de datos que queremos que introduza.  
   
 Si por ejemplo queremos preguntarle el nombre al usuario
 ```bash
@@ -796,7 +796,7 @@ fi
 
 Si pruebas el ejemplo pegándolo en tu terminal y pulsando enter, verás que si se cumple la condición mostrará el texto indicando que eres mayor de edad, y si no se cumple, te dirá que eres menor de edad.  
   
-La última palabra clave es **elif**, y sirve para introducir mas if, que se ejecutarán solo si el anterior **if** no se cumple. Ejemplo:
+La última palabra clave es **elif**, y sirve para introducir más if, que se ejecutarán solo si el anterior **if** no se cumple. Ejemplo:
 ```bash
 read -p "Introduce tu edad y pulsa enter: " edad
 if [ "$edad" -lt 12 ]; then
@@ -1002,7 +1002,7 @@ saludar "Arturo"
 
 Como puedes ver, puedes saludar a tantos usuarios como quieras sin necesidad de tener que escribir el mismo texto una y otra vez. Puedes poner cualquier tipo de comandos dentro de las funciones.
 
-Si quieres que quede mas claro que estás creando una función, puedes usar la palabra clave **function** y omitir los paréntesis:
+Si quieres que quede más claro que estás creando una función, puedes usar la palabra clave **function** y omitir los paréntesis:
 ```bash
 function saludar {
   echo "hola $1, bienvenido a mi programa"
@@ -1174,12 +1174,12 @@ printf 'Mi nombre es %s' $nombre
 -----
 
 ## Capítulo 6: Uso de VI y de VIM
-VI y VIM son editores de texto muy completos. VI es la versión mas pequeña y suele venir por defecto instalado en muchos sistemas. VIM es su hermano mayor e incluye cientos de características. Por si fueran pocas, la comunidad de programadores va creando sus plugins, temas y colores para VIM para extender aún mas su funcionalidad.  
+VI y VIM son editores de texto muy completos. VI es la versión más pequeña y suele venir por defecto instalado en muchos sistemas. VIM es su hermano mayor e incluye cientos de características. Por si fueran pocas, la comunidad de programadores va creando sus plugins, temas y colores para VIM para extender aún más su funcionalidad.  
   
-Dado lo extenso de VI y VIM, pondré el foco en los comandos y atajos que yo mas utilizo, dejando de lado muchísima funcionalidad útil. VIM por si solo daría para un libro entero y no es mi idea reinventar la rueda escribiendo un libro de VIM, asique centrando el tiro. 
+Dado lo extenso de VI y VIM, pondré el foco en los comandos y atajos que yo más utilizo, dejando de lado muchísima funcionalidad útil. VIM por si solo daría para un libro entero y no es mi idea reinventar la rueda escribiendo un libro de VIM, asique centrando el tiro. 
 
 #### Instalar VIM
-VI suele venir instalado, pero VIM no. Es un paquete mas, asique usaremos el comando que ya conocemos para instalar paquetes en Termux
+VI suele venir instalado, pero VIM no. Es un paquete más, asique usaremos el comando que ya conocemos para instalar paquetes en Termux
 ```bash
 pkg install vim
 ```
@@ -1626,7 +1626,7 @@ Archivos del gestor de paquetes APT
 Archivos de configuración de APT
 
 ###### com.termux/files/usr/etc/apt/preferences.d
-Archivos para configurar las preferencias de APT, por ejemplo si quieres priorizar que se descarge la versión mas reciente de los paquetes por defecto, priorizar que se descargen los paquetes estables, ....
+Archivos para configurar las preferencias de APT, por ejemplo si quieres priorizar que se descarge la versión más reciente de los paquetes por defecto, priorizar que se descargen los paquetes estables, ....
 
 ###### com.termux/files/usr/etc/apt/sources.list
 Este es un archivo de configuración de APT (el sistema de gestión de paquetes de Debian) que indica a APT dónde buscar paquetes para instalar. En este caso, se refiere a los repositorios que se pueden usar en Termux.
@@ -1790,7 +1790,7 @@ else
 fi
 ```
 
-Esta sería la forma mas completa para poder procesar argumentos en Bash. Si corres el comando **saludar**, verás que te dice __Hola__. Ahora también acepta varios argumentos. Por ejemplo el argumento name (nombre en español). **saludar --name Manolo** y también el argumento **--help**. Ambos argumentos admiten su versión cortas **-n**, **-h** respectivamente.  
+Esta sería la forma más completa para poder procesar argumentos en Bash. Si corres el comando **saludar**, verás que te dice __Hola__. Ahora también acepta varios argumentos. Por ejemplo el argumento name (nombre en español). **saludar --name Manolo** y también el argumento **--help**. Ambos argumentos admiten su versión cortas **-n**, **-h** respectivamente.  
 
   
 Explicación del código:  
@@ -3141,7 +3141,7 @@ Si espaciamos el JSON podemos ver mejor su estructura visualmente:
 Le añadí otro mensaje para que veas como queda.  
 
 
-Pues ahora que ya vemos mas o menos como funciona, lo que haremos es usar Bash para obtener estos mensajes programáticamente, analizarlos y tomar decisiones en base al texto que recibamos, por ejemplo si recibimos el mensaje /saluda podremos obtener el nombre del usuario que nos envió ese mensaje, el id del chat y enviarle un mensaje tal que 'Hola Manolo' al mismo chat que nos envió el mensaje /saluda. Con esta sencilla técnica si detectamos el mensaje '/run ls' podremos ejecutar el comando ls usando Bash y enviarle al chat del usuario la respuesta del comando ls. Así de esta forma es como tener una terminal remota, ya que todos los comandos que le ponemos en el chat de telegram nuestro programa en bash los ejecutará y nos enviará la respuesta.  
+Pues ahora que ya vemos más o menos como funciona, lo que haremos es usar Bash para obtener estos mensajes programáticamente, analizarlos y tomar decisiones en base al texto que recibamos, por ejemplo si recibimos el mensaje /saluda podremos obtener el nombre del usuario que nos envió ese mensaje, el id del chat y enviarle un mensaje tal que 'Hola Manolo' al mismo chat que nos envió el mensaje /saluda. Con esta sencilla técnica si detectamos el mensaje '/run ls' podremos ejecutar el comando ls usando Bash y enviarle al chat del usuario la respuesta del comando ls. Así de esta forma es como tener una terminal remota, ya que todos los comandos que le ponemos en el chat de telegram nuestro programa en bash los ejecutará y nos enviará la respuesta.  
   
 Pues procedamos a implementar en bash nuestra primera función LeerMensajes que hicimos en pseudocódugo en español. _Para programar usaré VIM como editor de texto. Si no lo manejas puedes revisar el_ [Capítulo 6: Uso de VI y de VIM](#cap%C3%ADtulo-6-uso-de-vi-y-de-vim) _o puedes utilizar cualquier otro editor de texto._
 
@@ -3840,7 +3840,7 @@ q=Termux&lr=lang_es
 ' | ncat google.com 80
 ```  
   
-  Si haces esta petición veras que Google te responde con el Error 400 Bad Request (mala petición) y es que muchos servidores no admiten que envies el cuerpo de la petición con el método GET.  
+  Si haces esta petición verás que Google te responde con el Error 400 Bad Request (mala petición) y es que muchos servidores no admiten que envies el cuerpo de la petición con el método GET.  
   
   El equivalente usando POST sería:
 
